@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+  <!-- Waveform bars (left) -->
+  <rect x="3" y="11" width="3" height="14" rx="1.5" fill="#EA580C"/>
+  <rect x="8" y="7" width="3" height="22" rx="1.5" fill="#EA580C"/>
+  <rect x="13" y="13" width="3" height="10" rx="1.5" fill="#EA580C"/>
+  <!-- Note stem -->
+  <rect x="19" y="4" width="3" height="24" rx="1.5" fill="#EA580C"/>
+  <!-- Note head -->
+  <ellipse cx="26" cy="26" rx="7.5" ry="5.5" transform="rotate(-20 26 26)" fill="#EA580C"/>
+  <!-- Flag -->
+  <path d="M22 4 C22 4, 30 6, 30 12" stroke="#EA580C" stroke-width="3" stroke-linecap="round" fill="none"/>
+</svg>
