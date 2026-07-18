@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MP3 to MIDI — Drop a track. Get the notes.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Space Grotesk', 'sans-serif'] },
+      colors: {
+        bg: '#FDF8F3',
+        surface: '#F5EDE4',
+        'surface-high': '#EDE3D7',
+        accent: '#EA580C',
+        'accent-light': '#FB923C',
+        earth: '#C8B8A8',
+        'earth-dark': '#A89888',
+        ink: '#1C1917',
+        'ink-light': '#44403C',
+        'ink-muted': '#78716C',
+      }
+    }
+  }
+}
+</script>
+<style>
+* { box-sizing: border-box; }
+body { font-family: 'Space Grotesk', sans-serif; background: #FDF8F3; color: #1C1917; }
+.bento-sharp { border-radius: 4px; }
+.bento-round { border-radius: 20px; }
+.bento-mixed { border-radius: 4px 20px 4px 20px; }
+.bento-mixed-alt { border-radius: 20px 4px 20px 4px; }
+.divider { height: 1px; background: linear-gradient(90deg, transparent, #C8B8A8, transparent); }
+.gradient-accent { background: linear-gradient(135deg, #EA580C, #FB923C); }
+.gradient-earth { background: linear-gradient(135deg, #F5EDE4, #EDE3D7); }
+.card-hover { transition: transform 0.2s, box-shadow 0.2s; }
+.card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(234, 88, 12, 0.1); }
+.upload-zone { border: 2px dashed #C8B8A8; transition: border-color 0.2s, background 0.2s; }
+.upload-zone:hover, .upload-zone.dragover { border-color: #EA580C; background: rgba(234, 88, 12, 0.05); }
+.carousel { scrollbar-width: none; -ms-overflow-style: none; }
+.carousel::-webkit-scrollbar { display: none; }
+</style>
+</head>
+<body class="min-h-screen">
+
+<!-- Header: Sharp left, round right -->
+<header class="sticky top-0 z-50 bg-bg/80 backdrop-blur-md border-b border-earth/30">
+  <div class="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 gradient-accent rounded-sm flex items-center justify-center">
+        <span class="material-icons-outlined text-white text-lg">music_note</span>
+      </div>
+      <span class="font-bold text-lg text-ink">MP3toMIDI</span>
+    </div>
+    <nav class="hidden md:flex items-center gap-8">
+      <a href="#convert" class="text-sm font-medium text-ink-muted hover:text-accent transition-colors">Convert</a>
+      <a href="#features" class="text-sm font-medium text-ink-muted hover:text-accent transition-colors">Features</a>
+      <a href="#how" class="text-sm font-medium text-ink-muted hover:text-accent transition-colors">How it works</a>
+      <a href="#faq" class="text-sm font-medium text-ink-muted hover:text-accent transition-colors">FAQ</a>
+    </nav>
+    <button class="gradient-accent text-white px-5 py-2 bento-sharp text-sm font-semibold hover:opacity-90 transition-opacity">
+      Start Converting
+    </button>
+  </div>
+</header>
+
+<!-- Hero: Asymmetric split — left text, right upload -->
+<section id="convert" class="max-w-[1400px] mx-auto px-6 py-16 md:py-24">
+  <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-start">
+    
+    <!-- Left: Text (3 cols) -->
+    <div class="lg:col-span-3 space-y-6">
+      <div class="inline-flex items-center gap-2 bg-accent/10 text-accent px-3 py-1.5 bento-sharp text-xs font-semibold">
+        <span class="material-icons-outlined text-sm">bolt</span>
+        FREE — NO SIGNUP REQUIRED
+      </div>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+        Drop a track.<br>
+        <span class="text-accent">Get the notes.</span>
+      </h1>
+      <p class="text-lg text-ink-light max-w-lg leading-relaxed">
+        Upload any MP3, WAV, or FLAC. Our AI extracts every note, chord, and rhythm — then hands you a clean MIDI file you can drop straight into Ableton, FL Studio, or Logic.
+      </p>
+      <div class="flex items-center gap-6 text-sm text-ink-muted">
+        <div class="flex items-center gap-2">
+          <span class="material-icons-outlined text-accent text-base">check_circle</span>
+          <span>100% browser-side</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-icons-outlined text-accent text-base">check_circle</span>
+          <span>Audio never leaves your device</span>
+        </div>
+      </div>
+      <!-- Social proof -->
+      <div class="flex items-center gap-3 pt-4">
+        <div class="flex -space-x-2">
+          <div class="w-8 h-8 rounded-full bg-earth flex items-center justify-center text-xs font-bold text-white">J</div>
+          <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-xs font-bold text-white">M</div>
+          <div class="w-8 h-8 rounded-full bg-ink-muted flex items-center justify-center text-xs font-bold text-white">K</div>
+        </div>
+        <span class="text-sm text-ink-muted">5,000+ producers use this every week</span>
+      </div>
+    </div>
+    
+    <!-- Right: Upload card (2 cols) — mixed border radius -->
+    <div class="lg:col-span-2">
+      <div class="bg-white bento-mixed p-8 shadow-lg shadow-accent/5">
+        <div class="upload-zone bento-round p-8 text-center cursor-pointer" id="uploadZone">
+          <span class="material-icons-outlined text-earth text-5xl mb-4">cloud_upload</span>
+          <h3 class="text-lg font-semibold text-ink mb-1">Drag & drop your audio</h3>
+          <p class="text-sm text-ink-muted">or click to browse files</p>
+          <p class="text-xs text-earth mt-3">MP3 · WAV · FLAC · OGG — Max 50MB</p>
+        </div>
+        <div class="mt-6 space-y-4">
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-ink-muted">Conversion quality</span>
+            <span class="font-medium text-accent">Standard</span>
+          </div>
+          <div class="h-1.5 bg-surface rounded-full overflow-hidden">
+            <div class="h-full gradient-accent rounded-full" style="width: 50%"></div>
+          </div>
+          <div class="flex justify-between text-xs text-ink-muted">
+            <span>Fast</span>
+            <span>Balanced</span>
+            <span>Detailed</span>
+          </div>
+        </div>
+        <button class="w-full mt-6 gradient-accent text-white py-3.5 bento-sharp font-semibold text-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+          <span class="material-icons-outlined text-lg">autorenew</span>
+          Convert to MIDI
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Divider -->
+<div class="divider max-w-[1400px] mx-auto"></div>
+
+<!-- How it works: 3 steps, asymmetric -->
+<section id="how" class="max-w-[1400px] mx-auto px-6 py-16">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    
+    <!-- Left: Title (4 cols) -->
+    <div class="lg:col-span-4">
+      <span class="text-xs font-semibold text-accent tracking-widest uppercase">How it works</span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-3 leading-tight">Three steps.<br>Under a minute.</h2>
+      <p class="text-ink-muted mt-4 leading-relaxed">No software install. No account. Just drag, convert, download.</p>
+    </div>
+    
+    <!-- Right: Steps (8 cols) -->
+    <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <!-- Step 1 -->
+      <div class="bg-white bento-sharp p-6 card-hover border border-earth/20">
+        <div class="w-10 h-10 gradient-accent bento-round flex items-center justify-center mb-4">
+          <span class="material-icons-outlined text-white text-lg">upload_file</span>
+        </div>
+        <div class="text-xs font-mono text-earth mb-2">01</div>
+        <h3 class="font-semibold text-ink mb-2">Upload your audio</h3>
+        <p class="text-sm text-ink-muted leading-relaxed">Drop any MP3, WAV, OGG, or FLAC file. We handle tracks up to 10 minutes long.</p>
+      </div>
+      <!-- Step 2 -->
+      <div class="bg-surface bento-mixed p-6 card-hover">
+        <div class="w-10 h-0 gradient-accent bento-round flex items-center justify-center mb-4">
+          <span class="material-icons-outlined text-white text-lg">memory</span>
+        </div>
+        <div class="text-xs font-mono text-accent mb-2">02</div>
+        <h3 class="font-semibold text-ink mb-2">AI extracts the notes</h3>
+        <p class="text-sm text-ink-muted leading-relaxed">Our neural engine detects pitch, velocity, timing, and chord structure — all in your browser.</p>
+      </div>
+      <!-- Step 3 -->
+      <div class="bg-white bento-sharp p-6 card-hover border border-earth/20">
+        <div class="w-10 h-10 gradient-accent bento-round flex items-center justify-center mb-4">
+          <span class="material-icons-outlined text-white text-lg">download</span>
+        </div>
+        <div class="text-xs font-mono text-earth mb-2">03</div>
+        <h3 class="font-semibold text-ink mb-2">Download your MIDI</h3>
+        <p class="text-sm text-ink-muted leading-relaxed">Get a clean .mid file ready for Ableton, FL Studio, Logic, or any DAW.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Divider -->
+<div class="divider max-w-[1400px] mx-auto"></div>
+
+<!-- Features: Bento grid 2+1 asymmetric -->
+<section id="features" class="max-w-[1400px] mx-auto px-6 py-16">
+  <div class="flex justify-between items-end mb-8">
+    <div>
+      <span class="text-xs font-semibold text-accent tracking-widest uppercase">Features</span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-3">Built for producers<br>who move fast.</h2>
+    </div>
+    <div class="hidden md:flex gap-2">
+      <button class="carousel-prev w-10 h-10 bg-surface bento-sharp flex items-center justify-center hover:bg-accent/10 transition-colors">
+        <span class="material-icons-outlined text-ink">chevron_left</span>
+      </button>
+      <button class="carousel-next w-10 h-10 bg-surface bento-sharp flex items-center justify-center hover:bg-accent/10 transition-colors">
+        <span class="material-icons-outlined text-ink">chevron_right</span>
+      </button>
+    </div>
+  </div>
+  
+  <!-- Bento grid: 2+1 layout -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    
+    <!-- Card 1: Large (2 cols) — Neural Audio -->
+    <div class="md:col-span-2 bg-white bento-mixed p-8 card-hover">
+      <div class="flex flex-col md:flex-row gap-8">
+        <div class="flex-1">
+          <div class="inline-flex items-center gap-2 bg-accent/10 text-accent px-3 py-1 bento-sharp text-xs font-semibold mb-4">
+            <span class="material-icons-outlined text-sm">psychology</span>
+            AI TRANSCRIPTION
+          </div>
+          <h3 class="text-2xl font-bold text-ink mb-3">Neural Audio Extraction</h3>
+          <p class="text-ink-muted leading-relaxed mb-4">Deep-learning models trained on 500,000+ hours of professional recordings. Separates vocals, drums, bass, and instruments with 99.4% note accuracy.</p>
+          <ul class="space-y-2 text-sm text-ink">
+            <li class="flex items-center gap-2"><span class="material-icons-outlined text-accent text-base">check_circle</span> Polyphonic note detection</li>
+            <li class="flex items-center gap-2"><span class="material-icons-outlined text-accent text-base">check_circle</span> Micro-timing preservation</li>
+            <li class="flex items-center gap-2"><span class="material-icons-outlined text-accent text-base">check_circle</span> Velocity & expression data</li>
+          </ul>
+        </div>
+        <div class="flex-1 gradient-earth bento-round p-6 flex items-center justify-center min-h-[200px]">
+          <div class="w-full h-32 flex items-end gap-1.5">
+            <div class="flex-1 bg-accent/30 rounded-t" style="height: 40%"></div>
+            <div class="flex-1 bg-accent rounded-t" style="height: 65%"></div>
+            <div class="flex-1 bg-accent/30 rounded-t" style="height: 30%"></div>
+            <div class="flex-1 bg-accent rounded-t" style="height: 80%"></div>
+            <div class="flex-1 bg-accent/30 rounded-t" style="height: 50%"></div>
+            <div class="flex-1 bg-accent rounded-t" style="height: 90%"></div>
+            <div class="flex-1 bg-accent/30 rounded-t" style="height: 45%"></div>
+            <div class="flex-1 bg-accent rounded-t" style="height: 70%"></div>
+            <div class="flex-1 bg-accent/30 rounded-t" style="height: 55%"></div>
+            <div class="flex-1 bg-accent rounded-t" style="height: 85%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Card 2: Small — Speed -->
+    <div class="bg-surface bento-mixed-alt p-6 card-hover flex flex-col justify-between">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-accent/10 text-accent px-3 py-1 bento-sharp text-xs font-semibold mb-4">
+          <span class="material-icons-outlined text-sm">speed</span>
+          SPEED
+        </div>
+        <h3 class="text-xl font-bold text-ink mb-2">Instant Processing</h3>
+        <p class="text-sm text-ink-muted leading-relaxed">MIDI output in under 15 seconds per minute of audio. No queue, no waiting.</p>
+      </div>
+      <div class="mt-6 pt-4 border-t border-earth/30 flex items-center justify-between">
+        <span class="text-xs font-mono text-ink-muted">LATENCY: &lt; 200MS</span>
+        <span class="material-icons-outlined text-accent">timer</span>
+      </div>
+    </div>
+    
+    <!-- Card 3: Small — Compatibility -->
+    <div class="bg-white bento-sharp p-6 card-hover border border-earth/20">
+      <div class="inline-flex items-center gap-2 bg-earth/20 text-ink px-3 py-1 bento-sharp text-xs font-semibold mb-4">
+        <span class="material-icons-outlined text-sm">devices</span>
+        COMPATIBILITY
+      </div>
+      <h3 class="text-xl font-bold text-ink mb-2">Works with your DAW</h3>
+      <p class="text-sm text-ink-muted leading-relaxed mb-4">Standard .mid files open in every major music production tool.</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-surface bento-sharp text-xs font-medium text-ink">Ableton</span>
+        <span class="px-3 py-1 bg-surface bento-sharp text-xs font-medium text-ink">FL Studio</span>
+        <span class="px-3 py-1 bg-surface bento-sharp text-xs font-medium text-ink">Logic Pro</span>
+        <span class="px-3 py-1 bg-surface bento-sharp text-xs font-medium text-ink">GarageBand</span>
+      </div>
+    </div>
+    
+    <!-- Card 4: Medium — Privacy -->
+    <div class="md:col-span-2 gradient-earth bento-round p-8 card-hover">
+      <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+        <div class="w-14 h-14 gradient-accent bento-mixed flex items-center justify-center flex-shrink-0">
+          <span class="material-icons-outlined text-white text-2xl">lock</span>
+        </div>
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-ink mb-2">Your audio stays on your device</h3>
+          <p class="text-ink-muted leading-relaxed">Everything runs in your browser using WebAssembly. We never upload, store, or see your files. Not now, not ever.</p>
+        </div>
+        <div class="flex items-center gap-2 text-sm font-medium text-accent">
+          <span class="material-icons-outlined text-base">verified_user</span>
+          100% Private
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Divider -->
+<div class="divider max-w-[1400px] mx-auto"></section>
+
+<!-- FAQ: Asymmetric layout -->
+<section id="faq" class="max-w-[1400px] mx-auto px-6 py-16">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    
+    <!-- Left: Title (5 cols) -->
+    <div class="lg:col-span-5">
+      <span class="text-xs font-semibold text-accent tracking-widest uppercase">FAQ</span>
+      <h2 class="text-3xl md:text-4xl font-bold mt-3 leading-tight">Got questions?<br>We've got answers.</h2>
+      <p class="text-ink-muted mt-4">Can't find what you're looking for? <a href="#" class="text-accent hover:underline">Contact us</a></p>
+    </div>
+    
+    <!-- Right: Accordion (7 cols) -->
+    <div class="lg:col-span-7 space-y-3">
+      <details class="bg-white bento-sharp border border-earth/20 group" open>
+        <summary class="p-5 cursor-pointer flex items-center justify-between font-semibold text-ink hover:text-accent transition-colors list-none">
+          <span>How accurate is the conversion?</span>
+          <span class="material-icons-outlined text-earth group-open:rotate-180 transition-transform">expand_more</span>
+        </summary>
+        <div class="px-5 pb-5 text-sm text-ink-muted leading-relaxed border-t border-earth/20 pt-4">
+          Our AI achieves 99.4% note accuracy on clean, single-instrument recordings. For complex mixes with multiple instruments, accuracy varies but the output is always a solid starting point for editing in your DAW.
+        </div>
+      </details>
+      
+      <details class="bg-surface bento-mixed group">
+        <summary class="p-5 cursor-pointer flex items-center justify-between font-semibold text-ink hover:text-accent transition-colors list-none">
+          <span>Is my audio uploaded to a server?</span>
+          <span class="material-icons-outlined text-earth group-open:rotate-180 transition-transform">expand_more</span>
+        </summary>
+        <div class="px-5 pb-5 text-sm text-ink-muted leading-relaxed border-t border-earth/20 pt-4">
+          No. All processing happens in your browser using WebAssembly. Your audio files never leave your device — not even a single byte is sent to our servers.
+        </div>
+      </details>
+      
+      <details class="bg-white bento-sharp border border-earth/20 group">
+        <summary class="p-5 cursor-pointer flex items-center justify-between font-semibold text-ink hover:text-accent transition-colors list-none">
+          <span>What file formats can I upload?</span>
+          <span class="material-icons-outlined text-earth group-open:rotate-180 transition-transform">expand_more</span>
+        </summary>
+        <div class="px-5 pb-5 text-sm text-ink-muted leading-relaxed border-t border-earth/20 pt-4">
+          We support MP3, WAV, OGG, FLAC, and M4A files up to 50MB. For best results, use lossless formats like WAV or FLAC with clear, single-instrument recordings.
+        </div>
+      </details>
+      
+      <details class="bg-surface bento-mixed group">
+        <summary class="p-5 cursor-pointer flex items-center justify-between font-semibold text-ink hover:text-accent transition-colors list-none">
+          <span>Can I use the MIDI commercially?</span>
+          <span class="material-icons-outlined text-earth group-open:rotate-180 transition-transform">expand_more</span>
+        </summary>
+        <div class="px-5 pb-5 text-sm text-ink-muted leading-relaxed border-t border-earth/20 pt-4">
+          Yes. The MIDI output is yours to use however you want — in personal projects, commercial releases, or educational materials. Just make sure you have the rights to the original audio.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Footer: Earth tone -->
+<footer class="bg-ink mt-16">
+  <div class="max-w-[1400px] mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+      <!-- Brand -->
+      <div class="md:col-span-4">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-8 gradient-accent rounded-sm flex items-center justify-center">
+            <span class="material-icons-outlined text-white text-lg">music_note</span>
+          </div>
+          <span class="font-bold text-lg text-white">MP3toMIDI</span>
+        </div>
+        <p class="text-sm text-earth leading-relaxed">Free, browser-based audio to MIDI conversion. Built by musicians, for musicians.</p>
+      </div>
+      <!-- Links -->
+      <div class="md:col-span-2">
+        <h4 class="text-xs font-semibold text-earth tracking-widest uppercase mb-4">Product</h4>
+        <ul class="space-y-2 text-sm text-earth/80">
+          <li><a href="#" class="hover:text-accent transition-colors">Convert</a></li>
+          <li><a href="#" class="hover:text-accent transition-colors">Features</a></li>
+          <li><a href="#" class="hover:text-accent transition-colors">API</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-2">
+        <h4 class="text-xs font-semibold text-earth tracking-widest uppercase mb-4">Resources</h4>
+        <ul class="space-y-2 text-sm text-earth/80">
+          <li><a href="#" class="hover:text-accent transition-colors">Blog</a></li>
+          <li><a href="#" class="hover:text-accent transition-colors">Guides</a></li>
+          <li><a href="#" class="hover:text-accent transition-colors">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-2">
+        <h4 class="text-xs font-semibold text-earth tracking-widest uppercase mb-4">Legal</h4>
+        <ul class="space-y-2 text-sm text-earth/80">
+          <li><a href="/privacy" class="hover:text-accent transition-colors">Privacy</a></li>
+          <li><a href="/terms" class="hover:text-accent transition-colors">Terms</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-2">
+        <h4 class="text-xs font-semibold text-earth tracking-widest uppercase mb-4">Connect</h4>
+        <div class="flex gap-3">
+          <a href="#" class="w-8 h-8 bg-earth/20 bento-sharp flex items-center justify-center hover:bg-accent/20 transition-colors">
+            <span class="material-icons-outlined text-earth text-sm">favorite</span>
+          </a>
+          <a href="#" class="w-8 h-8 bg-earth/20 bento-sharp flex items-center justify-center hover:bg-accent/20 transition-colors">
+            <span class="material-icons-outlined text-earth text-sm">share</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="divider mt-8 mb-6"></div>
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-earth/60">
+      <span>© 2024 MP3toMIDI. All rights reserved.</span>
+      <span>No audio is uploaded. Everything runs in your browser.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Upload zone interaction
+const uploadZone = document.getElementById('uploadZone');
+if (uploadZone) {
+  uploadZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    uploadZone.classList.add('dragover');
+  });
+  uploadZone.addEventListener('dragleave', () => {
+    uploadZone.classList.remove('dragover');
+  });
+  uploadZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    uploadZone.classList.remove('dragover');
+    const files = e.dataTransfer.files;
+    if (files.length > 0) {
+      console.log('File dropped:', files[0].name);
+    }
+  });
+  uploadZone.addEventListener('click', () => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.mp3,.wav,.flac,.ogg,.m4a';
+    input.onchange = (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        console.log('File selected:', file.name);
+      }
+    };
+    input.click();
+  });
+}
+</script>
+
+</body>
+</html>

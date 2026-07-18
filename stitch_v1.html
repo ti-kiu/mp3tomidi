@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MP3 to MIDI | Professional AI Audio Converter</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#00363d",
+                    "secondary": "#c8c6c5",
+                    "surface": "#131313",
+                    "on-surface": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#474746",
+                    "tertiary": "#ffeac0",
+                    "surface-container-highest": "#353534",
+                    "tertiary-fixed": "#ffdf96",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-tint": "#00daf3",
+                    "on-surface-variant": "#bac9cc",
+                    "background": "#131313",
+                    "surface-dim": "#131313",
+                    "inverse-on-surface": "#313030",
+                    "error-container": "#93000a",
+                    "tertiary-container": "#fec931",
+                    "outline": "#849396",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-container-low": "#1c1b1b",
+                    "on-tertiary-fixed-variant": "#594400",
+                    "on-tertiary": "#3e2e00",
+                    "on-primary-container": "#00626e",
+                    "on-secondary": "#313030",
+                    "surface-container-high": "#2a2a2a",
+                    "inverse-surface": "#e5e2e1",
+                    "tertiary-fixed-dim": "#f3bf26",
+                    "primary-fixed": "#9cf0ff",
+                    "primary": "#c3f5ff",
+                    "primary-fixed-dim": "#00daf3",
+                    "surface-variant": "#353534",
+                    "on-secondary-container": "#b7b5b4",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-primary-fixed-variant": "#004f58",
+                    "surface-bright": "#393939",
+                    "error": "#ffb4ab",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary-fixed": "#001f24",
+                    "on-tertiary-fixed": "#251a00",
+                    "inverse-primary": "#006875",
+                    "on-tertiary-container": "#6f5500",
+                    "outline-variant": "#3b494c",
+                    "surface-container": "#201f1f",
+                    "on-background": "#e5e2e1",
+                    "secondary-container": "#474746",
+                    "on-error": "#690005",
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#00e5ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "gutter": "20px",
+                    "base": "4px",
+                    "lg": "24px",
+                    "container-max": "1200px",
+                    "md": "16px",
+                    "sm": "8px",
+                    "xl": "48px",
+                    "stack-lg": "64px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "mono-label": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "mono-label": ["12px", {"lineHeight": "1", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .cyan-glow:hover {
+            box-shadow: 0px 0px 12px rgba(0, 229, 255, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-active .accordion-content {
+            max-height: 200px;
+        }
+        .waveform-bar {
+            transition: height 0.2s ease;
+        }
+    </style>
+</head>
+<body class="selection:bg-primary-container selection:text-on-primary">
+<!-- Header (TopNavBar) -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-low border-b border-outline-variant">
+<nav class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">music_note</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">MP3 to MIDI</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary hover:text-primary transition-colors" href="#">How it Works</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Features</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">FAQ</a>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded font-semibold active:scale-95 duration-150 transition-transform">
+                Quick Start
+            </button>
+</nav>
+</header>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="px-gutter max-w-container-max mx-auto py-xl text-center">
+<h1 class="font-headline-lg text-headline-lg md:text-6xl text-primary-container mb-md uppercase tracking-tight">
+                Free MP3 to MIDI Converter
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-xl">
+                Convert audio to MIDI in your browser. No upload, no signup. <br class="hidden md:block"/> High-fidelity note detection powered by local AI.
+            </p>
+<!-- Dropzone -->
+<div class="relative group max-w-3xl mx-auto p-xl border-2 border-dashed border-outline-variant rounded-xl glass-panel flex flex-col items-center justify-center transition-all duration-300 hover:border-primary-container cursor-pointer" id="dropzone">
+<div class="absolute inset-0 bg-primary-container/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
+<div class="mb-lg">
+<span class="material-symbols-outlined text-primary-container text-6xl" style="font-variation-settings: 'FILL' 0;">cloud_upload</span>
+</div>
+<div class="text-xl font-semibold mb-sm">Drag and drop audio here</div>
+<div class="text-on-surface-variant mb-lg">or click to browse from device</div>
+<div class="flex flex-wrap justify-center gap-2">
+<span class="px-3 py-1 bg-surface-container-high text-primary-container text-xs font-mono-label rounded border border-outline-variant uppercase">MP3</span>
+<span class="px-3 py-1 bg-surface-container-high text-primary-container text-xs font-mono-label rounded border border-outline-variant uppercase">WAV</span>
+<span class="px-3 py-1 bg-surface-container-high text-primary-container text-xs font-mono-label rounded border border-outline-variant uppercase">OGG</span>
+<span class="px-3 py-1 bg-surface-container-high text-primary-container text-xs font-mono-label rounded border border-outline-variant uppercase">FLAC</span>
+</div>
+<input accept=".mp3,.wav,.ogg,.flac" class="hidden" id="fileInput" type="file"/>
+</div>
+<!-- Visualization Placeholder (Micro-interaction) -->
+<div class="flex justify-center items-end gap-1 h-12 mt-lg opacity-30">
+<div class="waveform-bar w-1 bg-primary-container" style="height: 20%;"></div>
+<div class="waveform-bar w-1 bg-primary-container" style="height: 40%;"></div>
+<div class="waveform-bar w-1 bg-primary-container" style="height: 80%;"></div>
+<div class="waveform-bar w-1 bg-primary-container" style="height: 50%;"></div>
+<div class="waveform-bar w-1 bg-primary-container" style="height: 90%;"></div>
+<div class="waveform-bar w-1 bg-primary-container" style="height: 30%;"></div>
+<div class="waveform-bar w-1 bg-primary-container" style="height: 60%;"></div>
+</div>
+</section>
+<!-- How it Works -->
+<section class="bg-surface-container-lowest py-stack-lg px-gutter">
+<div class="max-w-container-max mx-auto">
+<div class="mb-xl text-left border-l-4 border-primary-container pl-6">
+<h2 class="font-headline-lg text-headline-lg">Workflow Excellence</h2>
+<p class="text-on-surface-variant">Simple, local, and professional conversion pipeline.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-lg">
+<!-- Step 1 -->
+<div class="glass-panel p-lg rounded-lg flex flex-col gap-4 hover:translate-y-[-4px] transition-transform duration-300">
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center font-mono-label text-primary-container border border-outline-variant">01</div>
+<h3 class="font-headline-md text-headline-md">Select or drop</h3>
+<p class="text-on-surface-variant font-body-sm">Simply upload your audio file. All processing happens locally in your browser memory for maximum speed.</p>
+</div>
+<!-- Step 2 -->
+<div class="glass-panel p-lg rounded-lg flex flex-col gap-4 hover:translate-y-[-4px] transition-transform duration-300 border-t-2 border-t-primary-container/20">
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center font-mono-label text-primary-container border border-outline-variant">02</div>
+<h3 class="font-headline-md text-headline-md">AI Processing</h3>
+<p class="text-on-surface-variant font-body-sm">Our neural network analyzes the harmonic frequency profile to reconstruct precise MIDI velocity and timing.</p>
+</div>
+<!-- Step 3 -->
+<div class="glass-panel p-lg rounded-lg flex flex-col gap-4 hover:translate-y-[-4px] transition-transform duration-300">
+<div class="w-12 h-12 rounded bg-surface-container-highest flex items-center justify-center font-mono-label text-primary-container border border-outline-variant">03</div>
+<h3 class="font-headline-md text-headline-md">Export MIDI</h3>
+<p class="text-on-surface-variant font-body-sm">Download a standardized high-quality .mid file compatible with all modern DAWs like Ableton and Logic.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Section -->
+<section class="py-stack-lg px-gutter max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-center mb-xl">Technical Precision. Seamless UX.</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Large Feature 1 -->
+<div class="md:col-span-2 glass-panel p-lg rounded-xl flex flex-col justify-between overflow-hidden relative">
+<div class="relative z-10">
+<div class="text-primary-container mb-md"><span class="material-symbols-outlined text-4xl">security</span></div>
+<h3 class="text-headline-md font-headline-md mb-2">Private &amp; Secure</h3>
+<p class="text-on-surface-variant font-body-sm">Files never leave your machine. We leverage client-side AI processing to ensure your intellectual property stays 100% private.</p>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-9xl">lock</span>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="glass-panel p-lg rounded-xl flex flex-col hover:bg-surface-container-high transition-colors">
+<div class="text-primary-container mb-md"><span class="material-symbols-outlined text-3xl">bolt</span></div>
+<h4 class="font-bold mb-1">Blazing Fast</h4>
+<p class="text-on-surface-variant text-xs">WebAssembly optimization for near-instant detection.</p>
+</div>
+<!-- Feature 3 -->
+<div class="glass-panel p-lg rounded-xl flex flex-col hover:bg-surface-container-high transition-colors">
+<div class="text-primary-container mb-md"><span class="material-symbols-outlined text-3xl">psychology</span></div>
+<h4 class="font-bold mb-1">AI-Powered</h4>
+<p class="text-on-surface-variant text-xs">Advanced frequency estimation and onset detection.</p>
+</div>
+<!-- Featured Image Card -->
+<div class="md:col-span-2 h-48 rounded-xl bg-cover bg-center overflow-hidden" data-alt="A macro photography shot of professional studio audio mixing board with glowing cyan LED lights and sliders. The atmosphere is technical and moody with deep shadows and sharp focus on the high-tech equipment, reflecting a music producer's professional workflow environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAZV60V6x521bTEyTVS7NKqENjhWGX8AbqPDvXeq77xSN1TSILh6j0AWLMP5HwzAv7rT2qdF72WWUCBIMV7BwabkZB99ySD4jJ_pK4aUG5HnG9VIM6mYgB6Zu14mK09LosxiWiIfJP1iaHdcNjb32AKJF_TDKWf4PMA9lyh3X_xMfugkeu3O3ekT9RKnqD9rx89jKv04-13C0Cm3Q9LfUH4j0F1pz4yaGsiCdRVbdVL6mIS1qQlJigS6gJ-EKkpfyixsVvthdWvPGo')">
+<div class="w-full h-full bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<!-- Feature 4 -->
+<div class="md:col-span-2 glass-panel p-lg rounded-xl flex items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-primary-container/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">currency_exchange</span>
+</div>
+<div>
+<h3 class="text-headline-md font-headline-md">100% Free</h3>
+<p class="text-on-surface-variant font-body-sm">No subscriptions, no tokens, no daily limits. Professional tools for every artist.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-stack-lg px-gutter max-w-3xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-center mb-xl">Frequently Asked</h2>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<div class="border border-outline-variant rounded-lg overflow-hidden glass-panel accordion-item">
+<button class="w-full flex items-center justify-between p-lg text-left hover:bg-surface-container-high transition-colors" onclick="toggleAccordion(this)">
+<span class="font-semibold">Does this work on mobile?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="p-lg pt-0 text-on-surface-variant font-body-sm">
+                            Yes! Our converter is fully responsive and uses modern web standards that run in Chrome, Safari, and Firefox on both iOS and Android devices.
+                        </div>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="border border-outline-variant rounded-lg overflow-hidden glass-panel accordion-item">
+<button class="w-full flex items-center justify-between p-lg text-left hover:bg-surface-container-high transition-colors" onclick="toggleAccordion(this)">
+<span class="font-semibold">What is MIDI used for?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="p-lg pt-0 text-on-surface-variant font-body-sm">
+                            MIDI is a data protocol that records the notes, velocity, and timing of a performance. You can use MIDI files to trigger software instruments (VSTs) in DAWs or print digital sheet music.
+                        </div>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="border border-outline-variant rounded-lg overflow-hidden glass-panel accordion-item">
+<button class="w-full flex items-center justify-between p-lg text-left hover:bg-surface-container-high transition-colors" onclick="toggleAccordion(this)">
+<span class="font-semibold">Is there a file size limit?</span>
+<span class="material-symbols-outlined transition-transform duration-300">expand_more</span>
+</button>
+<div class="accordion-content">
+<div class="p-lg pt-0 text-on-surface-variant font-body-sm">
+                            The current limit is 50MB per file. Since processing happens on your local device, larger files may cause browser performance issues depending on your RAM.
+                        </div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-lg px-gutter max-w-container-max mx-auto gap-lg">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">MP3 to MIDI</span>
+<p class="text-on-tertiary-container text-body-sm">Â© 2024 MP3 to MIDI. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-body-md text-body-md text-on-tertiary-container hover:text-on-surface transition-colors hover:underline" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-tertiary-container hover:text-on-surface transition-colors hover:underline" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-tertiary-container hover:text-on-surface transition-colors hover:underline" href="#">Support</a>
+<a class="font-body-md text-body-md text-on-tertiary-container hover:text-on-surface transition-colors hover:underline" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script>
+        function toggleAccordion(element) {
+            const item = element.parentElement;
+            const icon = element.querySelector('.material-symbols-outlined');
+            const isActive = item.classList.contains('accordion-active');
+            
+            // Close others
+            document.querySelectorAll('.accordion-item').forEach(i => {
+                i.classList.remove('accordion-active');
+                i.querySelector('.material-symbols-outlined').style.transform = 'rotate(0deg)';
+            });
+
+            if (!isActive) {
+                item.classList.add('accordion-active');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Simple waveform animation simulation
+        const bars = document.querySelectorAll('.waveform-bar');
+        setInterval(() => {
+            bars.forEach(bar => {
+                const height = Math.floor(Math.random() * 80) + 10;
+                bar.style.height = height + '%';
+            });
+        }, 150);
+
+        // File drop simulation
+        const dropzone = document.getElementById('dropzone');
+        const fileInput = document.getElementById('fileInput');
+
+        dropzone.addEventListener('click', () => fileInput.click());
+        
+        dropzone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropzone.classList.add('border-primary-container', 'bg-primary-container/5');
+        });
+
+        dropzone.addEventListener('dragleave', () => {
+            dropzone.classList.remove('border-primary-container', 'bg-primary-container/5');
+        });
+
+        dropzone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropzone.classList.remove('border-primary-container', 'bg-primary-container/5');
+            const files = e.dataTransfer.files;
+            if(files.length) {
+                alert(`Received: ${files[0].name}. (This is a UI demo, processing is simulated)`);
+            }
+        });
+    </script>
+</body></html>

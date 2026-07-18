@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MP3-MIDI.CORE | Professional Audio-to-MIDI Transcription</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-primary-fixed-variant": "#614000",
+                "on-primary-fixed": "#281800",
+                "on-error": "#690005",
+                "tertiary-fixed-dim": "#c9c6c5",
+                "surface-container-high": "#2b2a25",
+                "on-secondary-fixed": "#1c1b1b",
+                "on-primary": "#432c00",
+                "error-container": "#93000a",
+                "on-surface-variant": "#d6c4ad",
+                "surface-container-lowest": "#0f0e0a",
+                "primary-fixed": "#ffddaf",
+                "on-error-container": "#ffdad6",
+                "surface-tint": "#ffba42",
+                "error": "#ffb4ab",
+                "secondary": "#c8c6c5",
+                "outline": "#9e8e79",
+                "primary": "#ffbe51",
+                "on-tertiary-fixed": "#1c1b1b",
+                "surface-dim": "#14130f",
+                "inverse-on-surface": "#32302b",
+                "secondary-fixed-dim": "#c8c6c5",
+                "on-primary-container": "#5a3c00",
+                "inverse-surface": "#e7e2da",
+                "background": "#14130f",
+                "on-tertiary-container": "#424141",
+                "surface": "#14130f",
+                "outline-variant": "#514533",
+                "primary-fixed-dim": "#ffba42",
+                "secondary-fixed": "#e5e2e1",
+                "on-tertiary-fixed-variant": "#474646",
+                "surface-container-low": "#1d1c17",
+                "surface-bright": "#3b3934",
+                "secondary-container": "#474746",
+                "inverse-primary": "#805600",
+                "tertiary-container": "#b0adad",
+                "on-secondary-container": "#b7b5b4",
+                "on-secondary": "#313030",
+                "on-surface": "#e7e2da",
+                "surface-container": "#21201b",
+                "tertiary-fixed": "#e5e2e1",
+                "on-secondary-fixed-variant": "#474746",
+                "primary-container": "#e8a000",
+                "surface-variant": "#36352f",
+                "on-background": "#e7e2da",
+                "surface-container-highest": "#36352f",
+                "on-tertiary": "#313030",
+                "tertiary": "#cbc8c8"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "margin-desktop": "32px",
+                "gutter": "16px",
+                "margin-mobile": "16px",
+                "container-max": "1440px",
+                "base": "4px"
+            },
+            "fontFamily": {
+                "label-md": ["Space Grotesk"],
+                "body-md": ["DM Sans"],
+                "body-lg": ["DM Sans"],
+                "body-sm": ["DM Sans"],
+                "headline-sm": ["Space Grotesk"],
+                "label-sm": ["Space Grotesk"],
+                "headline-md": ["Space Grotesk"],
+                "headline-lg": ["Space Grotesk"]
+            },
+            "fontSize": {
+                "label-md": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                "label-sm": ["10px", {"lineHeight": "1", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                "headline-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                "headline-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0a0a0a;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 150px;
+            background-attachment: fixed;
+            opacity: 0.98;
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.05;
+            background: url('https://grainy-gradients.vercel.app/noise.svg');
+        }
+        .pipeline-line {
+            position: absolute;
+            width: 2px;
+            background: linear-gradient(to bottom, #e8a000 0%, transparent 100%);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<div class="grain-overlay"></div>
+<!-- Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-primary/30">
+<div class="flex justify-between items-center h-16 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">settings_input_component</span>
+<span class="font-headline-sm text-headline-sm font-bold tracking-tighter text-primary">MP3-MIDI.CORE</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-body-md text-primary font-bold border-b border-primary py-1" href="#">Convert</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Specs</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Docs</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">API</a>
+<button class="ml-4 px-6 py-2 bg-primary text-background font-bold rounded-full active:scale-95 transition-transform">Get Started</button>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-24 pb-12">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-24">
+<div class="flex flex-col lg:flex-row gap-gutter items-start">
+<div class="lg:w-2/3 pt-12">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-surface-container-low mb-6">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">System Online: v2.4.0 Edge Transcription</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-background mb-6 max-w-2xl leading-tight">
+                        Drop a song.<br/><span class="text-primary">Get the MIDI.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-8">
+                        Free, private, runs in your browser. No signup, no upload. Convert audio to polyphonic MIDI instantly using edge-optimized machine learning.
+                    </p>
+<div class="flex items-center gap-8">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">0ms</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Latency</span>
+</div>
+<div class="w-px h-10 bg-primary/20"></div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">100%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Local</span>
+</div>
+<div class="w-px h-10 bg-primary/20"></div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">24-bit</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Precision</span>
+</div>
+</div>
+</div>
+<!-- Dropzone Area -->
+<div class="lg:w-1/3 w-full">
+<div class="relative group cursor-pointer">
+<div class="absolute -inset-0.5 bg-primary/20 rounded-xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative flex flex-col items-center justify-center border-2 border-dashed border-primary/30 rounded-xl bg-surface-container-lowest h-[420px] p-8 text-center transition-all duration-300 hover:border-primary group">
+<div class="mb-6 relative">
+<span class="material-symbols-outlined text-primary text-6xl group-hover:scale-110 transition-transform duration-300">upload_file</span>
+<div class="absolute -top-1 -right-1 w-4 h-4 bg-primary rounded-full border-2 border-background"></div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-2">Drop MP3 or WAV</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-8">Max file size: 50MB. All processing occurs locally on your hardware.</p>
+<button class="w-full py-4 bg-primary text-background font-bold rounded-full transition-all active:scale-95 shadow-[0_0_20px_rgba(232,160,0,0.2)]">Select File</button>
+<div class="mt-8 flex gap-4 opacity-50">
+<span class="material-symbols-outlined text-on-surface-variant">music_note</span>
+<span class="material-symbols-outlined text-on-surface-variant">keyboard</span>
+<span class="material-symbols-outlined text-on-surface-variant">graphic_eq</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-32">
+<div class="mb-12">
+<span class="font-label-md text-label-md text-primary uppercase tracking-widest block mb-2">Hardware-Grade Specs</span>
+<h2 class="font-headline-md text-headline-md text-on-background">Industrial Core Features</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Large Card -->
+<div class="md:col-span-2 relative group rounded-xl bg-surface-bright border border-on-surface/10 overflow-hidden min-h-[400px]">
+<div class="absolute inset-0 z-0">
+
+</div>
+<div class="relative z-10 p-10 flex flex-col h-full justify-between pointer-events-none">
+<div>
+<div class="inline-block px-3 py-1 rounded bg-primary text-background font-label-sm text-label-sm mb-4">ENGINE v2</div>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Accurate - Basic Pitch</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Utilizing Spotify's Basic Pitch ML model, optimized for local WASM execution. High-fidelity note detection across complex polyphonic structures including chords and overlapping melodies.</p>
+</div>
+<div class="flex gap-4 items-end">
+<div class="h-16 w-1 bg-primary/50"></div>
+<div class="h-24 w-1 bg-primary"></div>
+<div class="h-12 w-1 bg-primary/30"></div>
+<div class="h-20 w-1 bg-primary/60"></div>
+<div class="h-14 w-1 bg-primary/40"></div>
+<span class="font-label-sm text-label-sm text-primary ml-4">REAL-TIME SPECTROGRAM ANALYSIS</span>
+</div>
+</div>
+</div>
+<!-- Two Small Cards -->
+<div class="flex flex-col gap-6">
+<div class="flex-1 p-8 rounded-xl bg-surface-container border border-on-surface/10 hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">lock_open_right</span>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-2">Private - No Server</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Your data never leaves your machine. We don't see your audio, and we don't store your MIDI. 100% GDPR and SOC2 compliant by design.</p>
+</div>
+<div class="flex-1 p-8 rounded-xl bg-surface-container border border-on-surface/10 hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary mb-4 text-3xl">bolt</span>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-2">Fast - Browser AI</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Powered by TensorFlow.js and WebAssembly. Transcribe a 3-minute song in under 15 seconds using your local GPU/CPU threads.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pipeline Section (Diagonal) -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-48 relative overflow-hidden">
+<div class="text-center mb-24">
+<h2 class="font-headline-md text-headline-md text-on-background">System Pipeline</h2>
+<div class="w-16 h-1 bg-primary mx-auto mt-4"></div>
+</div>
+<div class="relative py-24">
+<!-- Diagonal Layout -->
+<div class="flex flex-col md:flex-row md:justify-between items-center md:items-start relative gap-12">
+<!-- Step 1 -->
+<div class="w-full md:w-64 transform md:-translate-y-12">
+<div class="p-8 border border-primary/30 bg-background relative z-10">
+<span class="absolute -top-4 -left-4 w-10 h-10 bg-primary text-background flex items-center justify-center font-bold font-headline-sm">01</span>
+<h4 class="font-label-md text-label-md text-primary uppercase mb-4 tracking-widest">Ingest</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">PCM decoding of local audio buffers. Sample rate normalization to 44.1kHz.</p>
+</div>
+</div>
+<!-- Line 1-2 -->
+<div class="hidden md:block absolute top-1/2 left-1/4 w-[25%] h-px bg-primary/20 rotate-12 z-0"></div>
+<!-- Step 2 -->
+<div class="w-full md:w-64">
+<div class="p-8 border border-primary bg-surface-container-low relative z-10 shadow-[0_0_30px_rgba(232,160,0,0.1)]">
+<span class="absolute -top-4 -left-4 w-10 h-10 bg-primary text-background flex items-center justify-center font-bold font-headline-sm">02</span>
+<h4 class="font-label-md text-label-md text-primary uppercase mb-4 tracking-widest">Transcribe</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Neural Network inference. Note onset, offset, and velocity prediction via ML.</p>
+</div>
+</div>
+<!-- Line 2-3 -->
+<div class="hidden md:block absolute top-1/2 right-1/4 w-[25%] h-px bg-primary/20 rotate-12 z-0"></div>
+<!-- Step 3 -->
+<div class="w-full md:w-64 transform md:translate-y-12">
+<div class="p-8 border border-primary/30 bg-background relative z-10">
+<span class="absolute -top-4 -left-4 w-10 h-10 bg-primary text-background flex items-center justify-center font-bold font-headline-sm">03</span>
+<h4 class="font-label-md text-label-md text-primary uppercase mb-4 tracking-widest">Export</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">MIDI protocol packetization. Instant local download link generation.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Q&A -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-32 border-t border-primary/20 pt-24">
+<div class="flex flex-col md:flex-row gap-20">
+<div class="md:w-1/3">
+<h2 class="font-headline-md text-headline-md text-on-background mb-4">Technical<br/>Specifications</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Detailed documentation of the MP3-MIDI.CORE transcription environment.</p>
+<div class="space-y-4">
+<div class="p-4 bg-surface-container-low border-l-4 border-primary">
+<span class="font-label-sm text-label-sm text-primary uppercase block">System Status</span>
+<span class="font-body-md text-body-md">Operational - Edge Nodes Active</span>
+</div>
+</div>
+</div>
+<div class="md:w-2/3 space-y-12">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-3">Does it support drums?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Basic Pitch is primarily designed for melodic and harmonic instruments (piano, guitar, vocals). While it will attempt to transcribe percussion, results may vary depending on the frequency spectrum of the kit.</p>
+</div>
+<div class="h-px bg-primary/10 w-full"></div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-3">How does it run without a server?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">We utilize TensorFlow.js and WebAssembly (WASM) to download the machine learning weights to your browser's cache once. All subsequent calculations happen on your device's CPU or GPU via WebGL.</p>
+</div>
+<div class="h-px bg-primary/10 w-full"></div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-3">Is there a CLI version?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Yes. The core library is open-source. Developers can access the MIDI-CORE CLI on GitHub to integrate this engine into automated server-side pipelines or local batch processing workflows.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest border-t border-primary/10">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-end p-margin-desktop gap-gutter">
+<div class="flex flex-col gap-4 w-full md:w-auto">
+<span class="font-headline-md text-headline-md text-primary opacity-50 tracking-tighter">MP3-MIDI.CORE</span>
+<p class="font-label-sm text-label-sm uppercase tracking-widest text-on-tertiary-fixed-variant">Â© 2024 MP3-MIDI.CORE INDUSTRIAL SYSTEMS</p>
+</div>
+<div class="flex flex-wrap gap-8 w-full md:w-auto justify-end">
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Legal</span>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-tertiary-fixed-variant hover:text-primary transition-opacity" href="#">Privacy</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-tertiary-fixed-variant hover:text-primary transition-opacity" href="#">Terms</a>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Dev</span>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-tertiary-fixed-variant hover:text-primary transition-opacity" href="#">Github</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-tertiary-fixed-variant hover:text-primary transition-opacity" href="#">Status</a>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-2">Connect</span>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80">share</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80">terminal</span>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for the dropzone
+        const dropzone = document.querySelector('.group.cursor-pointer');
+        if (dropzone) {
+            dropzone.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dropzone.querySelector('.border-dashed').classList.add('border-primary', 'bg-surface-container-low');
+            });
+            dropzone.addEventListener('dragleave', () => {
+                dropzone.querySelector('.border-dashed').classList.remove('border-primary', 'bg-surface-container-low');
+            });
+        }
+
+        // Parallax effect for grain
+        window.addEventListener('scroll', () => {
+            const grain = document.querySelector('.grain-overlay');
+            const offset = window.pageYOffset;
+            grain.style.backgroundPositionY = (offset * 0.5) + 'px';
+        });
+    </script>
+</body></html>

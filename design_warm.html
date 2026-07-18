@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html class="" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SonicPulse | AI-Powered Audio to MIDI Conversion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#F9F1E8",
+            "error-container": "#FEE2E2",
+            "on-secondary-container": "#44403C",
+            "error": "#DC2626",
+            "on-tertiary": "#FFFFFF",
+            "secondary-fixed": "#D4C4B4",
+            "on-secondary-fixed-variant": "#44403C",
+            "surface-container-high": "#EDE3D7",
+            "primary-fixed-dim": "#FB923C",
+            "primary": "#EA580C",
+            "on-surface-variant": "#57534E",
+            "surface": "#FDF8F3",
+            "inverse-on-surface": "#F5F5F4",
+            "surface-variant": "#E6D5C3",
+            "surface-container-lowest": "#FFFFFF",
+            "surface-tint": "#EA580C",
+            "surface-bright": "#FFFFFF",
+            "surface-dim": "#F5EDE4",
+            "outline-variant": "#D6D3D1",
+            "inverse-primary": "#FB923C",
+            "on-secondary": "#1C1917",
+            "primary-fixed": "#FDBA74",
+            "on-tertiary-fixed-variant": "#57534E",
+            "surface-container": "#F3E9DD",
+            "on-primary": "#FFFFFF",
+            "on-primary-container": "#431407",
+            "surface-container-highest": "#E7DDD1",
+            "secondary": "#C8B8A8",
+            "on-tertiary-fixed": "#292524",
+            "inverse-surface": "#292524",
+            "tertiary-container": "#D6D3D1",
+            "outline": "#A8A29E",
+            "on-background": "#1C1917",
+            "primary-container": "#FB923C",
+            "secondary-container": "#E6D5C3",
+            "on-surface": "#1C1917",
+            "tertiary": "#78716C",
+            "on-error-container": "#7F1D1D",
+            "tertiary-fixed": "#A8A29E",
+            "tertiary-fixed-dim": "#78716C",
+            "on-primary-fixed-variant": "#7C2D12",
+            "on-primary-fixed": "#431407",
+            "on-error": "#FFFFFF",
+            "secondary-fixed-dim": "#C8B8A8",
+            "background": "#FDF8F3",
+            "on-tertiary-container": "#292524",
+            "on-secondary-fixed": "#1C1917"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "24px",
+            "sm": "12px",
+            "md": "24px",
+            "xs": "4px",
+            "container-max": "1280px",
+            "xl": "80px",
+            "base": "8px",
+            "lg": "48px"
+          },
+          "fontFamily": {
+            "display-lg": ["Space Grotesk"],
+            "body-lg": ["Space Grotesk"],
+            "label-md": ["Space Grotesk"],
+            "body-md": ["Space Grotesk"],
+            "mono-data": ["Space Grotesk"],
+            "headline-lg-mobile": ["Space Grotesk"],
+            "headline-lg": ["Space Grotesk"]
+          },
+          "fontSize": {
+            "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+            "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "mono-data": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "500"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #FDF8F3;
+      font-family: 'Space Grotesk', sans-serif;
+      color: #e5e2e1;
+      overflow-x: hidden;
+    }
+    
+    .glass-panel {
+      background: rgba(253, 248, 243, 0.8);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .pulse-glow {
+      box-shadow: 0 0 20px rgba(208, 188, 255, 0.15);
+    }
+
+    .cyan-glow:focus-within {
+      border-color: #4cd7f6;
+      box-shadow: 0 0 15px rgba(76, 215, 246, 0.2);
+    }
+
+    .waveform-bar {
+      transition: height 0.3s ease;
+    }
+
+    @keyframes flow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .animate-gradient-flow {
+      background-size: 200% 200%;
+      animation: flow 5s ease infinite;
+    }
+
+    .bento-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .bento-card:hover {
+      transform: translateY(-4px);
+      background: rgba(35, 31, 44, 0.8);
+      border-color: rgba(208, 188, 255, 0.3);
+    }
+  </style>
+</head>
+<body class="selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-sm">
+<div class="flex justify-between items-center px-gutter py-md max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-3">
+<img alt="SonicPulse Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLtP6CXXbK1jr561o1P0bJH5rzD9KdSIb5PPGbzAxQiTvXA_XezyEbc18fBaFWdp5obvxhcPiZ0izc-Y_FrtiFXjGR-aP2Yb6FS2am7WaeCwDgj3Z4XWvBVeS5BNQYK6Qr7FfcRpddFG0ziiHQzCuqGGTqKKN6GZhNmGcaCltMz0tccffkLYWGu8IKEp5-gOA9O2Rau4_MdpMIrTspo2vt5Rh0aNYPzp_NzEu-LzClVLkYNK9-77XrzRfw4"/>
+<span class="font-display-lg text-headline-lg tracking-tighter text-primary">SonicPulse</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-secondary font-bold border-b-2 border-secondary pb-1" href="#">Convert</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Features</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">How it Works</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Pricing</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">FAQ</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md font-bold hover:opacity-80 transition-all active:scale-95 duration-200">
+        Get Started
+      </button>
+</div>
+</header>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="px-gutter max-w-container-max mx-auto mb-xl">
+<div class="grid lg:grid-cols-2 gap-xl items-center">
+<div class="space-y-md">
+<div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 border border-primary/20">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="text-mono-data font-mono-data text-primary uppercase">v2.0 Neural Engine Live</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-gray-900 max-w-xl">
+            Drop a track. <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary animate-gradient-flow">Get the MIDI.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+            High-precision audio transcription powered by advanced deep learning. Convert polyphonic MP3s into studio-ready MIDI in seconds.
+          </p>
+<div class="flex gap-4 pt-4">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-background bg-white-high flex items-center justify-center text-xs font-bold text-secondary">JS</div>
+<div class="w-10 h-10 rounded-full border-2 border-background bg-white-high flex items-center justify-center text-xs font-bold text-primary">MK</div>
+<div class="w-10 h-10 rounded-full border-2 border-background bg-white-high flex items-center justify-center text-xs font-bold text-tertiary">DA</div>
+</div>
+<div class="text-on-surface-variant text-body-md">
+<span class="font-bold text-gray-900">5,000+</span> producers joined this week
+            </div>
+</div>
+</div>
+<!-- Upload Zone -->
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative glass-panel rounded-xl p-md flex flex-col items-center justify-center min-h-[400px] border-dashed border-2 border-outline-variant hover:border-secondary transition-all cursor-pointer">
+<div class="w-20 h-20 rounded-full bg-white flex items-center justify-center mb-md group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-4xl text-secondary" style="font-variation-settings: 'FILL' 1;">upload_file</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-gray-900 mb-2">Drag &amp; drop audio</h3>
+<p class="text-on-surface-variant text-body-md mb-md">Supports MP3, WAV, FLAC (Max 50MB)</p>
+<div class="flex gap-2 mb-md">
+<div class="waveform-bar w-1 h-8 bg-primary/20 rounded-full"></div>
+<div class="waveform-bar w-1 h-12 bg-primary/40 rounded-full"></div>
+<div class="waveform-bar w-1 h-16 bg-primary/60 rounded-full"></div>
+<div class="waveform-bar w-1 h-10 bg-primary/80 rounded-full"></div>
+<div class="waveform-bar w-1 h-20 bg-secondary rounded-full"></div>
+<div class="waveform-bar w-1 h-14 bg-primary/80 rounded-full"></div>
+<div class="waveform-bar w-1 h-18 bg-primary/60 rounded-full"></div>
+<div class="waveform-bar w-1 h-12 bg-primary/40 rounded-full"></div>
+<div class="waveform-bar w-1 h-8 bg-primary/20 rounded-full"></div>
+</div>
+<button class="bg-white text-background px-8 py-3 rounded-full font-bold hover:bg-secondary transition-colors">
+              Browse Files
+            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- How it Works -->
+<section class="py-xl bg-white-lowest">
+<div class="px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-lg">
+<h2 class="font-display-lg text-display-lg text-gray-900">Three steps to MIDI.</h2>
+<p class="text-on-surface-variant text-body-lg max-w-2xl mx-auto">Our workflow is designed for maximum efficiency, getting you from audio to arrangement in under a minute.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-md">
+<div class="relative p-md glass-panel rounded-xl">
+<div class="text-display-lg font-display-lg text-gray-900/5 absolute top-4 right-6 leading-none">01</div>
+<span class="material-symbols-outlined text-primary text-3xl mb-4" data-weight="fill">cloud_upload</span>
+<h4 class="text-headline-lg font-headline-lg text-gray-900 mb-2">Upload</h4>
+<p class="text-on-surface-variant text-body-md">Simply drop your polyphonic audio file onto our secure dashboard. We support up to 10-minute tracks.</p>
+</div>
+<div class="relative p-md glass-panel rounded-xl">
+<div class="text-display-lg font-display-lg text-gray-900/5 absolute top-4 right-6 leading-none">02</div>
+<span class="material-symbols-outlined text-secondary text-3xl mb-4" data-weight="fill">memory</span>
+<h4 class="text-headline-lg font-headline-lg text-gray-900 mb-2">Process</h4>
+<p class="text-on-surface-variant text-body-md">Our Neural Audio Engine extracts pitch, velocity, and timing with unmatched mathematical precision.</p>
+</div>
+<div class="relative p-md glass-panel rounded-xl">
+<div class="text-display-lg font-display-lg text-gray-900/5 absolute top-4 right-6 leading-none">03</div>
+<span class="material-symbols-outlined text-tertiary text-3xl mb-4" data-weight="fill">download</span>
+<h4 class="text-headline-lg font-headline-lg text-gray-900 mb-2">Download</h4>
+<p class="text-on-surface-variant text-body-md">Get your professional-grade MIDI file instantly. Perfect for importing into Ableton, FL Studio, or Logic.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Bento Grid -->
+<section class="py-xl px-gutter max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h2 class="font-display-lg text-display-lg text-gray-900">Engineered for Precision.</h2>
+<p class="text-on-surface-variant text-body-lg">The tech behind the music.</p>
+</div>
+<div class="flex gap-2">
+<button class="scroll-btn-prev w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-gray-900">chevron_left</span>
+</button>
+<button class="scroll-btn-next w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-gray-900">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="relative">
+<div class="features-carousel flex gap-6 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory" style="scrollbar-width: none; -ms-overflow-style: none;">
+<!-- Card 1: Neural Audio Extraction -->
+<div class="bento-card glass-panel rounded-xl p-lg flex-shrink-0 w-[350px] md:w-[400px] snap-start">
+<div class="bg-primary/20 text-primary w-fit px-3 py-1 rounded text-mono-data font-mono-data mb-4">AI TRANSCRIPTION</div>
+<div class="w-full h-48 relative overflow-hidden rounded-lg bg-white-high border border-white/5 mb-6">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10"></div>
+<div class="absolute bottom-4 left-4 right-4 h-24 flex items-end gap-1">
+<div class="flex-1 bg-secondary rounded-t-sm" style="height: 40%"></div>
+<div class="flex-1 bg-primary rounded-t-sm" style="height: 60%"></div>
+<div class="flex-1 bg-secondary rounded-t-sm" style="height: 30%"></div>
+<div class="flex-1 bg-primary rounded-t-sm" style="height: 80%"></div>
+<div class="flex-1 bg-secondary rounded-t-sm" style="height: 50%"></div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-900/10 text-[80px]">psychology</span>
+</div>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-gray-900 mb-2">Neural Audio Extraction</h3>
+<p class="text-on-surface-variant text-body-md mb-4">Deep-learning models trained on 500,000+ hours of professional multi-track recordings.</p>
+<ul class="space-y-2 text-body-sm text-on-surface">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> 99.4% Note Accuracy</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Instrument Separation AI</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-sm">check_circle</span> Micro-timing Detection</li>
+</ul>
+</div>
+<!-- Card 2: Instant Processing -->
+<div class="bento-card glass-panel rounded-xl p-lg flex-shrink-0 w-[350px] md:w-[400px] snap-start">
+<div class="bg-secondary/20 text-secondary w-fit px-3 py-1 rounded text-mono-data font-mono-data mb-4">SPEED</div>
+<div class="w-full h-48 relative overflow-hidden rounded-lg bg-white-high border border-white/5 mb-6">
+<div class="absolute inset-0 bg-gradient-to-br from-secondary/10 to-primary/10"></div>
+<div class="absolute bottom-4 left-4 right-4 h-24 flex items-end gap-1">
+<div class="flex-1 bg-primary rounded-t-sm" style="height: 70%"></div>
+<div class="flex-1 bg-secondary rounded-t-sm" style="height: 45%"></div>
+<div class="flex-1 bg-primary rounded-t-sm" style="height: 90%"></div>
+<div class="flex-1 bg-secondary rounded-t-sm" style="height: 55%"></div>
+<div class="flex-1 bg-primary rounded-t-sm" style="height: 80%"></div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-900/10 text-[80px]">speed</span>
+</div>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-gray-900 mb-2">Instant Processing</h3>
+<p class="text-on-surface-variant text-body-md mb-4">Proprietary cloud infrastructure delivers MIDI in less than 15 seconds per minute of audio.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant">
+<span class="text-mono-data text-on-surface-variant font-mono-data">LATENCY: &lt; 200MS</span>
+<span class="material-symbols-outlined text-secondary">speed</span>
+</div>
+</div>
+<!-- Card 3: Professional MIDI Export -->
+<div class="bento-card glass-panel rounded-xl p-lg flex-shrink-0 w-[350px] md:w-[400px] snap-start">
+<div class="bg-tertiary/20 text-tertiary w-fit px-3 py-1 rounded text-mono-data font-mono-data mb-4">COMPATIBILITY</div>
+<div class="w-full h-48 relative overflow-hidden rounded-lg bg-white-high border border-white/5 mb-6">
+<div class="absolute inset-0 bg-gradient-to-br from-tertiary/10 to-primary/10"></div>
+<div class="absolute bottom-4 left-4 right-4 h-24 flex items-end gap-1">
+<div class="flex-1 bg-tertiary rounded-t-sm" style="height: 60%"></div>
+<div class="flex-1 bg-primary rounded-t-sm" style="height: 40%"></div>
+<div class="flex-1 bg-tertiary rounded-t-sm" style="height: 75%"></div>
+<div class="flex-1 bg-primary rounded-t-sm" style="height: 50%"></div>
+<div class="flex-1 bg-tertiary rounded-t-sm" style="height: 85%"></div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-900/10 text-[80px]">music_note</span>
+</div>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-gray-900 mb-2">Professional MIDI Export</h3>
+<p class="text-on-surface-variant text-body-md mb-4">Export high-resolution MIDI with full velocity data and tempo mapping preserved.</p>
+<div class="flex gap-2">
+<div class="px-3 py-1 bg-surface rounded text-mono-data text-[10px] border border-outline-variant">ABLETON</div>
+<div class="px-3 py-1 bg-surface rounded text-mono-data text-[10px] border border-outline-variant">LOGIC PRO</div>
+<div class="px-3 py-1 bg-surface rounded text-mono-data text-[10px] border border-outline-variant">FL STUDIO</div>
+</div>
+</div>
+<!-- Card 4: 100% Free -->
+<div class="bento-card glass-panel rounded-xl p-lg flex-shrink-0 w-[350px] md:w-[400px] snap-start">
+<div class="bg-primary/20 text-primary w-fit px-3 py-1 rounded text-mono-data font-mono-data mb-4">PRICING</div>
+<div class="w-full h-48 relative overflow-hidden rounded-lg bg-white-high border border-white/5 mb-6">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-tertiary/10"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="text-center">
+<span class="material-symbols-outlined text-primary/30 text-[80px]">paid</span>
+<p class="text-display-lg font-display-lg text-primary mt-2">$0</p>
+</div>
+</div>
+</div>
+<h3 class="text-headline-lg font-headline-lg text-gray-900 mb-2">100% Free</h3>
+<p class="text-on-surface-variant text-body-md mb-4">No signup, no credit limits, no watermarks. Convert unlimited audio files to MIDI.</p>
+<div class="flex items-center gap-4 pt-4 border-t border-outline-variant">
+<div class="flex items-center gap-2 text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span>No registration</span>
+</div>
+<div class="flex items-center gap-2 text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+<span>No limits</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-xl px-gutter max-w-[800px] mx-auto">
+<div class="text-center mb-lg">
+<h2 class="font-display-lg text-display-lg text-gray-900">Technical FAQ</h2>
+<p class="text-on-surface-variant text-body-lg">Diving into the bitstream.</p>
+</div>
+<div class="space-y-md">
+<div class="glass-panel rounded-xl overflow-hidden border border-white/5">
+<button class="w-full p-md text-left flex justify-between items-center group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.arrow').classList.toggle('rotate-180')">
+<span class="font-headline-lg text-body-lg font-bold text-gray-900 group-hover:text-primary transition-colors">How accurate is the note detection?</span>
+<span class="material-symbols-outlined arrow transition-transform duration-300 text-on-surface-variant">expand_more</span>
+</button>
+<div class="px-md pb-md text-on-surface-variant text-body-md hidden">
+            Our current engine (Pulse V2) achieves 99.4% accuracy on clean stems and approximately 88% on fully mastered orchestral arrangements. We provide velocity mapping to match the original performance's dynamics.
+          </div>
+</div>
+<div class="glass-panel rounded-xl overflow-hidden border border-white/5">
+<button class="w-full p-md text-left flex justify-between items-center group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.arrow').classList.toggle('rotate-180')">
+<span class="font-headline-lg text-body-lg font-bold text-gray-900 group-hover:text-primary transition-colors">Does it support polyphonic instruments?</span>
+<span class="material-symbols-outlined arrow transition-transform duration-300 text-on-surface-variant">expand_more</span>
+</button>
+<div class="px-md pb-md text-on-surface-variant text-body-md hidden">
+            Yes. SonicPulse is specifically built for polyphony. It can distinguish between multiple notes played simultaneously, such as complex jazz chords, piano arpeggios, and guitar strumming.
+          </div>
+</div>
+<div class="glass-panel rounded-xl overflow-hidden border border-white/5">
+<button class="w-full p-md text-left flex justify-between items-center group" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.arrow').classList.toggle('rotate-180')">
+<span class="font-headline-lg text-body-lg font-bold text-gray-900 group-hover:text-primary transition-colors">What file formats can I download?</span>
+<span class="material-symbols-outlined arrow transition-transform duration-300 text-on-surface-variant">expand_more</span>
+</button>
+<div class="px-md pb-md text-on-surface-variant text-body-md hidden">
+            Currently, we provide Standard MIDI Files (.mid) in Type 0 and Type 1 formats. We are also rolling out support for MusicXML and directly downloadable DAW project templates later this year.
+          </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white-lowest border-t border-white/5 w-full py-xl mt-xl">
+<div class="flex flex-col md:flex-row justify-between items-start px-gutter max-w-container-max mx-auto gap-lg">
+<div class="space-y-md max-w-sm">
+<div class="flex items-center gap-3">
+<img alt="SonicPulse Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida/AP1WRLtP6CXXbK1jr561o1P0bJH5rzD9KdSIb5PPGbzAxQiTvXA_XezyEbc18fBaFWdp5obvxhcPiZ0izc-Y_FrtiFXjGR-aP2Yb6FS2am7WaeCwDgj3Z4XWvBVeS5BNQYK6Qr7FfcRpddFG0ziiHQzCuqGGTqKKN6GZhNmGcaCltMz0tccffkLYWGu8IKEp5-gOA9O2Rau4_MdpMIrTspo2vt5Rh0aNYPzp_NzEu-LzClVLkYNK9-77XrzRfw4"/>
+<span class="font-display-lg text-headline-lg text-primary">SonicPulse</span>
+</div>
+<p class="text-on-surface-variant text-body-md">
+          Â© 2024 SonicPulse AI. Precision Audio Engineering for the modern creator. Built by musicians, for musicians.
+        </p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-2 gap-xl">
+<div class="space-y-sm">
+<h5 class="text-gray-900 font-bold text-body-md uppercase tracking-widest">Platform</h5>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Convert</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Pricing</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">API Documentation</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Releases</a></li>
+</ul>
+</div>
+<div class="space-y-sm">
+<h5 class="text-gray-900 font-bold text-body-md uppercase tracking-widest">Legal</h5>
+<ul class="space-y-2">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Cookie Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Support</a></li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    // Micro-interaction for waveform animation
+    const bars = document.querySelectorAll('.waveform-bar');
+    setInterval(() => {
+      bars.forEach(bar => {
+        const height = Math.random() * 80 + 20;
+        bar.style.height = `${height}%`;
+      });
+    }, 150);
+
+    // Simple interaction for upload zone
+    const uploadZone = document.querySelector('.glass-panel');
+    uploadZone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      uploadZone.classList.add('border-primary');
+    });
+    uploadZone.addEventListener('dragleave', () => {
+      uploadZone.classList.remove('border-primary');
+    });
+  </script>
+</body></html>
