@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#FDF8F3"/>
+  <rect x="0" y="0" width="1200" height="630" rx="0" fill="#FDF8F3"/>
+  <!-- Orange accent bar -->
+  <rect x="0" y="0" width="1200" height="6" fill="#EA580C"/>
+  <!-- Left waveform bars -->
+  <rect x="100" y="240" width="24" height="150" rx="12" fill="#EA580C" opacity="0.8"/>
+  <rect x="140" y="200" width="24" height="230" rx="12" fill="#EA580C"/>
+  <rect x="180" y="260" width="24" height="110" rx="12" fill="#EA580C" opacity="0.6"/>
+  <!-- Arrow -->
+  <text x="240" y="340" font-family="Arial, sans-serif" font-size="48" fill="#C8B8A8" text-anchor="middle">→</text>
+  <!-- Music notes on right -->
+  <circle cx="340" cy="280" r="16" fill="#EA580C"/>
+  <rect x="356" y="200" width="6" height="80" rx="3" fill="#EA580C"/>
+  <circle cx="400" cy="310" r="16" fill="#C8B8A8"/>
+  <rect x="416" y="230" width="6" height="80" rx="3" fill="#C8B8A8"/>
+  <!-- Title -->
+  <text x="560" y="260" font-family="Arial, sans-serif" font-size="56" font-weight="700" fill="#1C1917" text-anchor="middle">MP3 to MIDI</text>
+  <text x="560" y="320" font-family="Arial, sans-serif" font-size="28" fill="#78716C" text-anchor="middle">Free · Browser · No Upload</text>
+  <text x="560" y="380" font-family="Arial, sans-serif" font-size="22" fill="#C8B8A8" text-anchor="middle">mp3tomidi.vip</text>
+  <!-- Bottom bar -->
+  <rect x="0" y="624" width="1200" height="6" fill="#EA580C"/>
+</svg>

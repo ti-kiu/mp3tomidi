@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { WebPageSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "Blog — MP3 to MIDI Guides & Tips | MP3toMIDI",
   description:
     "Learn how to convert MP3 to MIDI, best practices for audio transcription, and tips for music producers. Guides, tutorials, and more.",
   alternates: { canonical: "https://mp3tomidi.vip/blog" },
+  openGraph: {
+    title: "Blog — MP3 to MIDI Guides & Tips",
+    description: "Learn how to convert MP3 to MIDI, best practices for audio transcription, and tips for music producers.",
+    url: "https://mp3tomidi.vip/blog",
+    images: [{ url: "https://mp3tomidi.vip/og-image.svg", width: 1200, height: 630 }],
+  },
 };
 
 const posts = [
@@ -50,8 +58,16 @@ const posts = [
 export default function BlogPage() {
   return (
     <>
+      <WebPageSchema
+        title="Blog — MP3 to MIDI Guides & Tips"
+        description="Learn how to convert MP3 to MIDI, best practices for audio transcription, and tips for music producers."
+        url="https://mp3tomidi.vip/blog"
+      />
       <Header />
       <main>
+        <div className="container">
+          <Breadcrumbs items={[{ name: "Blog", href: "/blog" }]} />
+        </div>
         <section className="blog-page-hero">
           <div className="container">
             <span className="eyebrow">BLOG</span>

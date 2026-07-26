@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { WebPageSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "Features — AI Audio to MIDI | MP3toMIDI",
   description:
     "Explore MP3toMIDI features: AI-powered transcription, browser-side processing, MIDI preview, multi-format support, and complete privacy.",
   alternates: { canonical: "https://mp3tomidi.vip/features" },
+  openGraph: {
+    title: "Features — AI Audio to MIDI",
+    description: "Explore MP3toMIDI features: AI-powered transcription, browser-side processing, MIDI preview, multi-format support, and complete privacy.",
+    url: "https://mp3tomidi.vip/features",
+    images: [{ url: "https://mp3tomidi.vip/og-image.svg", width: 1200, height: 630 }],
+  },
 };
 
 const features = [
@@ -57,8 +65,16 @@ const features = [
 export default function FeaturesPage() {
   return (
     <>
+      <WebPageSchema
+        title="Features — AI Audio to MIDI"
+        description="Explore MP3toMIDI features: AI-powered transcription, browser-side processing, MIDI preview, multi-format support, and complete privacy."
+        url="https://mp3tomidi.vip/features"
+      />
       <Header />
       <main>
+        <div className="container">
+          <Breadcrumbs items={[{ name: "Features", href: "/features" }]} />
+        </div>
         <section className="features-page-hero">
           <div className="container">
             <span className="eyebrow">FEATURES</span>

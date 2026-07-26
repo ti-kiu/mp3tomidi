@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Space_Grotesk, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { HowToSchema } from "@/components/Schema";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-heading",
@@ -41,12 +42,21 @@ export const metadata: Metadata = {
     siteName: "MP3toMIDI",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://mp3tomidi.vip/og-image.svg",
+        width: 1200,
+        height: 630,
+        alt: "MP3 to MIDI — Free Online Converter",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "MP3 to MIDI — Free Online Converter",
     description:
       "Convert audio to MIDI in your browser. No upload, no signup.",
+    images: ["https://mp3tomidi.vip/og-image.svg"],
   },
   robots: {
     index: true,
@@ -66,13 +76,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}>
       <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="canonical" href="https://mp3tomidi.vip" />
         <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
           rel="stylesheet"
         />
       </head>
       <body>
-        {/* Google Analytics 4 */}
+          <HowToSchema />
+
+          {/* Google Analytics 4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-0VL0464EG4"
           strategy="afterInteractive"

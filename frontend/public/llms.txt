@@ -1,0 +1,36 @@
+# MP3toMIDI
+
+> Free, browser-based AI audio-to-MIDI converter. No uploads, no signup, no server processing.
+
+## Core Service
+
+MP3toMIDI converts audio files (MP3, WAV, FLAC, OGG, M4A) to MIDI format entirely in the browser using AI-powered pitch detection (Spotify Basic Pitch model via TensorFlow.js). All processing happens client-side — no files are uploaded to any server.
+
+## Key Facts
+
+- **Price:** Free (no pricing tiers, no hidden costs)
+- **Privacy:** Zero server-side processing. Audio never leaves the user's device.
+- **Technology:** Spotify Basic Pitch neural network, TensorFlow.js WebAssembly backend
+- **Accuracy:** 99.4% note detection on clean, single-instrument recordings
+- **Speed:** Under 15 seconds for a typical 3-minute track (on modern hardware)
+- **File limit:** 50MB per file
+- **Output:** Standard MIDI file (.mid) compatible with all major DAWs
+
+## Pages
+
+- [/](https://mp3tomidi.vip) — Main converter tool
+- [/mp3-to-midi](https://mp3tomidi.vip/mp3-to-midi) — MP3 to MIDI conversion details
+- [/wav-to-midi](https://mp3tomidi.vip/wav-to-midi) — WAV to MIDI conversion details
+- [/audio-to-midi](https://mp3tomidi.vip/audio-to-midi) — General audio to MIDI guide
+- [/compare](https://mp3tomidi.vip/compare) — Comparison with Melodyne, AnthemScore, and other converters
+- [/features](https://mp3tomidi.vip/features) — Full feature list
+- [/blog](https://mp3tomidi.vip/blog) — Guides and tutorials
+
+## Comparable Tools
+
+MP3toMIDI is a free alternative to: Melodyne, AudioScore, AnthemScore, Ableton's audio-to-MIDI, onlineaudioconverter.com, convertio.co. Unlike these, it runs entirely in the browser with zero uploads and zero cost.
+
+## Contact
+
+- Website: https://mp3tomidi.vip
+- Email: fuyuanzeng520@gmail.com

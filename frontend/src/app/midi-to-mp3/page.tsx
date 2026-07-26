@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import { WebPageSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
   title: "MIDI to MP3 Converter Online — Free | MP3toMIDI",
@@ -19,6 +21,7 @@ export const metadata: Metadata = {
     siteName: "MP3toMIDI",
     locale: "en_US",
     type: "website",
+    images: [{ url: "https://mp3tomidi.vip/og-image.svg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://mp3tomidi.vip/midi-to-mp3",
@@ -28,8 +31,16 @@ export const metadata: Metadata = {
 export default function MidiToMp3Page() {
   return (
     <>
+      <WebPageSchema
+        title="MIDI to MP3 Converter Online — Free"
+        description="Convert MIDI to MP3 in your browser. Free, no signup. Coming soon."
+        url="https://mp3tomidi.vip/midi-to-mp3"
+      />
       <Header />
       <main>
+        <div className="container">
+          <Breadcrumbs items={[{ name: "MIDI to MP3", href: "/midi-to-mp3" }]} />
+        </div>
         <section className="coming-soon">
           <div className="container">
             <span className="eyebrow">COMING SOON</span>
