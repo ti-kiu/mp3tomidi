@@ -31,13 +31,33 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mp3tomidi.vip/compare</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mp3tomidi.vip/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://mp3tomidi.vip/compare</loc>
+    <loc>https://mp3tomidi.vip/blog/mp3-to-midi-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mp3tomidi.vip/blog/best-converters</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mp3tomidi.vip/blog/mp3-to-midi-soundfont</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mp3tomidi.vip/blog/midi-to-mp3-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

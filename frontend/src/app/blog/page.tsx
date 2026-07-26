@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WebPageSchema } from "@/components/Schema";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Blog — MP3 to MIDI Guides & Tips | MP3toMIDI",
@@ -20,38 +21,35 @@ export const metadata: Metadata = {
 const posts = [
   {
     slug: "mp3-to-midi-guide",
-    title: "How to Convert MP3 to MIDI: Complete Guide",
+    title: "How to Convert MP3 to MIDI: A Complete Walkthrough",
     excerpt:
-      "Step-by-step tutorial on converting MP3 files to MIDI format using free online tools. Covers best practices for clean transcriptions.",
-    date: "Coming soon",
+      "Step-by-step tutorial on converting MP3 files to MIDI format. Covers how pitch detection works, what to expect from the results, and how to use MIDI in your DAW.",
+    date: "July 2026",
+    tag: "GUIDE",
   },
   {
-    slug: "best-mp3-to-midi-converters",
-    title: "Best MP3 to MIDI Converters in 2026",
+    slug: "best-converters",
+    title: "Best MP3 to MIDI Converters in 2026: We Tested Them All",
     excerpt:
-      "We tested the top MP3 to MIDI converters and ranked them by accuracy, speed, privacy, and price. See which one comes out on top.",
-    date: "Coming soon",
-  },
-  {
-    slug: "what-is-midi",
-    title: "What is MIDI? A Complete Guide",
-    excerpt:
-      "Everything you need to know about MIDI — the protocol that connects musical instruments, software, and computers.",
-    date: "Coming soon",
-  },
-  {
-    slug: "midi-to-mp3-guide",
-    title: "How to Convert MIDI to MP3",
-    excerpt:
-      "Learn how to turn MIDI files into high-quality MP3 audio using free tools and SoundFonts.",
-    date: "Coming soon",
+      "We tested every major MP3 to MIDI converter and ranked them by accuracy, speed, privacy, and price.",
+    date: "July 2026",
+    tag: "ROUNDUP",
   },
   {
     slug: "mp3-to-midi-soundfont",
-    title: "MP3 to MIDI with SoundFont: Complete Guide",
+    title: "MP3 to MIDI with SoundFont: Getting Better Playback Quality",
     excerpt:
-      "How to use SoundFont instruments to improve your MIDI playback quality after transcription.",
-    date: "Coming soon",
+      "After converting MP3 to MIDI, use SoundFonts to make the output sound like a real instrument.",
+    date: "July 2026",
+    tag: "TUTORIAL",
+  },
+  {
+    slug: "midi-to-mp3-guide",
+    title: "How to Convert MIDI to MP3: 3 Methods That Actually Work",
+    excerpt:
+      "Turn your MIDI files into playable audio using DAWs, SoundFont renderers, or online tools.",
+    date: "July 2026",
+    tag: "GUIDE",
   },
 ];
 
@@ -83,11 +81,13 @@ export default function BlogPage() {
           <div className="container">
             <div className="blog-grid">
               {posts.map((post) => (
-                <article key={post.slug} className="blog-card">
+                <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-card" style={{ textDecoration: "none", color: "inherit" }}>
+                  <span className="feature-tag">{post.tag}</span>
                   <span className="blog-date">{post.date}</span>
                   <h3>{post.title}</h3>
                   <p>{post.excerpt}</p>
-                </article>
+                  <span className="blog-read-more">Read article →</span>
+                </Link>
               ))}
             </div>
           </div>

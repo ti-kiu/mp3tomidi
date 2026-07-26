@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#1C1917" rx="12"/>
+  <text x="400" y="40" font-family="Arial" font-size="18" fill="#fff" text-anchor="middle" font-weight="700">Import MIDI into Your DAW</text>
+  <!-- DAW timeline mock -->
+  <rect x="40" y="60" width="720" height="40" fill="#292524" rx="4"/>
+  <text x="60" y="86" font-family="monospace" font-size="12" fill="#78716C">Track 1 — Melody</text>
+  <rect x="200" y="68" width="200" height="24" rx="4" fill="#EA580C" opacity="0.7"/>
+  <rect x="420" y="68" width="160" height="24" rx="4" fill="#EA580C" opacity="0.5"/>
+  <rect x="40" y="110" width="720" height="40" fill="#292524" rx="4"/>
+  <text x="60" y="136" font-family="monospace" font-size="12" fill="#78716C">Track 2 — Chords</text>
+  <rect x="200" y="118" width="300" height="24" rx="4" fill="#0D9488" opacity="0.6"/>
+  <rect x="40" y="160" width="720" height="40" fill="#292524" rx="4"/>
+  <text x="60" y="186" font-family="monospace" font-size="12" fill="#78716C">Track 3 — Bass</text>
+  <rect x="220" y="168" width="260" height="24" rx="4" fill="#D97706" opacity="0.6"/>
+  <rect x="40" y="210" width="720" height="40" fill="#292524" rx="4"/>
+  <text x="60" y="236" font-family="monospace" font-size="12" fill="#78716C">Track 4 — Drums</text>
+  <rect x="200" y="218" width="380" height="24" rx="4" fill="#E11D48" opacity="0.5"/>
+  <!-- DAWs list -->
+  <text x="400" y="300" font-family="Arial" font-size="14" fill="#78716C" text-anchor="middle">Compatible with:</text>
+  <text x="400" y="330" font-family="Arial" font-size="16" fill="#fff" text-anchor="middle" font-weight="600">Ableton · FL Studio · Logic Pro · GarageBand · Cubase · Reaper</text>
+</svg>

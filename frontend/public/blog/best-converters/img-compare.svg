@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#FDF8F3" rx="12"/>
+  <text x="400" y="40" font-family="Arial" font-size="20" fill="#1C1917" text-anchor="middle" font-weight="700">Converter Comparison</text>
+  <!-- Bars -->
+  <text x="180" y="90" font-family="Arial" font-size="13" fill="#1C1917" text-anchor="end">MP3toMIDI</text>
+  <rect x="200" y="75" width="400" height="22" rx="4" fill="#EA580C"/>
+  <text x="620" y="92" font-family="Arial" font-size="12" fill="#fff" font-weight="700">Free · Browser · No Upload</text>
+  <text x="180" y="130" font-family="Arial" font-size="13" fill="#1C1917" text-anchor="end">Melodyne</text>
+  <rect x="200" y="115" width="300" height="22" rx="4" fill="#78716C"/>
+  <text x="520" y="132" font-family="Arial" font-size="12" fill="#fff">$99-$849</text>
+  <text x="180" y="170" font-family="Arial" font-size="13" fill="#1C1917" text-anchor="end">AnthemScore</text>
+  <rect x="200" y="155" width="200" height="22" rx="4" fill="#78716C"/>
+  <text x="420" y="172" font-family="Arial" font-size="12" fill="#fff">$29-$58</text>
+  <text x="180" y="210" font-family="Arial" font-size="13" fill="#1C1917" text-anchor="end">AudioScore</text>
+  <rect x="200" y="195" width="250" height="22" rx="4" fill="#78716C"/>
+  <text x="470" y="212" font-family="Arial" font-size="12" fill="#fff">$79-$249</text>
+  <text x="180" y="250" font-family="Arial" font-size="13" fill="#1C1917" text-anchor="end">Online Converters</text>
+  <rect x="200" y="235" width="180" height="22" rx="4" fill="#78716C"/>
+  <text x="400" y="252" font-family="Arial" font-size="12" fill="#fff">Upload Required</text>
+  <text x="400" y="310" font-family="Arial" font-size="14" fill="#78716C" text-anchor="middle">Ease of Use (longer = better)</text>
+</svg>
