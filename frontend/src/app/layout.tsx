@@ -64,6 +64,7 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "uyi9rj1feLhJt3UI8-91fvb3Yo1b_753jd5ZUZsYbF8",
+    other: { "msvalidate.01": "8D5AE51845CFE08F58F54A68CFF76D57" },
   },
   metadataBase: new URL("https://mp3tomidi.vip"),
 };
