@@ -78,6 +78,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="canonical" href="https://mp3tomidi.vip" />
+      <meta name="msvalidate.01" content="8D5AE51845CFE08F58F54A68CFF76D57" />
         <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
           rel="stylesheet"
