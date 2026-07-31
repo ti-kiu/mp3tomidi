@@ -24,16 +24,25 @@ export default function Footer() {
             <ul>
               <li><Link href="/">Convert</Link></li>
               <li><Link href="/features">Features</Link></li>
-              <li><Link href="/api">API</Link></li>
+              <li><Link href="/compare">Compare</Link></li>
             </ul>
           </div>
 
           <div className="footer-col">
             <h4>Resources</h4>
             <ul>
+              <li><Link href="/what-is-midi">What is MIDI</Link></li>
               <li><Link href="/blog">Blog</Link></li>
-              <li><Link href="/guides">Guides</Link></li>
               <li><Link href="/faq">FAQ</Link></li>
+              <li><Link href="/help">Help</Link></li>
+            </ul>
+          </div>
+
+          <div className="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><Link href="/about">About</Link></li>
+              <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
 

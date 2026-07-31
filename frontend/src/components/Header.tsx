@@ -14,6 +14,7 @@ export default function Header() {
 
         <nav className="nav">
           <Link href="/">Convert</Link>
+          <Link href="/what-is-midi">What is MIDI</Link>
           <Link href="/features">Features</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/faq">FAQ</Link>
