@@ -1690,3 +1690,27 @@ img {
     font-size: 15px;
   }
 }
+
+/* ===== Landing Pages ===== */
+.landing-hero {
+  padding: 48px 0 32px;
+}
+
+.landing-hero h1 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 720px;
+}
+
+.landing-cta {
+  margin-top: 48px;
+  padding: 32px 0;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .landing-hero h1 {
+    font-size: 28px;
+  }
+}
