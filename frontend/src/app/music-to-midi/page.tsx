@@ -10,51 +10,51 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { SoftwareApplicationSchema, WebPageSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
-  title: "WAV to MIDI Converter — Free, Browser-Based | MP3toMIDI",
+  title: "Music to MIDI Converter — Convert Music Files to MIDI | MP3toMIDI",
   description:
-    "Convert WAV to MIDI in your browser. Free, no signup, no file upload. AI-powered audio to MIDI for music producers and DJs.",
+    "Convert music files to MIDI. Extract notes from any music format. Free browser-based AI tool for musicians.",
   keywords: [
-    "wav to midi",
-    "wav to midi converter",
-    "convert wav to midi",
-    "wav to midi online",
-    "free wav to midi",
+    "music to midi",
+    "music to midi converter",
+    "convert music to midi",
+    "music transcription",
+    "audio to midi converter"
   ],
   openGraph: {
-    title: "WAV to MIDI Converter — Free, Browser-Based",
+    title: "Music to MIDI Converter — Free, Browser-Based",
     description:
-      "Convert WAV to MIDI in your browser. Free, no signup, no file upload.",
-    url: "https://mp3tomidi.vip/wav-to-midi",
+      "Convert music files to MIDI. Free, browser-based AI tool.",
+    url: "https://mp3tomidi.vip/music-to-midi",
     siteName: "MP3toMIDI",
     locale: "en_US",
     type: "website",
     images: [{ url: "https://mp3tomidi.vip/og-image.svg", width: 1200, height: 630 }],
   },
   alternates: {
-    canonical: "https://mp3tomidi.vip/wav-to-midi",
+    canonical: "https://mp3tomidi.vip/music-to-midi",
   },
 };
 
-export default function WavToMidiPage() {
+export default function MusicToMidiPage() {
   return (
     <>
       <SoftwareApplicationSchema />
       <WebPageSchema
-        title="WAV to MIDI Converter — Free, Browser-Based"
-        description="Convert WAV files to MIDI using AI in your browser. Free, private, no signup."
-        url="https://mp3tomidi.vip/wav-to-midi"
+        title="Music to MIDI Converter — Free, Browser-Based"
+        description="Convert music files to MIDI using AI in your browser. Free, private, no signup."
+        url="https://mp3tomidi.vip/music-to-midi"
         faqQuestions={8}
       />
       <Header />
       <main>
         <div className="container">
-          <Breadcrumbs items={[{ name: "WAV to MIDI", href: "/wav-to-midi" }]} />
+          <Breadcrumbs items={[{ name: "Music to MIDI", href: "/music-to-midi" }]} />
         </div>
         <Hero />
         <HowItWorks />
         <Features />
         <FAQ />
-        <RelatedTools currentPath="/wav-to-midi" />
+        <RelatedTools currentPath="/music-to-midi" />
       </main>
       <Footer />
     </>

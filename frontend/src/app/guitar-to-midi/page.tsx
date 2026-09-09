@@ -10,51 +10,51 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { SoftwareApplicationSchema, WebPageSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
-  title: "WAV to MIDI Converter — Free, Browser-Based | MP3toMIDI",
+  title: "Guitar to MIDI Converter — Extract Guitar Notes | MP3toMIDI",
   description:
-    "Convert WAV to MIDI in your browser. Free, no signup, no file upload. AI-powered audio to MIDI for music producers and DJs.",
+    "Extract guitar notes from audio and convert to MIDI. Free browser-based AI tool for guitarists and music producers.",
   keywords: [
-    "wav to midi",
-    "wav to midi converter",
-    "convert wav to midi",
-    "wav to midi online",
-    "free wav to midi",
+    "guitar to midi",
+    "extract guitar midi",
+    "guitar to midi converter",
+    "guitar transcription",
+    "guitar midi online"
   ],
   openGraph: {
-    title: "WAV to MIDI Converter — Free, Browser-Based",
+    title: "Guitar to MIDI Converter — Free, Browser-Based",
     description:
-      "Convert WAV to MIDI in your browser. Free, no signup, no file upload.",
-    url: "https://mp3tomidi.vip/wav-to-midi",
+      "Extract guitar notes from audio and convert to MIDI. Free, browser-based.",
+    url: "https://mp3tomidi.vip/guitar-to-midi",
     siteName: "MP3toMIDI",
     locale: "en_US",
     type: "website",
     images: [{ url: "https://mp3tomidi.vip/og-image.svg", width: 1200, height: 630 }],
   },
   alternates: {
-    canonical: "https://mp3tomidi.vip/wav-to-midi",
+    canonical: "https://mp3tomidi.vip/guitar-to-midi",
   },
 };
 
-export default function WavToMidiPage() {
+export default function GuitarToMidiPage() {
   return (
     <>
       <SoftwareApplicationSchema />
       <WebPageSchema
-        title="WAV to MIDI Converter — Free, Browser-Based"
-        description="Convert WAV files to MIDI using AI in your browser. Free, private, no signup."
-        url="https://mp3tomidi.vip/wav-to-midi"
+        title="Guitar to MIDI Converter — Free, Browser-Based"
+        description="Extract guitar notes from audio and convert to MIDI using AI. Free, private, no signup."
+        url="https://mp3tomidi.vip/guitar-to-midi"
         faqQuestions={8}
       />
       <Header />
       <main>
         <div className="container">
-          <Breadcrumbs items={[{ name: "WAV to MIDI", href: "/wav-to-midi" }]} />
+          <Breadcrumbs items={[{ name: "Guitar to MIDI", href: "/guitar-to-midi" }]} />
         </div>
         <Hero />
         <HowItWorks />
         <Features />
         <FAQ />
-        <RelatedTools currentPath="/wav-to-midi" />
+        <RelatedTools currentPath="/guitar-to-midi" />
       </main>
       <Footer />
     </>

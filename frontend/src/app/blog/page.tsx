@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RelatedTools from "@/components/RelatedTools";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -92,6 +93,7 @@ export default function BlogPage() {
             </div>
           </div>
         </section>
+        <RelatedTools currentPath="/blog" />
       </main>
       <Footer />
     </>

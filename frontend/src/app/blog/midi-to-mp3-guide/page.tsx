@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WebPageSchema } from "@/components/Schema";
 import Image from "next/image";
+import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
   title: "How to Convert MIDI to MP3: 3 Methods That Actually Work | MP3toMIDI",
@@ -173,6 +174,7 @@ export default function Article() {
           </div>
         </div>
       </article>
+      <RelatedTools currentPath="/blog/midi-to-mp3-guide" />
       <Footer />
     </>
   );

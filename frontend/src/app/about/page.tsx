@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WebPageSchema } from "@/components/Schema";
 import Link from "next/link";
+import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
   title: "About MP3toMIDI — Free AI Audio to MIDI Converter | MP3toMIDI",
@@ -84,6 +85,7 @@ export default function AboutPage() {
           </div>
         </div>
       </article>
+      <RelatedTools currentPath="/about" />
       <Footer />
     </>
   );

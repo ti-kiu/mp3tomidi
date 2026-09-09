@@ -10,51 +10,51 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { SoftwareApplicationSchema, WebPageSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
-  title: "WAV to MIDI Converter — Free, Browser-Based | MP3toMIDI",
+  title: "OGG to MIDI Converter — Free, Browser-Based | MP3toMIDI",
   description:
-    "Convert WAV to MIDI in your browser. Free, no signup, no file upload. AI-powered audio to MIDI for music producers and DJs.",
+    "Convert OGG to MIDI in your browser. Free, no signup, no file upload. AI-powered audio to MIDI for music producers.",
   keywords: [
-    "wav to midi",
-    "wav to midi converter",
-    "convert wav to midi",
-    "wav to midi online",
-    "free wav to midi",
+    "ogg to midi",
+    "ogg to midi converter",
+    "convert ogg to midi",
+    "ogg to midi online",
+    "free ogg to midi"
   ],
   openGraph: {
-    title: "WAV to MIDI Converter — Free, Browser-Based",
+    title: "OGG to MIDI Converter — Free, Browser-Based",
     description:
-      "Convert WAV to MIDI in your browser. Free, no signup, no file upload.",
-    url: "https://mp3tomidi.vip/wav-to-midi",
+      "Convert OGG to MIDI in your browser. Free, no signup, no file upload.",
+    url: "https://mp3tomidi.vip/ogg-to-midi",
     siteName: "MP3toMIDI",
     locale: "en_US",
     type: "website",
     images: [{ url: "https://mp3tomidi.vip/og-image.svg", width: 1200, height: 630 }],
   },
   alternates: {
-    canonical: "https://mp3tomidi.vip/wav-to-midi",
+    canonical: "https://mp3tomidi.vip/ogg-to-midi",
   },
 };
 
-export default function WavToMidiPage() {
+export default function OGGToMidiPage() {
   return (
     <>
       <SoftwareApplicationSchema />
       <WebPageSchema
-        title="WAV to MIDI Converter — Free, Browser-Based"
-        description="Convert WAV files to MIDI using AI in your browser. Free, private, no signup."
-        url="https://mp3tomidi.vip/wav-to-midi"
+        title="OGG to MIDI Converter — Free, Browser-Based"
+        description="Convert OGG files to MIDI using AI in your browser. Free, private, no signup."
+        url="https://mp3tomidi.vip/ogg-to-midi"
         faqQuestions={8}
       />
       <Header />
       <main>
         <div className="container">
-          <Breadcrumbs items={[{ name: "WAV to MIDI", href: "/wav-to-midi" }]} />
+          <Breadcrumbs items={[{ name: "OGG to MIDI", href: "/ogg-to-midi" }]} />
         </div>
         <Hero />
         <HowItWorks />
         <Features />
         <FAQ />
-        <RelatedTools currentPath="/wav-to-midi" />
+        <RelatedTools currentPath="/ogg-to-midi" />
       </main>
       <Footer />
     </>

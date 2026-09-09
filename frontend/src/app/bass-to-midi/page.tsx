@@ -10,51 +10,51 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { SoftwareApplicationSchema, WebPageSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
-  title: "WAV to MIDI Converter — Free, Browser-Based | MP3toMIDI",
+  title: "Bass to MIDI Converter — Extract Bass Lines | MP3toMIDI",
   description:
-    "Convert WAV to MIDI in your browser. Free, no signup, no file upload. AI-powered audio to MIDI for music producers and DJs.",
+    "Extract bass lines from audio and convert to MIDI. Free browser-based AI tool for bassists and producers.",
   keywords: [
-    "wav to midi",
-    "wav to midi converter",
-    "convert wav to midi",
-    "wav to midi online",
-    "free wav to midi",
+    "bass to midi",
+    "extract bass midi",
+    "bass to midi converter",
+    "bass transcription",
+    "bass line to midi"
   ],
   openGraph: {
-    title: "WAV to MIDI Converter — Free, Browser-Based",
+    title: "Bass to MIDI Converter — Free, Browser-Based",
     description:
-      "Convert WAV to MIDI in your browser. Free, no signup, no file upload.",
-    url: "https://mp3tomidi.vip/wav-to-midi",
+      "Extract bass lines from audio and convert to MIDI. Free, browser-based.",
+    url: "https://mp3tomidi.vip/bass-to-midi",
     siteName: "MP3toMIDI",
     locale: "en_US",
     type: "website",
     images: [{ url: "https://mp3tomidi.vip/og-image.svg", width: 1200, height: 630 }],
   },
   alternates: {
-    canonical: "https://mp3tomidi.vip/wav-to-midi",
+    canonical: "https://mp3tomidi.vip/bass-to-midi",
   },
 };
 
-export default function WavToMidiPage() {
+export default function BassToMidiPage() {
   return (
     <>
       <SoftwareApplicationSchema />
       <WebPageSchema
-        title="WAV to MIDI Converter — Free, Browser-Based"
-        description="Convert WAV files to MIDI using AI in your browser. Free, private, no signup."
-        url="https://mp3tomidi.vip/wav-to-midi"
+        title="Bass to MIDI Converter — Free, Browser-Based"
+        description="Extract bass lines from audio and convert to MIDI using AI. Free, private, no signup."
+        url="https://mp3tomidi.vip/bass-to-midi"
         faqQuestions={8}
       />
       <Header />
       <main>
         <div className="container">
-          <Breadcrumbs items={[{ name: "WAV to MIDI", href: "/wav-to-midi" }]} />
+          <Breadcrumbs items={[{ name: "Bass to MIDI", href: "/bass-to-midi" }]} />
         </div>
         <Hero />
         <HowItWorks />
         <Features />
         <FAQ />
-        <RelatedTools currentPath="/wav-to-midi" />
+        <RelatedTools currentPath="/bass-to-midi" />
       </main>
       <Footer />
     </>

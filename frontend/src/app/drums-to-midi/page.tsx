@@ -10,51 +10,51 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { SoftwareApplicationSchema, WebPageSchema } from "@/components/Schema";
 
 export const metadata: Metadata = {
-  title: "WAV to MIDI Converter — Free, Browser-Based | MP3toMIDI",
+  title: "Drums to MIDI Converter — Extract Drum Patterns | MP3toMIDI",
   description:
-    "Convert WAV to MIDI in your browser. Free, no signup, no file upload. AI-powered audio to MIDI for music producers and DJs.",
+    "Extract drum patterns from audio and convert to MIDI. Free browser-based AI tool for beat makers and producers.",
   keywords: [
-    "wav to midi",
-    "wav to midi converter",
-    "convert wav to midi",
-    "wav to midi online",
-    "free wav to midi",
+    "drums to midi",
+    "extract drums midi",
+    "drum to midi converter",
+    "drum transcription",
+    "drums midi online"
   ],
   openGraph: {
-    title: "WAV to MIDI Converter — Free, Browser-Based",
+    title: "Drums to MIDI Converter — Free, Browser-Based",
     description:
-      "Convert WAV to MIDI in your browser. Free, no signup, no file upload.",
-    url: "https://mp3tomidi.vip/wav-to-midi",
+      "Extract drum patterns from audio and convert to MIDI. Free, browser-based.",
+    url: "https://mp3tomidi.vip/drums-to-midi",
     siteName: "MP3toMIDI",
     locale: "en_US",
     type: "website",
     images: [{ url: "https://mp3tomidi.vip/og-image.svg", width: 1200, height: 630 }],
   },
   alternates: {
-    canonical: "https://mp3tomidi.vip/wav-to-midi",
+    canonical: "https://mp3tomidi.vip/drums-to-midi",
   },
 };
 
-export default function WavToMidiPage() {
+export default function DrumsToMidiPage() {
   return (
     <>
       <SoftwareApplicationSchema />
       <WebPageSchema
-        title="WAV to MIDI Converter — Free, Browser-Based"
-        description="Convert WAV files to MIDI using AI in your browser. Free, private, no signup."
-        url="https://mp3tomidi.vip/wav-to-midi"
+        title="Drums to MIDI Converter — Free, Browser-Based"
+        description="Extract drum patterns from audio and convert to MIDI using AI. Free, private, no signup."
+        url="https://mp3tomidi.vip/drums-to-midi"
         faqQuestions={8}
       />
       <Header />
       <main>
         <div className="container">
-          <Breadcrumbs items={[{ name: "WAV to MIDI", href: "/wav-to-midi" }]} />
+          <Breadcrumbs items={[{ name: "Drums to MIDI", href: "/drums-to-midi" }]} />
         </div>
         <Hero />
         <HowItWorks />
         <Features />
         <FAQ />
-        <RelatedTools currentPath="/wav-to-midi" />
+        <RelatedTools currentPath="/drums-to-midi" />
       </main>
       <Footer />
     </>

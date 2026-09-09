@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RelatedTools from "@/components/RelatedTools";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -117,6 +118,7 @@ export default function FeaturesPage() {
             <a href="/" className="cta">Start Converting — It&apos;s Free</a>
           </div>
         </section>
+        <RelatedTools currentPath="/features" />
       </main>
       <Footer />
     </>

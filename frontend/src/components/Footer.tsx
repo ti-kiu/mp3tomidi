@@ -20,11 +20,22 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <h4>Product</h4>
+            <h4>Converters</h4>
             <ul>
-              <li><Link href="/">Convert</Link></li>
-              <li><Link href="/features">Features</Link></li>
-              <li><Link href="/compare">Compare</Link></li>
+              <li><Link href="/mp3-to-midi">MP3 to MIDI</Link></li>
+              <li><Link href="/wav-to-midi">WAV to MIDI</Link></li>
+              <li><Link href="/audio-to-midi">Audio to MIDI</Link></li>
+              <li><Link href="/midi-to-mp3">MIDI to MP3</Link></li>
+            </ul>
+          </div>
+
+          <div className="footer-col">
+            <h4>Tools</h4>
+            <ul>
+              <li><Link href="/convert-mp3-to-midi">Convert MP3 to MIDI</Link></li>
+              <li><Link href="/mp3-to-midi-converter">MP3 to MIDI Converter</Link></li>
+              <li><Link href="/mp3-to-midi-ai">MP3 to MIDI AI</Link></li>
+              <li><Link href="/convert-midi-to-mp3">Convert MIDI to MP3</Link></li>
             </ul>
           </div>
 
@@ -32,6 +43,8 @@ export default function Footer() {
             <h4>Resources</h4>
             <ul>
               <li><Link href="/what-is-midi">What is MIDI</Link></li>
+              <li><Link href="/features">Features</Link></li>
+              <li><Link href="/compare">Compare</Link></li>
               <li><Link href="/blog">Blog</Link></li>
               <li><Link href="/faq">FAQ</Link></li>
               <li><Link href="/help">Help</Link></li>

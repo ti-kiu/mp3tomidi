@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
   title: "Terms of Service | MP3toMIDI",
@@ -199,6 +200,7 @@ export default function TermsPage() {
             <a href="mailto:contact@mp3tomidi.vip">contact@mp3tomidi.vip</a>
           </p>
         </section>
+        <RelatedTools currentPath="/terms" />
       </main>
     </div>
   );

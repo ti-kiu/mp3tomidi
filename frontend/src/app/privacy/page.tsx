@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | MP3toMIDI",
@@ -184,6 +185,7 @@ export default function PrivacyPage() {
             us at: <a href="mailto:contact@mp3tomidi.vip">contact@mp3tomidi.vip</a>
           </p>
         </section>
+        <RelatedTools currentPath="/privacy" />
       </main>
     </div>
   );

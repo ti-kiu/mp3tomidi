@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WebPageSchema, FAQPageSchema } from "@/components/Schema";
 import Link from "next/link";
+import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
   title: "What is MIDI? Complete Guide to MIDI Files | MP3toMIDI",
@@ -226,6 +227,7 @@ export default function WhatIsMidiPage() {
           </div>
         </div>
       </article>
+      <RelatedTools currentPath="/what-is-midi" />
       <Footer />
     </>
   );

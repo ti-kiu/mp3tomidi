@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import RelatedTools from "@/components/RelatedTools";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { SoftwareApplicationSchema, WebPageSchema } from "@/components/Schema";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Turn MP3 to MIDI — Quick, Free, No Upload | MP3toMIDI",
@@ -44,11 +46,11 @@ export default function Page() {
         </section>
         <section className="article-body">
           <div className="container">
-            <p>You've got an audio file and you need the notes. Maybe it's a song you want to learn, a melody you want to remix, or a chord progression you want to study. Turning MP3 to MIDI extracts the musical information from the audio and gives you an editable file you can work with.</p>
+            <p>You've got an audio file and you need the notes. Maybe it's a song you want to learn, a melody you want to remix, or a chord progression you want to study. <Link href="/mp3-to-midi">Turning MP3 to MIDI</Link> extracts the musical information from the audio and gives you an editable file you can work with.</p>
             <p>Here's how it works: drag your MP3 onto the converter. The AI model (Spotify's Basic Pitch) analyzes the audio and identifies the notes. In about 10-15 seconds, you get a MIDI file with all the detected notes, ready to open in any DAW.</p>
             <h2>What you can do with the MIDI</h2>
             <p>Once you have the MIDI file, the possibilities open up. Change the instrument — play the melody on a synth instead of piano. Adjust the tempo — slow it down to practice, or speed it up. Transpose the key — move everything up or down to match your vocal range. Rearrange sections — copy the chorus, cut the bridge, extend the solo.</p>
-            <p>MIDI files are also great for learning. Open the file in a piano app and watch the notes scroll by in real time. It's like having a teacher play the piece slowly for you, note by note.</p>
+            <p>MIDI files are also great for learning. Open the file in a piano app and watch the notes scroll by in real time. It's like having a teacher play the piece slowly for you, note by note. Learn more about <Link href="/what-is-midi">what MIDI is</Link> and how to use it.</p>
             <h2>Tips for better results</h2>
             <p>Use the cleanest audio you have. Solo instruments work better than full band mixes. Higher quality files produce more accurate transcriptions. And always check the preview before downloading — a quick glance at the piano roll will tell you if the transcription captured the right notes.</p>
 
@@ -57,6 +59,7 @@ export default function Page() {
             </div>
           </div>
         </section>
+        <RelatedTools currentPath="/turn-mp3-to-midi" />
       </main>
       <Footer />
     </>

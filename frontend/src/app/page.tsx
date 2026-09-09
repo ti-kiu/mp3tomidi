@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import RelatedTools from "@/components/RelatedTools";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
 import Features from "@/components/Features";
@@ -82,6 +83,7 @@ export default function Home() {
         <Features />
         <WhatIsMidi />
         <FAQ />
+        <RelatedTools currentPath="/" />
       </main>
       <Footer />
     </>

@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WebPageSchema } from "@/components/Schema";
 import Image from "next/image";
+import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
   title: "MP3 to MIDI with SoundFont: How to Get Better Playback Quality | MP3toMIDI",
@@ -181,6 +182,7 @@ export default function Article() {
           </div>
         </div>
       </article>
+      <RelatedTools currentPath="/blog/mp3-to-midi-soundfont" />
       <Footer />
     </>
   );

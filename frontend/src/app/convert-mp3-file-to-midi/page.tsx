@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import RelatedTools from "@/components/RelatedTools";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { SoftwareApplicationSchema, WebPageSchema } from "@/components/Schema";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Convert MP3 File to MIDI — Step by Step | MP3toMIDI",
@@ -44,11 +46,11 @@ export default function Page() {
         </section>
         <section className="article-body">
           <div className="container">
-            <p>Converting an MP3 file to MIDI is simpler than most people think. You don't need to install software, create an account, or upload anything. Here's the exact process.</p>
+            <p><Link href="/mp3-to-midi">Converting an MP3 file to MIDI</Link> is simpler than most people think. You don't need to install software, create an account, or upload anything. Here's the exact process.</p>
             <h2>Step 1: Open the converter</h2>
             <p>Go to mp3tomidi.vip in any modern browser — Chrome, Firefox, Edge, or Safari all work. The page loads the AI model in the background (about 900KB, takes a few seconds on first visit).</p>
             <h2>Step 2: Select your MP3 file</h2>
-            <p>Drag and drop your MP3 file onto the upload area, or click to browse your files. The tool also accepts WAV, FLAC, OGG, and M4A files up to 50MB. The file stays on your device — nothing is uploaded to any server.</p>
+            <p>Drag and drop your MP3 file onto the upload area, or click to browse your files. The tool also accepts <Link href="/wav-to-midi">WAV</Link>, FLAC, OGG, and M4A files up to 50MB. The file stays on your device — nothing is uploaded to any server.</p>
             <h2>Step 3: Wait for conversion</h2>
             <p>The AI model analyzes your audio and detects the musical notes. A progress bar shows the conversion status. Most files finish in 10-15 seconds. Complex files with many instruments may take a bit longer.</p>
             <h2>Step 4: Preview the results</h2>
@@ -61,6 +63,7 @@ export default function Page() {
             </div>
           </div>
         </section>
+        <RelatedTools currentPath="/convert-mp3-file-to-midi" />
       </main>
       <Footer />
     </>

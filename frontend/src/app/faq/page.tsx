@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RelatedTools from "@/components/RelatedTools";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -34,6 +35,7 @@ export default function FAQPage() {
           <Breadcrumbs items={[{ name: "FAQ", href: "/faq" }]} />
         </div>
         <FAQ />
+        <RelatedTools currentPath="/faq" />
       </main>
       <Footer />
     </>

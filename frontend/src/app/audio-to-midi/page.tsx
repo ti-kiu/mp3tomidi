@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RelatedTools from "@/components/RelatedTools";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
@@ -53,6 +54,7 @@ export default function AudioToMidiPage() {
         <HowItWorks />
         <Features />
         <FAQ />
+        <RelatedTools currentPath="/audio-to-midi" />
       </main>
       <Footer />
     </>

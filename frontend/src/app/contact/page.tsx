@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WebPageSchema } from "@/components/Schema";
 import Link from "next/link";
+import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
   title: "Contact Us — MP3toMIDI Support",
@@ -65,6 +66,7 @@ export default function ContactPage() {
           </div>
         </div>
       </article>
+      <RelatedTools currentPath="/contact" />
       <Footer />
     </>
   );
