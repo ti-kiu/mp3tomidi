@@ -32,53 +32,108 @@ export function SoftwareApplicationSchema() {
   );
 }
 
-export function FAQPageSchema() {
-  const faqs = [
+export function FAQPageSchema({ items, url }: { items?: { question: string; answer: string }[]; url?: string }) {
+  const defaultFaqs = [
     {
-      q: "How accurate is the conversion?",
-      a: "Our AI achieves 99.4% note detection accuracy on clean, single-instrument recordings. The system uses Spotify's Basic Pitch neural network trained on tens of thousands of hours of music. For best results, use recordings with a single instrument and minimal background noise.",
+      question: "How accurate is the conversion?",
+      answer: "Our AI achieves 99.4% note detection accuracy on clean, single-instrument recordings. The system uses Spotify's Basic Pitch neural network trained on tens of thousands of hours of music. For best results, use recordings with a single instrument and minimal background noise.",
     },
     {
-      q: "Is my audio uploaded to a server?",
-      a: "No. All audio processing happens directly in your browser using WebAssembly. Your files never leave your device. The AI model runs locally — even your internet connection doesn't matter once the page loads.",
+      question: "Is my audio uploaded to a server?",
+      answer: "No. All audio processing happens directly in your browser using WebAssembly. Your files never leave your device. The AI model runs locally — even your internet connection doesn't matter once the page loads.",
     },
     {
-      q: "What file formats can I upload?",
-      a: "We support MP3, WAV, FLAC, OGG, and M4A.",
+      question: "What file formats can I upload?",
+      answer: "We support MP3, WAV, FLAC, OGG, M4A, AAC, AIFF, WMA, and Opus.",
     },
     {
-      q: "Can I use the MIDI commercially?",
-      a: "Yes. The MIDI files you download are yours to use however you want — in commercial releases, remixes, live performances, or educational materials. No attribution required.",
+      question: "Can I use the MIDI commercially?",
+      answer: "Yes. The MIDI files you download are yours to use however you want — in commercial releases, remixes, live performances, or educational materials. No attribution required.",
     },
     {
-      q: "What DAWs does the MIDI work with?",
-      a: "Compatible with Ableton Live, FL Studio, Logic Pro, GarageBand, Cubase, Reaper, Pro Tools, Studio One, and any software that supports standard MIDI files.",
+      question: "What DAWs does the MIDI work with?",
+      answer: "Compatible with Ableton Live, FL Studio, Logic Pro, GarageBand, Cubase, Reaper, Pro Tools, Studio One, and any software that supports standard MIDI files.",
     },
     {
-      q: "Is there a file size limit?",
-      a: "We support files up to 50MB, which covers most audio files up to 60 minutes of high-quality audio.",
+      question: "Is there a file size limit?",
+      answer: "We support files up to 50MB, which covers most audio files up to 60 minutes of high-quality audio.",
     },
     {
-      q: "Does it work on mobile?",
-      a: "Yes, the converter works on mobile browsers. For the best experience with larger files, we recommend using a desktop browser.",
+      question: "Does it work on mobile?",
+      answer: "Yes, the converter works on mobile browsers. For the best experience with larger files, we recommend using a desktop browser.",
     },
     {
-      q: "What is MIDI used for?",
-      a: "MIDI is used for music production, remixing, learning songs, creating backing tracks, and controlling virtual instruments in DAWs.",
+      question: "What is MIDI used for?",
+      answer: "MIDI is used for music production, remixing, learning songs, creating backing tracks, and controlling virtual instruments in DAWs.",
     },
   ];
+
+  const faqs = items || defaultFaqs;
 
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    ...(url ? { url } : {}),
     mainEntity: faqs.map((faq) => ({
       "@type": "Question",
-      name: faq.q,
+      name: faq.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: faq.a,
+        text: faq.answer,
       },
     })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function ArticleSchema({
+  title,
+  description,
+  url,
+  datePublished,
+  dateModified,
+  image,
+}: {
+  title: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified: string;
+  image?: string;
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description: description,
+    url: url,
+    datePublished: datePublished,
+    dateModified: dateModified,
+    author: {
+      "@type": "Organization",
+      name: "MP3toMIDI",
+      url: "https://mp3tomidi.vip",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "MP3toMIDI",
+      url: "https://mp3tomidi.vip",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://mp3tomidi.vip/favicon.svg",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+    ...(image ? { image: { "@type": "ImageObject", url: image } } : {}),
   };
 
   return (

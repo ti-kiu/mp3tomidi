@@ -98,6 +98,13 @@ const relatedMap: Record<string, Tool[]> = {
   "/blog/best-converters": [converters[0], converters[1], converters[9], resources[1]],
   "/blog/mp3-to-midi-soundfont": [converters[0], resources[0]],
   "/blog/midi-to-mp3-guide": [converters[10], converters[0], resources[0]],
+  // 新博客文章
+  "/blog/alternatives-to-basic-pitch": [converters[0], converters[1], converters[9], resources[1]],
+  "/blog/mp3-vs-wav-midi": [converters[0], converters[1], converters[2], resources[0]],
+  "/blog/extract-piano-notes": [converters[0], instruments[0], resources[0]],
+  "/blog/best-free-midi-converters": [converters[0], converters[1], converters[9], resources[1]],
+  "/blog/what-is-midi-file": [converters[0], converters[9], resources[0]],
+  "/blog/youtube-to-midi-guide": [converters[0], instruments[5], resources[0]],
 
   // 其他页面
   "/about": [converters[0], resources[0], resources[4]],
