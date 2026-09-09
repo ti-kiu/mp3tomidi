@@ -84,8 +84,8 @@ export default function Article() {
               that could take hours.
             </p>
             <p>
-              The new way: run the audio through an{" "}
-              <Link href="/piano-to-midi">AI piano transcription tool</Link>, get a MIDI file with
+              run the <Link href="/audio-to-midi">audio</Link> through an
+                            <Link href="/piano-to-midi">AI piano transcription tool</Link> (like <Link href="/mp3-to-midi">MP3toMIDI</Link>)
               every note, open it in your DAW or sheet music software, and start practicing. The
               whole process takes about 60 seconds.
             </p>
@@ -120,7 +120,7 @@ export default function Article() {
             <h3>Step 1: Get your audio file</h3>
             <p>
               Start with the song you want to extract piano from. Any common audio format works:
-              MP3, WAV, FLAC, OGG, or M4A. If the song is on YouTube or Spotify, you'll need to
+              MP3, WAV, FLAC, OGG, or M4A. If you have a <Link href="/wav-to-midi">WAV file</Link>, it will give slightly better results. If the song is on YouTube or Spotify, you'll need to
               have it as a local file first.
             </p>
             <p>

@@ -80,7 +80,7 @@ export default function Article() {
           <div className="article-body">
             <p>
               You found a song on YouTube and want the notes. Maybe it's a piano cover, a guitar
-              solo, or a synth melody you want to remix. Whatever the case, converting YouTube to
+              solo, or a synth melody you want to remix. You can even <Link href="/song-to-midi">convert the entire song to MIDI</Link>. Whatever the case, converting YouTube to
               MIDI is a two-step process: extract the audio, then convert it to MIDI.
             </p>
             <p>

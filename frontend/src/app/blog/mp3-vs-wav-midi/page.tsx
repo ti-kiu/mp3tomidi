@@ -229,14 +229,14 @@ export default function Article() {
               The bottom line: if you have a WAV file, use it — you might get slightly better results.
               If you only have an MP3, don't bother converting it to WAV first (that won't undo the
               compression). Just use the MP3 directly with{" "}
-              <Link href="/">MP3toMIDI</Link> and you'll get results that are 99% as good.
+              <Link href="/mp3-to-midi">MP3toMIDI</Link> and you'll get results that are 99% as good. Our <Link href="/audio-to-midi">audio to MIDI tool</Link> handles all formats.
             </p>
 
             {/* CTA */}
             <section style={{ marginTop: "3rem", padding: "2rem", background: "#EA580C", borderRadius: "12px", textAlign: "center", color: "white" }}>
               <h2 style={{ fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>Convert Any Format to MIDI</h2>
               <p style={{ marginBottom: "1.5rem", opacity: 0.9 }}>
-                MP3, WAV, FLAC, OGG, M4A — drag any audio file and convert it free, right in your browser.
+                MP3, WAV, FLAC, OGG, M4A — drag any <Link href="/audio-to-midi">audio file</Link> and convert it free, right in your browser.
               </p>
               <Link href="/" style={{ display: "inline-block", padding: "0.75rem 2rem", background: "white", color: "#EA580C", borderRadius: "8px", fontWeight: 600, textDecoration: "none" }}>
                 Try It Free →

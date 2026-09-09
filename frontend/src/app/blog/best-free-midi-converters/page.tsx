@@ -84,7 +84,7 @@ export default function Article() {
               output that's barely usable.
             </p>
             <p>
-              We tested every free tool we could find and narrowed it down to five that actually work.
+              We tested every free tool we could find and narrowed it down to five that actually work. Whether you need to convert <Link href="/mp3-to-midi">MP3 to MIDI</Link>, <Link href="/wav-to-midi">WAV to MIDI</Link>, or any other format, here's how they compare.
               Here's how they compare.
             </p>
 
@@ -236,8 +236,9 @@ export default function Article() {
             <h2 id="recommendation">Which One Should You Choose?</h2>
             <ul>
               <li><strong>Just need a quick MIDI file?</strong> Use <Link href="/">MP3toMIDI</Link>. Free, fast, preview before download.</li>
-              <li><strong>Want sheet music?</strong> MuseScore converts audio directly to notation.</li>
-              <li><strong>Converting a specific instrument?</strong> Klangio's instrument models help.</li>
+              <li><strong>Converting a piano recording?</strong> Try <Link href="/piano-to-midi">MP3toMIDI's piano extraction</Link> — optimized for keyboard instruments.</li>
+              <li><strong>Have a WAV file?</strong> <Link href="/wav-to-midi">MP3toMIDI's WAV converter</Link> handles lossless formats directly.</li>
+              <li><strong>Working with any audio format?</strong> <Link href="/audio-to-midi">MP3toMIDI supports 9 formats</Link> including FLAC, OGG, M4A.</li>
               <li><strong>No installation possible?</strong> MP3toMIDI or Basic Pitch — both run in your browser.</li>
             </ul>
             <p>
