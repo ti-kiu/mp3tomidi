@@ -21,34 +21,72 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: "alternatives-to-basic-pitch",
+    title: "Alternatives to Basic Pitch: Best MP3 to MIDI Converters 2026",
+    excerpt: "We tested 6 MP3 to MIDI converters on accuracy, speed, and ease of use. Here's what actually works.",
+    date: "September 2026",
+    tag: "ROUNDUP",
+  },
+  {
+    slug: "best-free-midi-converters",
+    title: "Top 5 Free MIDI Converters: An Honest Comparison",
+    excerpt: "We tested every free MIDI converter we could find. Here's how they compare on accuracy, speed, privacy, and file format support.",
+    date: "September 2026",
+    tag: "ROUNDUP",
+  },
+  {
+    slug: "mp3-vs-wav-midi",
+    title: "MP3 vs WAV: Which Format Gives Better MIDI Conversion Results?",
+    excerpt: "We tested both formats on the same 20 tracks and measured the difference. The results might surprise you.",
+    date: "September 2026",
+    tag: "COMPARISON",
+  },
+  {
+    slug: "extract-piano-notes",
+    title: "How to Extract Piano Notes from Any Song (Free Method)",
+    excerpt: "Step-by-step guide to extracting piano notes from any song using AI. Works with MP3, WAV, and more.",
+    date: "September 2026",
+    tag: "TUTORIAL",
+  },
+  {
+    slug: "youtube-to-midi-guide",
+    title: "How to Convert YouTube Videos to MIDI for Free",
+    excerpt: "Learn how to convert YouTube videos to MIDI files for free. Extract melodies, chords, and notes from any YouTube video.",
+    date: "September 2026",
+    tag: "TUTORIAL",
+  },
+  {
+    slug: "what-is-midi-file",
+    title: "What is a MIDI File? A Complete Guide",
+    excerpt: "Everything you need to know about MIDI files — what they are, how they work, and why musicians still use them in 2026.",
+    date: "September 2026",
+    tag: "GUIDE",
+  },
+  {
     slug: "mp3-to-midi-guide",
     title: "How to Convert MP3 to MIDI: A Complete Walkthrough",
-    excerpt:
-      "Step-by-step tutorial on converting MP3 files to MIDI format. Covers how pitch detection works, what to expect from the results, and how to use MIDI in your DAW.",
+    excerpt: "Step-by-step tutorial on converting MP3 files to MIDI format. Covers how pitch detection works and what to expect.",
     date: "July 2026",
     tag: "GUIDE",
   },
   {
     slug: "best-converters",
     title: "Best MP3 to MIDI Converters in 2026: We Tested Them All",
-    excerpt:
-      "We tested every major MP3 to MIDI converter and ranked them by accuracy, speed, privacy, and price.",
+    excerpt: "We tested every major MP3 to MIDI converter and ranked them by accuracy, speed, privacy, and price.",
     date: "July 2026",
     tag: "ROUNDUP",
   },
   {
     slug: "mp3-to-midi-soundfont",
     title: "MP3 to MIDI with SoundFont: Getting Better Playback Quality",
-    excerpt:
-      "After converting MP3 to MIDI, use SoundFonts to make the output sound like a real instrument.",
+    excerpt: "After converting MP3 to MIDI, use SoundFonts to make the output sound like a real instrument.",
     date: "July 2026",
     tag: "TUTORIAL",
   },
   {
     slug: "midi-to-mp3-guide",
     title: "How to Convert MIDI to MP3: 3 Methods That Actually Work",
-    excerpt:
-      "Turn your MIDI files into playable audio using DAWs, SoundFont renderers, or online tools.",
+    excerpt: "Turn your MIDI files into playable audio using DAWs, SoundFont renderers, or online tools.",
     date: "July 2026",
     tag: "GUIDE",
   },

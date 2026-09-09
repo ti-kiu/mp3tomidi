@@ -178,7 +178,7 @@ export default function Article() {
 
             <h3>Step 5: Edit and practice</h3>
             <p>
-              In your DAW or notation software, you can:
+              You can import the MIDI into any <Link href="/">MIDI-compatible software</Link>. In your DAW or notation software, you can:
             </p>
             <ul>
               <li>Fix any wrong notes (click and drag)</li>

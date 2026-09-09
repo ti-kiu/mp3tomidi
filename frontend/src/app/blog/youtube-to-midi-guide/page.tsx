@@ -174,7 +174,7 @@ export default function Article() {
 
             <h3>Step 3: Use the MIDI file</h3>
             <p>
-              The downloaded .mid file works in any DAW — Ableton, FL Studio, Logic Pro,
+              The downloaded <Link href="/mp3-to-midi">.mid MIDI file</Link> works in any DAW — Ableton, FL Studio, Logic Pro,
               GarageBand, Cubase, or Reaper. Import it and you'll see every note on a piano roll.
               From there you can:
             </p>
@@ -183,7 +183,7 @@ export default function Article() {
               <li>Edit wrong notes</li>
               <li>Adjust timing with quantize</li>
               <li>Slow down the tempo for practice</li>
-              <li>Export as sheet music (import into MuseScore or Finale)</li>
+              <li>Export as <Link href="/music-to-midi">sheet music</Link> (import into MuseScore or Finale)</li>
             </ul>
 
             <h2 id="tips">Best Practices for YouTube to MIDI</h2>
