@@ -8,6 +8,7 @@ import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { SoftwareApplicationSchema, WebPageSchema } from "@/components/Schema";
+import { BreadcrumbListSchema } from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
   title: "MP3 to MIDI Converter Online — Free, No Upload | MP3toMIDI",
@@ -38,6 +39,12 @@ export const metadata: Metadata = {
 export default function Mp3ToMidiPage() {
   return (
     <>
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", url: "https://mp3tomidi.vip" },
+          { name: "MP3 to MIDI", url: "https://mp3tomidi.vip/mp3-to-midi" },
+        ]}
+      />
       <SoftwareApplicationSchema />
       <WebPageSchema
         title="MP3 to MIDI Converter Online — Free, No Upload"

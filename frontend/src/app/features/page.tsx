@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { WebPageSchema } from "@/components/Schema";
+import { BreadcrumbListSchema } from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
   title: "Features — AI Audio to MIDI | MP3toMIDI",
@@ -66,6 +67,12 @@ const features = [
 export default function FeaturesPage() {
   return (
     <>
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", url: "https://mp3tomidi.vip" },
+          { name: "Features", url: "https://mp3tomidi.vip/features" },
+        ]}
+      />
       <WebPageSchema
         title="Features — AI Audio to MIDI"
         description="Explore MP3toMIDI features: AI-powered transcription, browser-side processing, MIDI preview, multi-format support, and complete privacy."

@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import { WebPageSchema, FAQPageSchema } from "@/components/Schema";
+import { BreadcrumbListSchema } from "@/components/SchemaOrg";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions — MP3toMIDI",
@@ -22,6 +23,12 @@ export const metadata: Metadata = {
 export default function FAQPage() {
   return (
     <>
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", url: "https://mp3tomidi.vip" },
+          { name: "FAQ", url: "https://mp3tomidi.vip/faq" },
+        ]}
+      />
       <WebPageSchema
         title="Frequently Asked Questions — MP3toMIDI"
         description="Common questions about MP3toMIDI: accuracy, privacy, supported formats, and more."

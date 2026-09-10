@@ -6,6 +6,7 @@ import Features from "@/components/Features";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import { SoftwareApplicationSchema, FAQPageSchema, WebPageSchema } from "@/components/Schema";
+import { OrganizationSchema, WebSiteSchema, BreadcrumbListSchema } from "@/components/SchemaOrg";
 import Link from "next/link";
 
 function WhatIsMidi() {
@@ -68,6 +69,13 @@ function WhatIsMidi() {
 export default function Home() {
   return (
     <>
+      <OrganizationSchema />
+      <WebSiteSchema />
+      <BreadcrumbListSchema
+        items={[
+          { name: "Home", url: "https://mp3tomidi.vip" },
+        ]}
+      />
       <SoftwareApplicationSchema />
       <FAQPageSchema />
       <WebPageSchema
