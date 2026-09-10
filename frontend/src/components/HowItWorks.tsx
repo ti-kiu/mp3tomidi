@@ -45,6 +45,11 @@ export default function HowItWorks() {
           </div>
         ))}
       </div>
+
+      {/* Overview image */}
+      <div className="container" style={{ marginTop: 40, textAlign: "center" }}>
+        <img src="/steps-overview.svg" alt="Three steps to convert audio to MIDI" width="100%" style={{ maxWidth: 600, borderRadius: 16 }} />
+      </div>
     </section>
   );
 }

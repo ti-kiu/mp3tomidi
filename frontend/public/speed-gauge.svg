@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <rect width="500" height="300" rx="16" fill="#E6FAF7"/>
+  <!-- Speed gauge -->
+  <circle cx="250" cy="140" r="80" fill="none" stroke="#CCFBF1" stroke-width="16"/>
+  <circle cx="250" cy="140" r="80" fill="none" stroke="#0D9488" stroke-width="16" stroke-dasharray="350" stroke-dashoffset="70" stroke-linecap="round" transform="rotate(-90 250 140)"/>
+  <!-- Center text -->
+  <text x="250" y="130" font-family="Space Grotesk, sans-serif" font-size="42" font-weight="700" fill="#0D9488" text-anchor="middle">&lt;15s</text>
+  <text x="250" y="160" font-family="DM Sans, sans-serif" font-size="14" fill="#78716C" text-anchor="middle">per minute</text>
+  <!-- Progress bars below -->
+  <rect x="80" y="240" width="340" height="8" rx="4" fill="#CCFBF1"/>
+  <rect x="80" y="240" width="270" height="8" rx="4" fill="#0D9488"/>
+  <text x="250" y="270" font-family="DM Sans, sans-serif" font-size="12" fill="#78716C" text-anchor="middle">WebGL-accelerated · No upload · Private</text>
+</svg>

@@ -28,17 +28,7 @@ export default function Features() {
               </div>
             </div>
             <div className="feature-visual">
-              <div className="visual-notes">
-                <div className="note-bar" style={{ height: "75%", animationDelay: "0s", background: "#ea580c" }} />
-                <div className="note-bar" style={{ height: "45%", animationDelay: "0.15s", background: "#f97316" }} />
-                <div className="note-bar" style={{ height: "90%", animationDelay: "0.3s", background: "#ea580c" }} />
-                <div className="note-bar" style={{ height: "60%", animationDelay: "0.45s", background: "#fb923c" }} />
-                <div className="note-bar" style={{ height: "85%", animationDelay: "0.6s", background: "#ea580c" }} />
-                <div className="note-bar" style={{ height: "35%", animationDelay: "0.75s", background: "#f97316" }} />
-                <div className="note-bar" style={{ height: "70%", animationDelay: "0.9s", background: "#ea580c" }} />
-                <div className="note-bar" style={{ height: "50%", animationDelay: "1.05s", background: "#fb923c" }} />
-              </div>
-              <span className="visual-label">Real-time note detection</span>
+              <img src="/hero-conversion.svg" alt="Audio to MIDI conversion" width="260" height="auto" style={{ borderRadius: 18 }} />
             </div>
           </div>
 
@@ -72,11 +62,8 @@ export default function Features() {
               Standard MIDI files open directly in Ableton, FL Studio,
               Logic Pro, Cubase, and every other major production software.
             </p>
-            <div className="daw-list">
-              <span className="daw-chip" style={{ borderColor: "#fcd34d", background: "#fffbeb" }}>Ableton</span>
-              <span className="daw-chip" style={{ borderColor: "#fcd34d", background: "#fffbeb" }}>FL Studio</span>
-              <span className="daw-chip" style={{ borderColor: "#fcd34d", background: "#fffbeb" }}>Logic Pro</span>
-              <span className="daw-chip" style={{ borderColor: "#fcd34d", background: "#fffbeb" }}>Cubase</span>
+            <div style={{ marginTop: 16, textAlign: "center" }}>
+              <img src="/daw-import.svg" alt="DAW compatibility" width="100%" style={{ maxWidth: 300, borderRadius: 12 }} />
             </div>
           </div>
 
