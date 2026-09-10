@@ -7,27 +7,10 @@ export default function Features() {
           <h2>Built for producers who move fast.</h2>
         </div>
 
-        <div className="features-grid">
-          {/* Large card — AI Transcription (orange) */}
-          <div className="card feature-large" style={{ background: "linear-gradient(135deg, #fff7ed 0%, #fff1e6 100%)" }}>
-            <div className="feature-large-content">
-              <span className="feature-tag" style={{ background: "#ffedd5", color: "#c2410c" }}>AI TRANSCRIPTION</span>
-              <div className="feature-icon" style={{ background: "#ea580c" }}>
-                <span className="material-icons-outlined" style={{ color: "#fff" }}>psychology</span>
-              </div>
-              <h3>Neural Audio Extraction</h3>
-              <p>
-                Deep-learning models trained on 500,000+ hours of professional
-                multi-track recordings. Identifies melodies, chords, and rhythms
-                with 99.4% accuracy — from clean solos to dense mixes.
-              </p>
-              <div className="chip-row">
-                <span className="chip" style={{ background: "#ffedd5", color: "#9a3412" }}>99.4% Note Accuracy</span>
-                <span className="chip" style={{ background: "#ffedd5", color: "#9a3412" }}>Instrument Separation</span>
-                <span className="chip" style={{ background: "#ffedd5", color: "#9a3412" }}>Micro-timing Detection</span>
-              </div>
-            </div>
-            <div className="feature-visual">
+        {/* Feature 1: AI Transcription — image left, text right */}
+        <div className="feature-showcase">
+          <div className="feature-showcase-visual">
+            <div className="feature-visual-card">
               <div className="visual-notes">
                 <div className="note-bar" style={{ height: "75%", animationDelay: "0s", background: "#ea580c" }} />
                 <div className="note-bar" style={{ height: "45%", animationDelay: "0.15s", background: "#f97316" }} />
@@ -41,9 +24,40 @@ export default function Features() {
               <span className="visual-label">Real-time note detection</span>
             </div>
           </div>
+          <div className="feature-showcase-content">
+            <span className="feature-tag" style={{ background: "#ffedd5", color: "#c2410c" }}>AI TRANSCRIPTION</span>
+            <div className="feature-icon" style={{ background: "#ea580c" }}>
+              <span className="material-icons-outlined" style={{ color: "#fff" }}>psychology</span>
+            </div>
+            <h3>Neural Audio Extraction</h3>
+            <p>
+              Deep-learning models trained on 500,000+ hours of professional
+              multi-track recordings. Identifies melodies, chords, and rhythms
+              with 99.4% accuracy — from clean solos to dense mixes.
+            </p>
+            <div className="chip-row">
+              <span className="chip" style={{ background: "#ffedd5", color: "#9a3412" }}>99.4% Note Accuracy</span>
+              <span className="chip" style={{ background: "#ffedd5", color: "#9a3412" }}>Instrument Separation</span>
+              <span className="chip" style={{ background: "#ffedd5", color: "#9a3412" }}>Micro-timing Detection</span>
+            </div>
+          </div>
+        </div>
 
-          {/* Speed card (teal) */}
-          <div className="card feature-speed" style={{ background: "linear-gradient(160deg, #e6faf7 0%, #ccfbf1 100%)" }}>
+        {/* Feature 2: Speed — text left, image right */}
+        <div className="feature-showcase feature-showcase-reverse">
+          <div className="feature-showcase-visual">
+            <div className="feature-visual-card speed-card">
+              <div className="speed-stat" style={{ background: "#e0f5f1" }}>
+                <span className="speed-number" style={{ color: "#0d9488" }}>&lt;15s</span>
+                <span className="speed-label">per minute of audio</span>
+              </div>
+              <div className="speed-bar">
+                <div className="speed-bar-fill" style={{ width: "85%", background: "#0d9488" }} />
+              </div>
+              <span className="visual-label">Processing speed</span>
+            </div>
+          </div>
+          <div className="feature-showcase-content">
             <span className="feature-tag" style={{ background: "#ccfbf1", color: "#0d9488" }}>SPEED</span>
             <div className="feature-icon" style={{ background: "#0d9488" }}>
               <span className="material-icons-outlined" style={{ color: "#fff" }}>speed</span>
@@ -51,18 +65,31 @@ export default function Features() {
             <h3>Instant Processing</h3>
             <p>
               MIDI output in less than 15 seconds per minute of audio.
-              No queues, no server uploads, no waiting.
+              No queues, no server uploads, no waiting. Your audio is decoded
+              and transcribed locally using WebGL-accelerated inference.
             </p>
-            <div className="speed-stat" style={{ background: "#e0f5f1" }}>
-              <span className="speed-number" style={{ color: "#0d9488" }}>&lt;15s</span>
-              <span className="speed-label">per minute of audio</span>
+            <div className="chip-row">
+              <span className="chip" style={{ background: "#ccfbf1", color: "#0d7377" }}>WebGL Accelerated</span>
+              <span className="chip" style={{ background: "#ccfbf1", color: "#0d7377" }}>No Upload Required</span>
+              <span className="chip" style={{ background: "#ccfbf1", color: "#0d7377" }}>Real-time Progress</span>
             </div>
           </div>
         </div>
 
-        <div className="feature-row">
-          {/* Compatibility card (amber) */}
-          <div className="card" style={{ background: "linear-gradient(160deg, #fef3c7 0%, #fef9e7 100%)" }}>
+        {/* Feature 3: Compatibility — image left, text right */}
+        <div className="feature-showcase">
+          <div className="feature-showcase-visual">
+            <div className="feature-visual-card daw-card">
+              <div className="daw-icons">
+                <span className="daw-icon">Ableton</span>
+                <span className="daw-icon">FL Studio</span>
+                <span className="daw-icon">Logic Pro</span>
+                <span className="daw-icon">Cubase</span>
+              </div>
+              <span className="visual-label">Works with all major DAWs</span>
+            </div>
+          </div>
+          <div className="feature-showcase-content">
             <span className="feature-tag" style={{ background: "#fef3c7", color: "#b45309" }}>COMPATIBILITY</span>
             <div className="feature-icon" style={{ background: "#d97706" }}>
               <span className="material-icons-outlined" style={{ color: "#fff" }}>devices</span>
@@ -71,6 +98,7 @@ export default function Features() {
             <p>
               Standard MIDI files open directly in Ableton, FL Studio,
               Logic Pro, Cubase, and every other major production software.
+              No conversion needed — just drag and drop.
             </p>
             <div className="daw-list">
               <span className="daw-chip" style={{ borderColor: "#fcd34d", background: "#fffbeb" }}>Ableton</span>
@@ -79,9 +107,33 @@ export default function Features() {
               <span className="daw-chip" style={{ borderColor: "#fcd34d", background: "#fffbeb" }}>Cubase</span>
             </div>
           </div>
+        </div>
 
-          {/* Privacy card (rose) */}
-          <div className="card feature-privacy" style={{ background: "linear-gradient(160deg, #ffe4e6 0%, #fff1f2 100%)" }}>
+        {/* Feature 4: Privacy — text left, image right */}
+        <div className="feature-showcase feature-showcase-reverse">
+          <div className="feature-showcase-visual">
+            <div className="feature-visual-card privacy-card">
+              <div className="privacy-visual">
+                <span className="material-icons-outlined" style={{ fontSize: 48, color: "#e11d48" }}>lock</span>
+                <div className="privacy-badges">
+                  <span className="privacy-badge">
+                    <span className="material-icons-outlined" style={{ color: "#e11d48" }}>check_circle</span>
+                    No server upload
+                  </span>
+                  <span className="privacy-badge">
+                    <span className="material-icons-outlined" style={{ color: "#e11d48" }}>check_circle</span>
+                    No data collection
+                  </span>
+                  <span className="privacy-badge">
+                    <span className="material-icons-outlined" style={{ color: "#e11d48" }}>check_circle</span>
+                    GDPR compliant
+                  </span>
+                </div>
+              </div>
+              <span className="visual-label">100% client-side processing</span>
+            </div>
+          </div>
+          <div className="feature-showcase-content">
             <span className="feature-tag" style={{ background: "#ffe4e6", color: "#e11d48" }}>PRIVACY</span>
             <div className="feature-icon" style={{ background: "#e11d48" }}>
               <span className="material-icons-outlined" style={{ color: "#fff" }}>lock</span>
@@ -90,20 +142,12 @@ export default function Features() {
             <p>
               All processing happens in your browser using WebAssembly.
               We never upload, store, or see your files. 100% private.
+              No account required, no tracking of your content.
             </p>
-            <div className="privacy-badges">
-              <span className="privacy-badge">
-                <span className="material-icons-outlined" style={{ color: "#e11d48" }}>check_circle</span>
-                No server upload
-              </span>
-              <span className="privacy-badge">
-                <span className="material-icons-outlined" style={{ color: "#e11d48" }}>check_circle</span>
-                No data collection
-              </span>
-              <span className="privacy-badge">
-                <span className="material-icons-outlined" style={{ color: "#e11d48" }}>check_circle</span>
-                GDPR compliant
-              </span>
+            <div className="chip-row">
+              <span className="chip" style={{ background: "#ffe4e6", color: "#be123c" }}>100% Client-Side</span>
+              <span className="chip" style={{ background: "#ffe4e6", color: "#be123c" }}>No Account Needed</span>
+              <span className="chip" style={{ background: "#ffe4e6", color: "#be123c" }}>Zero Data Collection</span>
             </div>
           </div>
         </div>
