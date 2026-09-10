@@ -11,17 +11,7 @@ export default function Features() {
         <div className="feature-showcase">
           <div className="feature-showcase-visual">
             <div className="feature-visual-card">
-              <div className="visual-notes">
-                <div className="note-bar" style={{ height: "75%", animationDelay: "0s", background: "#ea580c" }} />
-                <div className="note-bar" style={{ height: "45%", animationDelay: "0.15s", background: "#f97316" }} />
-                <div className="note-bar" style={{ height: "90%", animationDelay: "0.3s", background: "#ea580c" }} />
-                <div className="note-bar" style={{ height: "60%", animationDelay: "0.45s", background: "#fb923c" }} />
-                <div className="note-bar" style={{ height: "85%", animationDelay: "0.6s", background: "#ea580c" }} />
-                <div className="note-bar" style={{ height: "35%", animationDelay: "0.75s", background: "#f97316" }} />
-                <div className="note-bar" style={{ height: "70%", animationDelay: "0.9s", background: "#ea580c" }} />
-                <div className="note-bar" style={{ height: "50%", animationDelay: "1.05s", background: "#fb923c" }} />
-              </div>
-              <span className="visual-label">Real-time note detection</span>
+              <img src="/feature-ai-transcription.svg" alt="AI Transcription" width="100%" height="auto" />
             </div>
           </div>
           <div className="feature-showcase-content">
@@ -46,15 +36,8 @@ export default function Features() {
         {/* Feature 2: Speed — text left, image right */}
         <div className="feature-showcase feature-showcase-reverse">
           <div className="feature-showcase-visual">
-            <div className="feature-visual-card speed-card">
-              <div className="speed-stat" style={{ background: "#e0f5f1" }}>
-                <span className="speed-number" style={{ color: "#0d9488" }}>&lt;15s</span>
-                <span className="speed-label">per minute of audio</span>
-              </div>
-              <div className="speed-bar">
-                <div className="speed-bar-fill" style={{ width: "85%", background: "#0d9488" }} />
-              </div>
-              <span className="visual-label">Processing speed</span>
+            <div className="feature-visual-card">
+              <img src="/feature-speed.svg" alt="Instant Processing" width="100%" height="auto" />
             </div>
           </div>
           <div className="feature-showcase-content">
@@ -79,14 +62,8 @@ export default function Features() {
         {/* Feature 3: Compatibility — image left, text right */}
         <div className="feature-showcase">
           <div className="feature-showcase-visual">
-            <div className="feature-visual-card daw-card">
-              <div className="daw-icons">
-                <span className="daw-icon">Ableton</span>
-                <span className="daw-icon">FL Studio</span>
-                <span className="daw-icon">Logic Pro</span>
-                <span className="daw-icon">Cubase</span>
-              </div>
-              <span className="visual-label">Works with all major DAWs</span>
+            <div className="feature-visual-card">
+              <img src="/feature-compatibility.svg" alt="DAW Compatibility" width="100%" height="auto" />
             </div>
           </div>
           <div className="feature-showcase-content">
@@ -112,25 +89,8 @@ export default function Features() {
         {/* Feature 4: Privacy — text left, image right */}
         <div className="feature-showcase feature-showcase-reverse">
           <div className="feature-showcase-visual">
-            <div className="feature-visual-card privacy-card">
-              <div className="privacy-visual">
-                <span className="material-icons-outlined" style={{ fontSize: 48, color: "#e11d48" }}>lock</span>
-                <div className="privacy-badges">
-                  <span className="privacy-badge">
-                    <span className="material-icons-outlined" style={{ color: "#e11d48" }}>check_circle</span>
-                    No server upload
-                  </span>
-                  <span className="privacy-badge">
-                    <span className="material-icons-outlined" style={{ color: "#e11d48" }}>check_circle</span>
-                    No data collection
-                  </span>
-                  <span className="privacy-badge">
-                    <span className="material-icons-outlined" style={{ color: "#e11d48" }}>check_circle</span>
-                    GDPR compliant
-                  </span>
-                </div>
-              </div>
-              <span className="visual-label">100% client-side processing</span>
+            <div className="feature-visual-card">
+              <img src="/feature-privacy.svg" alt="Privacy Protection" width="100%" height="auto" />
             </div>
           </div>
           <div className="feature-showcase-content">
