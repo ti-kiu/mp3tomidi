@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDF8F3"/>
+      <stop offset="100%" style="stop-color:#F5EDE4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg)"/>
+  <!-- Browser window frame -->
+  <rect x="40" y="30" width="720" height="340" rx="12" fill="#fff" stroke="#E5DDD4" stroke-width="2"/>
+  <!-- Title bar -->
+  <rect x="40" y="30" width="720" height="44" rx="12" fill="#F5EDE4"/>
+  <rect x="40" y="62" width="720" height="12" fill="#F5EDE4"/>
+  <circle cx="64" cy="52" r="6" fill="#E8604C"/>
+  <circle cx="84" cy="52" r="6" fill="#F0C040"/>
+  <circle cx="104" cy="52" r="6" fill="#62C554"/>
+  <!-- URL bar -->
+  <rect x="130" y="42" width="400" height="22" rx="11" fill="#fff" stroke="#D4C8BC" stroke-width="1"/>
+  <text x="330" y="57" text-anchor="middle" font-family="system-ui" font-size="11" fill="#8B7355">mp3tomidi.vip</text>
+  <!-- Upload area -->
+  <rect x="200" y="100" width="400" height="120" rx="16" fill="#FDF8F3" stroke="#EA580C" stroke-width="2" stroke-dasharray="8,6"/>
+  <text x="400" y="148" text-anchor="middle" font-family="system-ui" font-size="20" fill="#EA580C" font-weight="700">Drop your MP3 here</text>
+  <text x="400" y="178" text-anchor="middle" font-family="system-ui" font-size="14" fill="#8B7355">or click to browse files</text>
+  <!-- Piano roll preview -->
+  <rect x="80" y="250" width="640" height="100" rx="8" fill="#2D2319" opacity="0.9"/>
+  <!-- Piano keys on left -->
+  <rect x="80" y="250" width="32" height="100" rx="8" fill="#1A1510"/>
+  <!-- Grid lines -->
+  <line x1="112" y1="250" x2="720" y2="250" stroke="#3A2E22" stroke-width="0.5"/>
+  <line x1="112" y1="268" x2="720" y2="268" stroke="#3A2E22" stroke-width="0.5"/>
+  <line x1="112" y1="286" x2="720" y2="286" stroke="#3A2E22" stroke-width="0.5"/>
+  <line x1="112" y1="304" x2="720" y2="304" stroke="#3A2E22" stroke-width="0.5"/>
+  <line x1="112" y1="322" x2="720" y2="322" stroke="#3A2E22" stroke-width="0.5"/>
+  <line x1="112" y1="340" x2="720" y2="340" stroke="#3A2E22" stroke-width="0.5"/>
+  <!-- MIDI notes -->
+  <rect x="130" y="262" width="60" height="14" rx="3" fill="#EA580C"/>
+  <rect x="210" y="280" width="45" height="14" rx="3" fill="#F97316"/>
+  <rect x="275" y="262" width="35" height="14" rx="3" fill="#EA580C"/>
+  <rect x="320" y="298" width="80" height="14" rx="3" fill="#F97316"/>
+  <rect x="420" y="262" width="50" height="14" rx="3" fill="#EA580C"/>
+  <rect x="490" y="316" width="65" height="14" rx="3" fill="#F97316"/>
+  <rect x="570" y="280" width="40" height="14" rx="3" fill="#EA580C"/>
+  <rect x="620" y="262" width="55" height="14" rx="3" fill="#F97316"/>
+  <rect x="180" y="316" width="50" height="14" rx="3" fill="#C8B8A8"/>
+  <rect x="360" y="262" width="40" height="14" rx="3" fill="#C8B8A8"/>
+  <rect x="530" y="298" width="45" height="14" rx="3" fill="#C8B8A8"/>
+  <!-- Convert button -->
+  <rect x="310" y="360" width="180" height="36" rx="18" fill="#EA580C"/>
+  <text x="400" y="383" text-anchor="middle" font-family="system-ui" font-size="15" fill="#fff" font-weight="600">Convert to MIDI</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDF8F3"/>
+      <stop offset="100%" style="stop-color:#F5EDE4"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#EA580C"/>
+      <stop offset="100%" style="stop-color:#F97316"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Decorative -->
+  <circle cx="1100" cy="530" r="200" fill="#EA580C" opacity="0.05"/>
+  <circle cx="100" cy="80" r="120" fill="#C8B8A8" opacity="0.08"/>
+  <!-- Trophy icon -->
+  <g transform="translate(600,140)">
+    <path d="M-30 0 L-25 -35 Q0 -50 25 -35 L30 0 Q0 15 -30 0Z" fill="#F97316" opacity="0.2"/>
+    <path d="M-20 0 L-16 -25 Q0 -35 16 -25 L20 0 Q0 10 -20 0Z" fill="#EA580C"/>
+    <rect x="-4" y="5" width="8" height="15" rx="2" fill="#EA580C"/>
+    <rect x="-12" y="18" width="24" height="6" rx="3" fill="#C8B8A8"/>
+  </g>
+  <!-- Title -->
+  <text x="600" y="250" text-anchor="middle" font-family="system-ui, sans-serif" font-size="52" fill="#2D2319" font-weight="800">Best Free MIDI</text>
+  <text x="600" y="312" text-anchor="middle" font-family="system-ui, sans-serif" font-size="52" fill="#2D2319" font-weight="800">Converters in 2026</text>
+  <!-- Subtitle -->
+  <text x="600" y="370" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" fill="#8B7355">Tested & compared — accuracy, speed, and ease of use</text>
+  <!-- Tool cards -->
+  <g transform="translate(600,420)">
+    <rect x="-340" y="0" width="160" height="50" rx="10" fill="#fff" stroke="#E5DDD4" stroke-width="1.5"/>
+    <text x="-260" y="32" text-anchor="middle" font-family="system-ui" font-size="14" fill="#8B7355">Basic Pitch</text>
+    <rect x="-155" y="0" width="160" height="50" rx="10" fill="#fff" stroke="#E5DDD4" stroke-width="1.5"/>
+    <text x="-75" y="32" text-anchor="middle" font-family="system-ui" font-size="14" fill="#8B7355">Klangio</text>
+    <rect x="30" y="0" width="160" height="50" rx="10" fill="#EA580C"/>
+    <text x="110" y="32" text-anchor="middle" font-family="system-ui" font-size="14" fill="#fff" font-weight="600">MP3toMIDI</text>
+    <rect x="180" y="0" width="160" height="50" rx="10" fill="#fff" stroke="#E5DDD4" stroke-width="1.5"/>
+    <text x="260" y="32" text-anchor="middle" font-family="system-ui" font-size="14" fill="#8B7355">TuneTranscriber</text>
+  </g>
+  <!-- Winner badge -->
+  <circle cx="820" cy="395" r="18" fill="#EA580C"/>
+  <text x="820" y="401" text-anchor="middle" font-family="system-ui" font-size="14" fill="#fff" font-weight="700">★</text>
+  <!-- Brand -->
+  <rect x="490" y="530" width="220" height="44" rx="22" fill="url(#accent)"/>
+  <text x="600" y="558" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#fff" font-weight="600">mp3tomidi.vip</text>
+</svg>

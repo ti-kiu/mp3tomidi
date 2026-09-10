@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#FDF8F3"/>
+  <text x="400" y="50" font-family="Space Grotesk, Arial" font-size="24" font-weight="700" fill="#1C1917" text-anchor="middle">Conversion Results</text>
+  <!-- Stats cards -->
+  <rect x="40" y="90" width="160" height="100" rx="12" fill="#fff" stroke="#E7E5E4" stroke-width="1"/>
+  <text x="120" y="130" font-family="Space Grotesk, Arial" font-size="36" font-weight="700" fill="#EA580C" text-anchor="middle">99.4%</text>
+  <text x="120" y="160" font-family="DM Sans, Arial" font-size="13" fill="#78716C" text-anchor="middle">Note Accuracy</text>
+  <rect x="220" y="90" width="160" height="100" rx="12" fill="#fff" stroke="#E7E5E4" stroke-width="1"/>
+  <text x="300" y="130" font-family="Space Grotesk, Arial" font-size="36" font-weight="700" fill="#0D9488" text-anchor="middle">&lt;15s</text>
+  <text x="300" y="160" font-family="DM Sans, Arial" font-size="13" fill="#78716C" text-anchor="middle">Processing Time</text>
+  <rect x="400" y="90" width="160" height="100" rx="12" fill="#fff" stroke="#E7E5E4" stroke-width="1"/>
+  <text x="480" y="130" font-family="Space Grotesk, Arial" font-size="36" font-weight="700" fill="#D97706" text-anchor="middle">100%</text>
+  <text x="480" y="160" font-family="DM Sans, Arial" font-size="13" fill="#78716C" text-anchor="middle">Private</text>
+  <rect x="580" y="90" width="180" height="100" rx="12" fill="#fff" stroke="#E7E5E4" stroke-width="1"/>
+  <text x="670" y="130" font-family="Space Grotesk, Arial" font-size="36" font-weight="700" fill="#E11D48" text-anchor="middle">0</text>
+  <text x="670" y="160" font-family="DM Sans, Arial" font-size="13" fill="#78716C" text-anchor="middle">Files Uploaded</text>
+  <!-- Bottom text -->
+  <text x="400" y="250" font-family="DM Sans, Arial" font-size="16" fill="#1C1917" text-anchor="middle">Works with any YouTube video containing music</text>
+  <text x="400" y="280" font-family="DM Sans, Arial" font-size="14" fill="#78716C" text-anchor="middle">Piano covers, guitar solos, full songs, and more</text>
+</svg>

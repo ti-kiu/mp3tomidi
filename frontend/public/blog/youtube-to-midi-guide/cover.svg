@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" rx="0" fill="#FDF8F3"/>
+  <rect x="0" y="0" width="1200" height="6" fill="#EA580C"/>
+  <rect x="0" y="624" width="1200" height="6" fill="#EA580C"/>
+  <text x="600" y="260" font-family="Space Grotesk, Arial" font-size="56" font-weight="700" fill="#1C1917" text-anchor="middle">YouTube to MIDI</text>
+  <text x="600" y="320" font-family="DM Sans, Arial" font-size="28" fill="#78716C" text-anchor="middle">The Complete Guide</text>
+  <text x="600" y="380" font-family="DM Sans, Arial" font-size="18" fill="#C8B8A8" text-anchor="middle">mp3tomidi.vip</text>
+</svg>

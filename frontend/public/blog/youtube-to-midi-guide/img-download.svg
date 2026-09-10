@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" rx="12" fill="#FDF8F3"/>
+  <text x="400" y="50" font-family="Space Grotesk, Arial" font-size="24" font-weight="700" fill="#1C1917" text-anchor="middle">Download Audio from YouTube</text>
+  <!-- YouTube-style interface -->
+  <rect x="40" y="80" width="720" height="280" rx="12" fill="#fff" stroke="#E7E5E4" stroke-width="1"/>
+  <!-- URL bar -->
+  <rect x="60" y="100" width="500" height="40" rx="8" fill="#F5F5F4"/>
+  <text x="80" y="126" font-family="JetBrains Mono, monospace" font-size="13" fill="#78716C">https://youtube.com/watch?v=...</text>
+  <rect x="580" y="100" width="160" height="40" rx="8" fill="#EA580C"/>
+  <text x="660" y="126" font-family="DM Sans, Arial" font-size="14" font-weight="600" fill="#fff" text-anchor="middle">Extract Audio</text>
+  <!-- Progress -->
+  <rect x="60" y="170" width="680" height="8" rx="4" fill="#F5F5F4"/>
+  <rect x="60" y="170" width="544" height="8" rx="4" fill="#EA580C"/>
+  <text x="400" y="200" font-family="DM Sans, Arial" font-size="13" fill="#78716C" text-anchor="middle">Audio extracted: piano-cover.mp3 (3.2 MB)</text>
+  <!-- Download button -->
+  <rect x="300" y="230" width="200" height="44" rx="12" fill="#0D9488"/>
+  <text x="400" y="258" font-family="DM Sans, Arial" font-size="15" font-weight="600" fill="#fff" text-anchor="middle">Download MP3</text>
+  <text x="400" y="320" font-family="DM Sans, Arial" font-size="12" fill="#C8B8A8" text-anchor="middle">Audio is processed locally in your browser</text>
+</svg>

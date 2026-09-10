@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FDF8F3"/>
+      <stop offset="100%" style="stop-color:#F5EDE4"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#EA580C"/>
+      <stop offset="100%" style="stop-color:#F97316"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Decorative circles -->
+  <circle cx="100" cy="530" r="180" fill="#EA580C" opacity="0.06"/>
+  <circle cx="1100" cy="100" r="140" fill="#EA580C" opacity="0.05"/>
+  <!-- Icon: conversion arrows -->
+  <g transform="translate(600,180)">
+    <rect x="-120" y="-50" width="80" height="100" rx="12" fill="#C8B8A8" opacity="0.3"/>
+    <text x="-80" y="0" text-anchor="middle" font-family="system-ui" font-size="28" fill="#C8B8A8" font-weight="600">MP3</text>
+    <path d="M-20 0 L20 0 M10 -12 L22 0 L10 12" stroke="#EA580C" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M20 0 L60 0 M50 -12 L62 0 L50 12" stroke="#EA580C" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <rect x="40" y="-50" width="80" height="100" rx="12" fill="#EA580C" opacity="0.15"/>
+    <text x="80" y="0" text-anchor="middle" font-family="system-ui" font-size="28" fill="#EA580C" font-weight="700">MIDI</text>
+  </g>
+  <!-- Title -->
+  <text x="600" y="340" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" fill="#2D2319" font-weight="800">5 Better Alternatives</text>
+  <text x="600" y="400" text-anchor="middle" font-family="system-ui, sans-serif" font-size="48" fill="#2D2319" font-weight="800">to Basic Pitch</text>
+  <!-- Subtitle -->
+  <text x="600" y="460" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" fill="#8B7355">Free & online — convert MP3 to MIDI with better accuracy</text>
+  <!-- Brand -->
+  <rect x="490" y="520" width="220" height="44" rx="22" fill="url(#accent)"/>
+  <text x="600" y="548" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#fff" font-weight="600">mp3tomidi.vip</text>
+</svg>

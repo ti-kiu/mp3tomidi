@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#FDF8F3"/>
+  <rect x="20" y="20" width="760" height="360" rx="16" fill="white" stroke="#C8B8A8" stroke-width="1.5"/>
+  <!-- Title -->
+  <text x="400" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#2D2319">MP3 vs WAV: Waveform Comparison</text>
+  <!-- MP3 waveform -->
+  <text x="400" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#EA580C">MP3 — Compressed (detail lost)</text>
+  <g transform="translate(60, 110)">
+    <rect x="0" y="0" width="680" height="80" rx="8" fill="#FEF3E2" stroke="#C8B8A8" stroke-width="1"/>
+    <path d="M10,40 C30,25 50,55 70,35 C90,20 110,58 130,38 C150,22 170,55 190,40 C210,28 230,52 250,35 C270,22 290,55 310,38 C330,25 350,52 370,40 C390,30 410,50 430,35 C450,25 470,52 490,38 C510,28 530,50 550,35 C570,25 590,52 610,40 C630,30 650,48 670,38" fill="none" stroke="#EA580C" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <!-- WAV waveform -->
+  <text x="400" y="225" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#1A7A3A">WAV — Uncompressed (full detail)</text>
+  <g transform="translate(60, 235)">
+    <rect x="0" y="0" width="680" height="80" rx="8" fill="#F0F7F3" stroke="#C8B8A8" stroke-width="1"/>
+    <path d="M10,40 L20,20 L25,55 L30,15 L35,60 L40,10 L45,65 L50,18 L55,58 L60,12 L65,62 L70,20 L75,55 L80,15 L85,60 L90,10 L95,65 L100,18 L105,58 L110,12 L115,62 L120,22 L125,52 L130,15 L135,58 L140,10 L145,65 L150,20 L155,55 L160,12 L165,62 L170,18 L175,55 L180,15 L185,60 L190,10 L195,65 L200,20 L205,55 L210,12 L215,62 L220,18 L225,55 L230,15 L235,58 L240,10 L245,65 L250,22 L255,52 L260,15 L265,58 L270,12 L275,62 L280,18 L285,55 L290,15 L295,60 L300,10 L305,65 L310,20 L315,55 L320,12 L325,62 L330,18 L335,55 L340,15 L345,58 L350,10 L355,65 L360,22 L365,52 L370,15 L375,58 L380,12 L385,62 L390,18 L395,55 L400,15 L405,60 L410,10 L415,65 L420,20 L425,55 L430,12 L435,62 L440,18 L445,55 L450,15 L455,58 L460,10 L465,65 L470,22 L475,52 L480,15 L485,58 L490,12 L495,62 L500,18 L505,55 L510,15 L515,60 L520,10 L525,65 L530,20 L535,55 L540,12 L545,62 L550,18 L555,55 L560,15 L565,58 L570,10 L575,65 L580,22 L585,52 L590,15 L595,58 L600,12 L605,62 L610,18 L615,55 L620,15 L625,60 L630,10 L635,65 L640,20 L645,55 L650,12 L655,62 L660,18 L665,55 L670,15" fill="none" stroke="#1A7A3A" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <!-- Labels -->
+  <text x="400" y="345" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#7A6B5D">Higher detail → more accurate note detection → better MIDI</text>
+  <text x="400" y="370" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#C8B8A8">mp3tomidi.vip</text>
+</svg>

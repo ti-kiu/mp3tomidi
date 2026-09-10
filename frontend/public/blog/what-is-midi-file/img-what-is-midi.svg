@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#FDF8F3"/>
+  <rect x="20" y="20" width="760" height="360" rx="16" fill="white" stroke="#C8B8A8" stroke-width="1.5"/>
+  <text x="400" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#2D2319">MIDI = Instructions &nbsp; | &nbsp; Audio = Sound Waves</text>
+  <!-- MIDI side: instructions as code/notes -->
+  <rect x="50" y="85" width="330" height="280" rx="12" fill="#FEF3E2" stroke="#EA580C" stroke-width="1.5"/>
+  <text x="215" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#EA580C">MIDI File (.mid)</text>
+  <!-- Piano roll visualization -->
+  <g transform="translate(70, 130)">
+    <rect x="0" y="0" width="290" height="210" rx="8" fill="white" stroke="#C8B8A8" stroke-width="1"/>
+    <!-- Grid lines (horizontal = pitches, vertical = time) -->
+    <line x1="0" y1="42" x2="290" y2="42" stroke="#E8E0D8" stroke-width="0.5"/>
+    <line x1="0" y1="84" x2="290" y2="84" stroke="#E8E0D8" stroke-width="0.5"/>
+    <line x1="0" y1="126" x2="290" y2="126" stroke="#E8E0D8" stroke-width="0.5"/>
+    <line x1="0" y1="168" x2="290" y2="168" stroke="#E8E0D8" stroke-width="0.5"/>
+    <!-- Note blocks (like piano roll) -->
+    <rect x="10" y="60" width="40" height="16" rx="3" fill="#EA580C" opacity="0.9"/>
+    <rect x="60" y="45" width="35" height="16" rx="3" fill="#EA580C" opacity="0.8"/>
+    <rect x="105" y="75" width="50" height="16" rx="3" fill="#EA580C" opacity="0.9"/>
+    <rect x="165" y="55" width="30" height="16" rx="3" fill="#EA580C" opacity="0.85"/>
+    <rect x="205" y="90" width="45" height="16" rx="3" fill="#EA580C" opacity="0.9"/>
+    <rect x="10" y="100" width="60" height="16" rx="3" fill="#EA580C" opacity="0.7"/>
+    <rect x="80" y="115" width="35" height="16" rx="3" fill="#EA580C" opacity="0.8"/>
+    <rect x="130" y="100" width="40" height="16" rx="3" fill="#EA580C" opacity="0.85"/>
+    <rect x="180" y="120" width="50" height="16" rx="3" fill="#EA580C" opacity="0.75"/>
+    <rect x="10" y="150" width="45" height="16" rx="3" fill="#EA580C" opacity="0.7"/>
+    <rect x="70" y="140" width="30" height="16" rx="3" fill="#EA580C" opacity="0.8"/>
+    <rect x="115" y="155" width="55" height="16" rx="3" fill="#EA580C" opacity="0.85"/>
+    <rect x="185" y="145" width="40" height="16" rx="3" fill="#EA580C" opacity="0.75"/>
+    <!-- Labels -->
+    <text x="-3" y="15" font-family="system-ui, sans-serif" font-size="9" fill="#7A6B5D">C5</text>
+    <text x="-3" y="57" font-family="system-ui, sans-serif" font-size="9" fill="#7A6B5D">B4</text>
+    <text x="-3" y="99" font-family="system-ui, sans-serif" font-size="9" fill="#7A6B5D">G4</text>
+    <text x="-3" y="150" font-family="system-ui, sans-serif" font-size="9" fill="#7A6B5D">E4</text>
+  </g>
+  <!-- Arrow -->
+  <text x="400" y="230" text-anchor="middle" font-family="system-ui, sans-serif" font-size="36" fill="#C8B8A8">→</text>
+  <!-- Audio side: sound waves -->
+  <rect x="420" y="85" width="330" height="280" rx="12" fill="#F0F7F3" stroke="#1A7A3A" stroke-width="1.5"/>
+  <text x="585" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#1A7A3A">Audio File (.mp3)</text>
+  <!-- Waveform -->
+  <g transform="translate(440, 130)">
+    <rect x="0" y="0" width="290" height="210" rx="8" fill="white" stroke="#C8B8A8" stroke-width="1"/>
+    <path d="M10,105 L20,80 L25,125 L30,70 L35,135 L40,60 L45,140 L50,75 L55,128 L60,65 L65,138 L70,78 L75,122 L80,68 L85,135 L90,60 L95,142 L100,72 L105,130 L110,65 L115,138 L120,80 L125,120 L130,68 L135,135 L140,62 L145,140 L150,75 L155,128 L160,65 L165,138 L170,78 L175,122 L180,68 L185,135 L190,60 L195,142 L200,72 L205,130 L210,65 L215,138 L220,80 L225,120 L230,68 L235,135 L240,62 L245,140 L250,75 L255,128 L260,65 L265,138 L270,78 L275,122 L280,90" fill="none" stroke="#1A7A3A" stroke-width="2" stroke-linecap="round"/>
+    <!-- Center line -->
+    <line x1="10" y1="105" x2="280" y2="105" stroke="#C8B8A8" stroke-width="0.5" stroke-dasharray="4,4"/>
+  </g>
+  <!-- Bottom labels -->
+  <text x="215" y="380" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#7A6B5D">~10 KB — editable, lightweight</text>
+  <text x="585" y="380" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#7A6B5D">~3 MB — fixed, heavy</text>
+</svg>
