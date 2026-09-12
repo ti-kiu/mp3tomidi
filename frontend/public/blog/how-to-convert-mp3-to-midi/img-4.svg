@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#FDF8F3"/>
+  <text x="400" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a">Common Mistakes to Avoid</text>
+  <!-- Mistakes -->
+  <rect x="40" y="70" width="720" height="55" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+  <text x="70" y="103" font-family="system-ui, sans-serif" font-size="18" fill="#ef4444">✗</text>
+  <text x="105" y="103" font-family="system-ui, sans-serif" font-size="14" fill="#1a1a1a">Converting low-bitrate MP3 (under 128kbps) — garbled input = garbled output</text>
+  <rect x="40" y="135" width="720" height="55" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+  <text x="70" y="168" font-family="system-ui, sans-serif" font-size="18" fill="#ef4444">✗</text>
+  <text x="105" y="168" font-family="system-ui, sans-serif" font-size="14" fill="#1a1a1a">Expecting studio-quality MIDI from a full band mix — AI picks up all instruments</text>
+  <rect x="40" y="200" width="720" height="55" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+  <text x="70" y="233" font-family="system-ui, sans-serif" font-size="18" fill="#ef4444">✗</text>
+  <text x="105" y="233" font-family="system-ui, sans-serif" font-size="14" fill="#1a1a1a">Converting WAV that was made from MP3 — can't recover lost quality</text>
+  <rect x="40" y="265" width="720" height="55" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+  <text x="70" y="298" font-family="system-ui, sans-serif" font-size="18" fill="#ef4444">✗</text>
+  <text x="105" y="298" font-family="system-ui, sans-serif" font-size="14" fill="#1a1a1a">Skipping post-conversion cleanup — always review and edit notes in your DAW</text>
+  <rect x="40" y="330" width="720" height="55" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+  <text x="70" y="363" font-family="system-ui, sans-serif" font-size="18" fill="#ef4444">✗</text>
+  <text x="105" y="363" font-family="system-ui, sans-serif" font-size="14" fill="#1a1a1a">Using MIDI as a replacement for audio — MIDI is note data, not a recording</text>
+</svg>

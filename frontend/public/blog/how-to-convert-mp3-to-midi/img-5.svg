@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#FDF8F3"/>
+  <text x="400" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a">Importing MIDI into Your DAW</text>
+  <!-- DAW icons -->
+  <rect x="40" y="80" width="170" height="140" rx="12" fill="white" stroke="#C8B8A8" stroke-width="2"/>
+  <text x="125" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">Ableton</text>
+  <text x="125" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280">Drag .mid to</text>
+  <text x="125" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280">MIDI track</text>
+  <rect x="230" y="80" width="170" height="140" rx="12" fill="white" stroke="#C8B8A8" stroke-width="2"/>
+  <text x="315" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">FL Studio</text>
+  <text x="315" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280">File → Import</text>
+  <text x="315" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280">→ MIDI file</text>
+  <rect x="420" y="80" width="170" height="140" rx="12" fill="white" stroke="#C8B8A8" stroke-width="2"/>
+  <text x="505" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">Logic Pro</text>
+  <text x="505" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280">File → Import</text>
+  <text x="505" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280">→ MIDI file</text>
+  <rect x="610" y="80" width="150" height="140" rx="12" fill="white" stroke="#C8B8A8" stroke-width="2"/>
+  <text x="685" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#1a1a1a">GarageBand</text>
+  <text x="685" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280">Drag .mid to</text>
+  <text x="685" y="175" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280">timeline</text>
+  <!-- Tips -->
+  <text x="400" y="280" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#EA580C">After importing:</text>
+  <text x="400" y="310" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#4b5563">1. Assign a virtual instrument to the track</text>
+  <text x="400" y="335" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#4b5563">2. Check tempo and time signature</text>
+  <text x="400" y="360" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#4b5563">3. Quantize notes if timing feels off</text>
+</svg>

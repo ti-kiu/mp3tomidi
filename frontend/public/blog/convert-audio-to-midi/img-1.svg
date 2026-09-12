@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#FDF8F3" rx="16"/>
+  <rect x="40" y="40" width="720" height="320" rx="12" fill="white" stroke="#F5E6D3" stroke-width="1.5"/>
+  <text x="400" y="80" font-family="Arial, sans-serif" font-size="20" fill="#1C1917" font-weight="700" text-anchor="middle">Audio to MIDI Conversion Process</text>
+  <text x="400" y="370" font-family="Arial, sans-serif" font-size="12" fill="#A8A29E" text-anchor="middle">Waveform to MIDI note data diagram</text>
+</svg>

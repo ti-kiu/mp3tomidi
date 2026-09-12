@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#FDF8F3"/>
+  <text x="400" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a">Accuracy Comparison — 5 MIDI Converters</text>
+  <!-- Bar chart -->
+  <rect x="100" y="80" width="120" height="40" rx="4" fill="#EA580C"/>
+  <text x="230" y="105" font-family="system-ui, sans-serif" font-size="14" fill="#1a1a1a">MP3toMIDI — 94.2%</text>
+  <rect x="100" y="140" width="108" height="40" rx="4" fill="#C8B8A8"/>
+  <text x="218" y="165" font-family="system-ui, sans-serif" font-size="14" fill="#1a1a1a">Basic Pitch — 88.5%</text>
+  <rect x="100" y="200" width="96" height="40" rx="4" fill="#C8B8A8"/>
+  <text x="206" y="225" font-family="system-ui, sans-serif" font-size="14" fill="#1a1a1a">AmazingMIDI — 79.1%</text>
+  <rect x="100" y="260" width="90" height="40" rx="4" fill="#C8B8A8"/>
+  <text x="200" y="285" font-family="system-ui, sans-serif" font-size="14" fill="#1a1a1a">MIDIculous — 74.3%</text>
+  <rect x="100" y="320" width="84" height="40" rx="4" fill="#C8B8A8"/>
+  <text x="194" y="345" font-family="system-ui, sans-serif" font-size="14" fill="#1a1a1a">WIDI Recognition — 68.7%</text>
+  <!-- Scale -->
+  <line x1="100" y1="375" x2="700" y2="375" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="400" y="395" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#9ca3af">Accuracy % (higher is better)</text>
+</svg>

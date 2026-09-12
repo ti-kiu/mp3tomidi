@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#FDF8F3"/>
+  <rect x="60" y="60" width="1080" height="510" rx="20" fill="white" stroke="#C8B8A8" stroke-width="2"/>
+  <text x="600" y="180" font-family="system-ui, sans-serif" font-size="52" font-weight="700" fill="#1a1a1a" text-anchor="middle">Free Audio to MIDI Converter</text>
+  <text x="600" y="250" font-family="system-ui, sans-serif" font-size="36" fill="#EA580C" text-anchor="middle" font-weight="600">No Signup · No Watermark · No Limits</text>
+  <line x1="200" y1="300" x2="1000" y2="300" stroke="#C8B8A8" stroke-width="1" stroke-dasharray="8,4"/>
+  <rect x="120" y="340" width="280" height="160" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/>
+  <text x="260" y="385" font-family="system-ui, sans-serif" font-size="18" font-weight="600" fill="#92400E" text-anchor="middle">Other "Free" Tools</text>
+  <text x="260" y="420" font-family="system-ui, sans-serif" font-size="15" fill="#92400E" text-anchor="middle">✗ Signup required</text>
+  <text x="260" y="448" font-family="system-ui, sans-serif" font-size="15" fill="#92400E" text-anchor="middle">✗ 30-second limit</text>
+  <text x="260" y="476" font-family="system-ui, sans-serif" font-size="15" fill="#92400E" text-anchor="middle">✗ Watermarked output</text>
+  <rect x="460" y="340" width="280" height="160" rx="12" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/>
+  <text x="600" y="385" font-family="system-ui, sans-serif" font-size="18" font-weight="600" fill="#92400E" text-anchor="middle">Hidden Costs</text>
+  <text x="600" y="420" font-family="system-ui, sans-serif" font-size="15" fill="#92400E" text-anchor="middle">✗ Paywall after upload</text>
+  <text x="600" y="448" font-family="system-ui, sans-serif" font-size="15" fill="#92400E" text-anchor="middle">✗ Daily conversion cap</text>
+  <text x="600" y="476" font-family="system-ui, sans-serif" font-size="15" fill="#92400E" text-anchor="middle">✗ Quality throttling</text>
+  <rect x="800" y="340" width="280" height="160" rx="12" fill="#DCFCE7" stroke="#22C55E" stroke-width="2"/>
+  <text x="940" y="385" font-family="system-ui, sans-serif" font-size="18" font-weight="600" fill="#166534" text-anchor="middle">MP3toMIDI</text>
+  <text x="940" y="420" font-family="system-ui, sans-serif" font-size="15" fill="#166534" text-anchor="middle">✓ No signup needed</text>
+  <text x="940" y="448" font-family="system-ui, sans-serif" font-size="15" fill="#166534" text-anchor="middle">✓ Full song conversion</text>
+  <text x="940" y="476" font-family="system-ui, sans-serif" font-size="15" fill="#166534" text-anchor="middle">✓ Clean MIDI output</text>
+  <text x="600" y="545" font-family="system-ui, sans-serif" font-size="16" fill="#C8B8A8" text-anchor="middle">mp3tomidi.vip — Compare 12 tools, find the ones that are actually free</text>
+</svg>

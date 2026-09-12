@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#FDF8F3"/>
+  <text x="400" y="35" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a" text-anchor="middle">12 Tools Tested — Only 3 Truly Free</text>
+  <rect x="40" y="60" width="720" height="35" rx="6" fill="#EA580C"/>
+  <text x="80" y="84" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="white">Tool</text>
+  <text x="280" y="84" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="white">Signup</text>
+  <text x="380" y="84" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="white">Limit</text>
+  <text x="500" y="84" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="white">Watermark</text>
+  <text x="640" y="84" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="white">Free?</text>
+  <rect x="40" y="100" width="720" height="30" fill="#DCFCE7"/>
+  <text x="80" y="120" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#166534">MP3toMIDI</text>
+  <text x="280" y="120" font-family="system-ui, sans-serif" font-size="13" fill="#166534">No</text>
+  <text x="380" y="120" font-family="system-ui, sans-serif" font-size="13" fill="#166534">None</text>
+  <text x="500" y="120" font-family="system-ui, sans-serif" font-size="13" fill="#166534">None</text>
+  <text x="640" y="120" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#16a34a">✓ Yes</text>
+  <rect x="40" y="135" width="720" height="30" fill="white"/>
+  <text x="80" y="155" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">Basic Pitch</text>
+  <text x="280" y="155" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">No</text>
+  <text x="380" y="155" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">None</text>
+  <text x="500" y="155" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">None</text>
+  <text x="640" y="155" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#16a34a">✓ Yes</text>
+  <rect x="40" y="170" width="720" height="30" fill="#FEF3C7"/>
+  <text x="80" y="190" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">Convertio</text>
+  <text x="280" y="190" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">No</text>
+  <text x="380" y="190" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">10 min</text>
+  <text x="500" y="190" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">None</text>
+  <text x="640" y="190" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#ea580c">Limited</text>
+  <rect x="40" y="205" width="720" height="30" fill="white"/>
+  <text x="80" y="225" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">Bear Audio</text>
+  <text x="280" y="225" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">No</text>
+  <text x="380" y="225" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">3 min</text>
+  <text x="500" y="225" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">None</text>
+  <text x="640" y="225" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#ea580c">Limited</text>
+  <rect x="40" y="240" width="720" height="30" fill="#FEF2F2"/>
+  <text x="80" y="260" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">MIDI City</text>
+  <text x="280" y="260" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">Yes</text>
+  <text x="380" y="260" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">Full</text>
+  <text x="500" y="260" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">Yes</text>
+  <text x="640" y="260" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#dc2626">✗ No</text>
+  <rect x="40" y="275" width="720" height="30" fill="white"/>
+  <text x="80" y="295" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">Klangio</text>
+  <text x="280" y="295" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">Yes</text>
+  <text x="380" y="295" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">30 sec</text>
+  <text x="500" y="295" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">None</text>
+  <text x="640" y="295" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#dc2626">✗ No</text>
+  <rect x="40" y="310" width="720" height="30" fill="#FEF2F2"/>
+  <text x="80" y="330" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">AnthemScore</text>
+  <text x="280" y="330" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">Desktop</text>
+  <text x="380" y="330" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">Trial</text>
+  <text x="500" y="330" font-family="system-ui, sans-serif" font-size="13" fill="#1a1a1a">None</text>
+  <text x="640" y="330" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#dc2626">✗ No</text>
+  <text x="400" y="375" font-family="system-ui, sans-serif" font-size="14" fill="#C8B8A8" text-anchor="middle">Tested September 2026 • 12 tools compared</text>
+</svg>

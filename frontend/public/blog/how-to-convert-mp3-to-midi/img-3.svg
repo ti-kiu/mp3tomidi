@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#FDF8F3"/>
+  <text x="400" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a">Quality Tips for Better MIDI Output</text>
+  <!-- Tips list -->
+  <rect x="40" y="70" width="720" height="55" rx="8" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="70" y="103" font-family="system-ui, sans-serif" font-size="18" fill="#EA580C">🎵</text>
+  <text x="105" y="103" font-family="system-ui, sans-serif" font-size="14" fill="#1a1a1a">Use high bitrate MP3 (256kbps+) — more audio data = more accurate note detection</text>
+  <rect x="40" y="135" width="720" height="55" rx="8" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="70" y="168" font-family="system-ui, sans-serif" font-size="18" fill="#EA580C">🎸</text>
+  <text x="105" y="168" font-family="system-ui, sans-serif" font-size="14" fill="#1a1a1a">Solo instruments work best — one instrument at a time gives cleaner results</text>
+  <rect x="40" y="200" width="720" height="55" rx="8" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="70" y="233" font-family="system-ui, sans-serif" font-size="18" fill="#EA580C">🔊</text>
+  <text x="105" y="233" font-family="system-ui, sans-serif" font-size="14" fill="#1a1a1a">Clean audio first — remove background noise before converting</text>
+  <rect x="40" y="265" width="720" height="55" rx="8" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="70" y="298" font-family="system-ui, sans-serif" font-size="18" fill="#EA580C">⏱️</text>
+  <text x="105" y="298" font-family="system-ui, sans-serif" font-size="14" fill="#1a1a1a">Trim silence — remove long intros/outros to focus on the music</text>
+  <rect x="40" y="330" width="720" height="55" rx="8" fill="white" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="70" y="363" font-family="system-ui, sans-serif" font-size="18" fill="#EA580C">🎹</text>
+  <text x="105" y="363" font-family="system-ui, sans-serif" font-size="14" fill="#1a1a1a">Check tempo — if the MIDI feels off, adjust BPM in your DAW after import</text>
+</svg>

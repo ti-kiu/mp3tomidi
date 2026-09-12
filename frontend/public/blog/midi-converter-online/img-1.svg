@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#FDF8F3"/>
+  <text x="400" y="40" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#1a1a1a">Browser-Side vs Server-Side Conversion</text>
+  <!-- Browser-side box -->
+  <rect x="40" y="80" width="340" height="280" rx="12" fill="white" stroke="#22c55e" stroke-width="2"/>
+  <text x="210" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#22c55e">✓ Browser-Side</text>
+  <text x="210" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#4b5563">Audio stays on your device</text>
+  <text x="210" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#4b5563">No upload wait time</text>
+  <text x="210" y="215" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#4b5563">Works offline after load</text>
+  <text x="210" y="245" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#4b5563">Full privacy</text>
+  <rect x="100" y="275" width="220" height="40" rx="8" fill="#22c55e"/>
+  <text x="210" y="300" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="white">Recommended</text>
+  <!-- Server-side box -->
+  <rect x="420" y="80" width="340" height="280" rx="12" fill="white" stroke="#C8B8A8" stroke-width="2"/>
+  <text x="590" y="115" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#C8B8A8">Server-Side</text>
+  <text x="590" y="155" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#4b5563">Audio uploaded to server</text>
+  <text x="590" y="185" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#4b5563">Upload + processing time</text>
+  <text x="590" y="215" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#4b5563">Requires internet</text>
+  <text x="590" y="245" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#4b5563">Privacy concerns</text>
+  <rect x="480" y="275" width="220" height="40" rx="8" fill="#C8B8A8"/>
+  <text x="590" y="300" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="white">Legacy approach</text>
+</svg>

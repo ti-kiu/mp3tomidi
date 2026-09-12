@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#FDF8F3"/>
+  <text x="400" y="40" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#1a1a1a" text-anchor="middle">9 Supported Audio Formats</text>
+  <rect x="50" y="70" width="160" height="70" rx="12" fill="white" stroke="#EA580C" stroke-width="2"/>
+  <text x="130" y="100" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#EA580C" text-anchor="middle">MP3</text>
+  <text x="130" y="125" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Lossy • 89.5%</text>
+  <rect x="230" y="70" width="160" height="70" rx="12" fill="white" stroke="#EA580C" stroke-width="2"/>
+  <text x="310" y="100" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#EA580C" text-anchor="middle">WAV</text>
+  <text x="310" y="125" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Lossless • 90.5%</text>
+  <rect x="410" y="70" width="160" height="70" rx="12" fill="white" stroke="#EA580C" stroke-width="2"/>
+  <text x="490" y="100" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#EA580C" text-anchor="middle">FLAC</text>
+  <text x="490" y="125" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Lossless • 90.5%</text>
+  <rect x="590" y="70" width="160" height="70" rx="12" fill="white" stroke="#C8B8A8" stroke-width="2"/>
+  <text x="670" y="100" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#C8B8A8" text-anchor="middle">OGG</text>
+  <text x="670" y="125" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Lossy • 88.9%</text>
+  <rect x="50" y="160" width="160" height="70" rx="12" fill="white" stroke="#C8B8A8" stroke-width="2"/>
+  <text x="130" y="190" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#C8B8A8" text-anchor="middle">M4A</text>
+  <text x="130" y="215" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Lossy • 89.2%</text>
+  <rect x="230" y="160" width="160" height="70" rx="12" fill="white" stroke="#C8B8A8" stroke-width="2"/>
+  <text x="310" y="190" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#C8B8A8" text-anchor="middle">AAC</text>
+  <text x="310" y="215" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Lossy • 89.2%</text>
+  <rect x="410" y="160" width="160" height="70" rx="12" fill="white" stroke="#C8B8A8" stroke-width="2"/>
+  <text x="490" y="190" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#C8B8A8" text-anchor="middle">AIFF</text>
+  <text x="490" y="215" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Lossless • 90.5%</text>
+  <rect x="590" y="160" width="160" height="70" rx="12" fill="white" stroke="#C8B8A8" stroke-width="2"/>
+  <text x="670" y="190" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#C8B8A8" text-anchor="middle">WMA</text>
+  <text x="670" y="215" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Lossy • 88.5%</text>
+  <rect x="230" y="250" width="340" height="70" rx="12" fill="white" stroke="#22C55E" stroke-width="2"/>
+  <text x="400" y="280" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#22C55E" text-anchor="middle">YouTube URL</text>
+  <text x="400" y="305" font-family="system-ui, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">Paste link • 85-90% accuracy</text>
+  <line x1="100" y1="350" x2="700" y2="350" stroke="#C8B8A8" stroke-width="1" stroke-dasharray="6,3"/>
+  <text x="400" y="380" font-family="system-ui, sans-serif" font-size="14" fill="#C8B8A8" text-anchor="middle">All formats → MIDI — no format restrictions behind a paywall</text>
+</svg>

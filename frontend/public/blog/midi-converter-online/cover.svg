@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#FDF8F3"/>
+  <rect x="0" y="0" width="1200" height="8" fill="#EA580C"/>
+  <rect x="0" y="622" width="1200" height="8" fill="#EA580C"/>
+  <text x="600" y="200" text-anchor="middle" font-family="system-ui, sans-serif" font-size="52" font-weight="700" fill="#1a1a1a">Best MIDI Converter Online</text>
+  <text x="600" y="260" text-anchor="middle" font-family="system-ui, sans-serif" font-size="28" fill="#EA580C">Free, Fast, No Upload Needed</text>
+  <text x="600" y="330" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#C8B8A8">Browser-side conversion · Privacy-first · 2026 Guide</text>
+  <!-- Browser window icon -->
+  <rect x="450" y="380" width="300" height="180" rx="12" fill="white" stroke="#C8B8A8" stroke-width="2"/>
+  <rect x="450" y="380" width="300" height="36" rx="12" fill="#f3f4f6"/>
+  <circle cx="474" cy="398" r="6" fill="#ef4444"/>
+  <circle cx="492" cy="398" r="6" fill="#eab308"/>
+  <circle cx="510" cy="398" r="6" fill="#22c55e"/>
+  <text x="600" y="460" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#EA580C">♪ Audio In → MIDI Out ♪</text>
+  <text x="600" y="500" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#6b7280">100% in your browser</text>
+  <text x="600" y="600" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#C8B8A8">mp3tomidi.vip</text>
+</svg>
