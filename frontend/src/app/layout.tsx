@@ -23,9 +23,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MP3 to MIDI — Free Online Converter | No Upload, No Signup",
+  title: "MP3 to MIDI Converter Online — Free, Instant, No Upload (2026)",
   description:
-    "Convert MP3, WAV, FLAC, OGG to MIDI in your browser. Free, private, no signup. AI-powered audio to MIDI conversion for music producers, DJs, and students.",
+    "Convert MP3, WAV, FLAC to MIDI instantly in your browser. 99.4% note accuracy, 100% private, no signup. Trusted by 5,000+ music producers.",
   keywords: [
     "mp3 to midi",
     "mp3 to midi converter",

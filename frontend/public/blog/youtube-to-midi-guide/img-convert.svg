@@ -1,23 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
-  <rect width="800" height="400" rx="12" fill="#FDF8F3"/>
-  <text x="400" y="50" font-family="Space Grotesk, Arial" font-size="24" font-weight="700" fill="#1C1917" text-anchor="middle">Convert to MIDI</text>
-  <!-- Converter interface -->
-  <rect x="40" y="80" width="720" height="280" rx="12" fill="#fff" stroke="#E7E5E4" stroke-width="1"/>
-  <!-- File info -->
-  <rect x="60" y="100" width="400" height="50" rx="8" fill="#FDF8F3"/>
-  <text x="80" y="120" font-family="DM Sans, Arial" font-size="14" font-weight="600" fill="#1C1917">piano-cover.mp3</text>
-  <text x="80" y="140" font-family="DM Sans, Arial" font-size="12" fill="#78716C">3.2 MB · 4:32</text>
-  <!-- Quality selector -->
-  <rect x="480" y="100" width="260" height="50" rx="8" fill="#F5F5F4"/>
-  <text x="500" y="120" font-family="DM Sans, Arial" font-size="12" fill="#78716C">Quality</text>
-  <rect x="500" y="128" width="70" height="18" rx="9" fill="#F5F5F4"/>
-  <text x="535" y="141" font-family="DM Sans, Arial" font-size="11" fill="#78716C" text-anchor="middle">Fast</text>
-  <rect x="580" y="128" width="70" height="18" rx="9" fill="#EA580C"/>
-  <text x="615" y="141" font-family="DM Sans, Arial" font-size="11" fill="#fff" text-anchor="middle">Balanced</text>
-  <rect x="660" y="128" width="70" height="18" rx="9" fill="#F5F5F4"/>
-  <text x="695" y="141" font-family="DM Sans, Arial" font-size="11" fill="#78716C" text-anchor="middle">Detailed</text>
-  <!-- Convert button -->
-  <rect x="250" y="180" width="300" height="56" rx="16" fill="#EA580C"/>
-  <text x="400" y="214" font-family="DM Sans, Arial" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">Convert to MIDI</text>
-  <text x="400" y="280" font-family="DM Sans, Arial" font-size="13" fill="#78716C" text-anchor="middle">Powered by Spotify Basic Pitch · Runs in your browser</text>
+  <rect width="800" height="400" fill="#FDF8F3"/>
+  <rect x="20" y="20" width="760" height="360" rx="16" fill="white" stroke="#C8B8A8" stroke-width="1.5"/>
+  <text x="400" y="58" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#2D2319">Step 2: Convert to MIDI</text>
+  <!-- Browser mockup -->
+  <rect x="80" y="80" width="640" height="280" rx="12" fill="#F8F8F8" stroke="#C8B8A8" stroke-width="1.5"/>
+  <!-- URL bar -->
+  <rect x="80" y="80" width="640" height="36" rx="12" fill="white" stroke="#C8B8A8" stroke-width="1"/>
+  <rect x="95" y="89" width="300" height="18" rx="9" fill="#F0F0F0"/>
+  <text x="110" y="102" font-family="system-ui, sans-serif" font-size="11" fill="#7A6B5D">mp3tomidi.vip/youtube-to-midi</text>
+  <!-- Drop zone -->
+  <rect x="150" y="135" width="500" height="160" rx="16" fill="white" stroke="#EA580C" stroke-width="2.5" stroke-dasharray="8,4"/>
+  <!-- Drag arrow icon -->
+  <path d="M400,185 L400,235" stroke="#EA580C" stroke-width="3"/>
+  <path d="M385,220 L400,240 L415,220" fill="#EA580C"/>
+  <text x="400" y="180" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#2D2319">Drop your MP3 here</text>
+  <text x="400" y="265" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#7A6B5D">or click to browse files</text>
+  <text x="400" y="285" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#C8B8A8">Supports MP3, WAV, M4A, FLAC, OGG</text>
+  <!-- Arrow down from drop zone -->
+  <path d="M400,300 L400,330" stroke="#EA580C" stroke-width="2" stroke-dasharray="4,4"/>
+  <text x="400" y="348" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#EA580C">AI processes in ~10-15 seconds</text>
+  <text x="400" y="375" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#C8B8A8">mp3tomidi.vip</text>
 </svg>

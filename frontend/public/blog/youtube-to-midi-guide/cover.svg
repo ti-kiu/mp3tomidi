@@ -1,8 +1,50 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" rx="0" fill="#FDF8F3"/>
-  <rect x="0" y="0" width="1200" height="6" fill="#EA580C"/>
-  <rect x="0" y="624" width="1200" height="6" fill="#EA580C"/>
-  <text x="600" y="260" font-family="Space Grotesk, Arial" font-size="56" font-weight="700" fill="#1C1917" text-anchor="middle">YouTube to MIDI</text>
-  <text x="600" y="320" font-family="DM Sans, Arial" font-size="28" fill="#78716C" text-anchor="middle">The Complete Guide</text>
-  <text x="600" y="380" font-family="DM Sans, Arial" font-size="18" fill="#C8B8A8" text-anchor="middle">mp3tomidi.vip</text>
+  <rect width="1200" height="630" fill="#FDF8F3"/>
+  <rect x="40" y="40" width="1120" height="550" rx="20" fill="white" stroke="#C8B8A8" stroke-width="2"/>
+  <!-- YouTube play button area -->
+  <rect x="120" y="120" width="420" height="260" rx="16" fill="#FEF3E2" stroke="#C8B8A8" stroke-width="1.5"/>
+  <!-- Play triangle (YouTube red) -->
+  <circle cx="330" cy="250" r="50" fill="#FF0000" opacity="0.15"/>
+  <polygon points="310,225 310,275 355,250" fill="#FF0000" opacity="0.9"/>
+  <text x="330" y="330" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#2D2319">YouTube Video</text>
+  <text x="330" y="350" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#7A6B5D">Music, piano covers, tutorials</text>
+  <!-- Arrow -->
+  <path d="M550,250 L640,250" stroke="#EA580C" stroke-width="4" marker-end="url(#yarr)"/>
+  <defs><marker id="yarr" markerWidth="12" markerHeight="8" refX="6" refY="4" orient="auto"><polygon points="0 0, 12 4, 0 8" fill="#EA580C"/></marker></defs>
+  <!-- MIDI file area -->
+  <rect x="660" y="120" width="400" height="260" rx="16" fill="#FEF3E2" stroke="#EA580C" stroke-width="1.5"/>
+  <!-- Piano roll preview -->
+  <g transform="translate(690, 160)">
+    <rect x="0" y="0" width="340" height="160" rx="8" fill="white" stroke="#C8B8A8" stroke-width="1"/>
+    <rect x="10" y="15" width="40" height="14" rx="3" fill="#EA580C"/>
+    <rect x="60" y="30" width="55" height="14" rx="3" fill="#EA580C" opacity="0.85"/>
+    <rect x="125" y="10" width="35" height="14" rx="3" fill="#EA580C"/>
+    <rect x="170" y="45" width="50" height="14" rx="3" fill="#EA580C" opacity="0.9"/>
+    <rect x="230" y="25" width="40" height="14" rx="3" fill="#EA580C"/>
+    <rect x="10" y="55" width="65" height="14" rx="3" fill="#EA580C" opacity="0.8"/>
+    <rect x="85" y="70" width="45" height="14" rx="3" fill="#EA580C"/>
+    <rect x="140" y="60" width="30" height="14" rx="3" fill="#EA580C" opacity="0.85"/>
+    <rect x="180" y="80" width="55" height="14" rx="3" fill="#EA580C"/>
+    <rect x="245" y="65" width="35" height="14" rx="3" fill="#EA580C" opacity="0.9"/>
+    <rect x="10" y="100" width="50" height="14" rx="3" fill="#EA580C" opacity="0.8"/>
+    <rect x="70" y="115" width="40" height="14" rx="3" fill="#EA580C"/>
+    <rect x="120" y="100" width="60" height="14" rx="3" fill="#EA580C" opacity="0.9"/>
+    <rect x="190" y="120" width="45" height="14" rx="3" fill="#EA580C"/>
+    <rect x="245" y="110" width="35" height="14" rx="3" fill="#EA580C" opacity="0.85"/>
+  </g>
+  <text x="860" y="348" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="600" fill="#EA580C">MIDI File (.mid)</text>
+  <text x="860" y="366" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#7A6B5D">Notes, chords, timing</text>
+  <!-- Steps badge -->
+  <g transform="translate(350, 420)">
+    <rect x="0" y="0" width="500" height="80" rx="12" fill="#EA580C"/>
+    <circle cx="80" cy="40" r="22" fill="white" opacity="0.2"/>
+    <text x="80" y="46" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="white">1</text>
+    <text x="120" y="46" font-family="system-ui, sans-serif" font-size="14" fill="rgba(255,255,255,0.9)">Download Audio</text>
+    <text x="280" y="46" font-family="system-ui, sans-serif" font-size="20" fill="rgba(255,255,255,0.5)">→</text>
+    <circle cx="330" cy="40" r="22" fill="white" opacity="0.2"/>
+    <text x="330" y="46" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="white">2</text>
+    <text x="370" y="46" font-family="system-ui, sans-serif" font-size="14" fill="rgba(255,255,255,0.9)">Convert to MIDI</text>
+  </g>
+  <!-- Brand -->
+  <text x="600" y="550" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#C8B8A8">mp3tomidi.vip</text>
 </svg>
