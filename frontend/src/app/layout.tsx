@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Space_Grotesk, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { HowToSchema } from "@/components/Schema";
+import { RouteHowTo } from "@/components/Schema";
+import { HOME_DESCRIPTION } from "@/lib/modelCopy";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-heading",
@@ -24,8 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "MP3 to MIDI Converter Online — Free, Instant, No Upload (2026)",
-  description:
-    "Convert MP3, WAV, FLAC to MIDI instantly in your browser. 99.4% note accuracy, 100% private, no signup. Trusted by 5,000+ music producers.",
+  description: HOME_DESCRIPTION,
   keywords: [
     "mp3 to midi",
     "mp3 to midi converter",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MP3 to MIDI — Free Online Converter",
     description:
-      "Convert audio to MIDI in your browser. No upload, no signup. AI-powered.",
+      "Convert audio to MIDI in your browser with Spotify's open-source Basic Pitch model. No upload, no signup.",
     url: "https://mp3tomidi.vip",
     siteName: "MP3toMIDI",
     locale: "en_US",
@@ -78,15 +78,14 @@ export default function RootLayout({
     <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="canonical" href="https://mp3tomidi.vip" />
-      <meta name="msvalidate.01" content="8D5AE51845CFE08F58F54A68CFF76D57" />
+        <meta name="msvalidate.01" content="8D5AE51845CFE08F58F54A68CFF76D57" />
         <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
           rel="stylesheet"
         />
       </head>
       <body>
-          <HowToSchema />
+          <RouteHowTo />
 
           {/* Google Analytics 4 */}
         <Script

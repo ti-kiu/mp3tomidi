@@ -34,7 +34,7 @@ const faqItems = [
   },
   {
     question: "Are free MIDI converters accurate enough?",
-    answer: "For single-instrument recordings, yes — free tools achieve 93-98% note accuracy. For complex multi-instrument mixes, you'll need manual cleanup regardless of which tool you use. Paid tools like Melodyne ($99+) only really matter if you need to extract one instrument from a dense mix.",
+    answer: "For a clear single-instrument recording, a free Basic Pitch transcription is often usable after a short edit. Full mixes need cleanup no matter which tool you use. Paid tools such as Melodyne matter when you need to pull one part out of a dense mix. MP3toMIDI does not publish an accuracy percentage.",
   },
   {
     question: "Do I need to install software to convert MIDI?",
@@ -42,11 +42,11 @@ const faqItems = [
   },
   {
     question: "Is it safe to use online MIDI converters?",
-    answer: "It depends on the tool. Server-based converters (like Basic Pitch) upload your file to their servers, which is a privacy concern for unreleased music. Browser-based tools (like MP3toMIDI) process everything locally — your file never leaves your device.",
+    answer: "It depends on the tool. Some websites upload your file. MP3toMIDI runs Spotify's open-source Basic Pitch model in the browser, so the audio stays on your device. Spotify's own Basic Pitch demo is a separate site.",
   },
   {
     question: "Can I convert MIDI back to MP3?",
-    answer: "Yes. MP3toMIDI has a MIDI to MP3 converter that renders your MIDI file to audio. You can also use any DAW to play MIDI through a virtual instrument and export the audio.",
+    answer: "Not in this browser yet. The MIDI to MP3 page is marked coming soon. Open the .mid file in a DAW, pick a virtual instrument, and export the audio.",
   },
 ];
 
@@ -116,7 +116,7 @@ export default function Article() {
                     <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Privacy</th>
                     <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Formats</th>
                     <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Preview</th>
-                    <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Accuracy</th>
+                    <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Transcription</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -126,7 +126,7 @@ export default function Article() {
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a" }}>Local (no upload)</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>9 formats</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a" }}>Piano roll</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>95-98%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Basic Pitch, in the browser</td>
                   </tr>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Basic Pitch</td>
@@ -134,7 +134,7 @@ export default function Article() {
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#dc2626" }}>Upload required</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>MP3, WAV, OGG</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#dc2626" }}>None</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>95-98%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Same open-source model</td>
                   </tr>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>MuseScore</td>
@@ -142,7 +142,7 @@ export default function Article() {
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a" }}>Local (desktop)</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>MP3, WAV</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a" }}>Sheet music</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>85-92%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Not scored here</td>
                   </tr>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Klangio</td>
@@ -150,7 +150,7 @@ export default function Article() {
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#dc2626" }}>Upload required</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>MP3, WAV</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a" }}>Yes</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>90-95%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Not scored here</td>
                   </tr>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>MidiCo</td>
@@ -158,7 +158,7 @@ export default function Article() {
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a" }}>Local (desktop)</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>MP3, WAV</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a" }}>Yes</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>88-93%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Not scored here</td>
                   </tr>
                 </tbody>
               </table>

@@ -34,11 +34,11 @@ const faqItems = [
   },
   {
     question: "How accurate is audio to MIDI conversion?",
-    answer: "Our AI achieves 99.4% note detection accuracy on clean, single-instrument recordings. For full mixes with multiple instruments, accuracy varies depending on how separated the parts are. Solo piano, guitar, and vocal recordings produce the best results.",
+    answer: "The converter is based on Spotify's open-source Basic Pitch model, running in your browser. There is no fixed accuracy rate. Clear, single-instrument recordings usually need less editing. Dense mixes often include extra or missing notes.",
   },
   {
     question: "Can I convert a full song with drums, bass, and vocals to MIDI?",
-    answer: "You can, but the results will be a combined MIDI with all detected notes. For best results with full mixes, use our dedicated instrument tools like guitar-to-midi, piano-to-midi, or drums-to-midi which are optimized for specific instruments.",
+    answer: "You can, but the result is one MIDI file of every note Basic Pitch detects. The piano, guitar, and drums pages use the same open-source Basic Pitch model. They are not separately trained. An isolated track still needs less cleanup than a full mix.",
   },
   {
     question: "Is my audio file uploaded to a server when converting?",
@@ -201,8 +201,7 @@ export default function Article() {
             <h2 id="accuracy">Accuracy by Source Type</h2>
 
             <p>
-              Not all audio converts equally. The accuracy depends on the complexity of the audio and
-              the type of instrument. Here's what to expect from our tests across 50 tracks:
+              Not all audio converts equally. Spotify's open-source Basic Pitch model is the same on every page. What changes is the recording: an isolated instrument is easier than a full mix. These are practical expectations, not a scored benchmark.
             </p>
 
             <div style={{ overflowX: "auto", margin: "1.5rem 0" }}>
@@ -210,7 +209,7 @@ export default function Article() {
                 <thead>
                   <tr style={{ background: "#f3f4f6", textAlign: "left" }}>
                     <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Source Type</th>
-                    <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Accuracy</th>
+                    <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>What to expect</th>
                     <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Best Tool</th>
                     <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Notes</th>
                   </tr>
@@ -218,31 +217,31 @@ export default function Article() {
                 <tbody>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Solo Piano</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a", fontWeight: 600 }}>97.8%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Easiest when the piano is isolated</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}><Link href="/piano-to-midi">Piano to MIDI</Link></td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Excellent with classical and jazz</td>
                   </tr>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Solo Guitar</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a", fontWeight: 600 }}>94.2%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Clean takes need less editing</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}><Link href="/guitar-to-midi">Guitar to MIDI</Link></td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Clean recordings work best</td>
                   </tr>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Vocals</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a", fontWeight: 600 }}>91.5%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>A dry vocal is easier than a stacked mix</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}><Link href="/song-to-midi">Song to MIDI</Link></td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Pitch detection on voice is solid</td>
                   </tr>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Bass Lines</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#ca8a04", fontWeight: 600 }}>86.3%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Low, muddy notes are easier to miss</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}><Link href="/bass-to-midi">Bass to MIDI</Link></td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Low frequencies need clean recordings</td>
                   </tr>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Full Band Mix</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#ca8a04", fontWeight: 600 }}>78.3%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Overlapping instruments need cleanup</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}><Link href="/audio-to-midi">Audio to MIDI</Link></td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Multiple instruments overlap</td>
                   </tr>
@@ -298,12 +297,12 @@ export default function Article() {
               <li><strong>Use single-instrument recordings</strong> — the AI works best when it only has one instrument to track. Solo piano or guitar gives the cleanest MIDI output.</li>
               <li><strong>Minimize background noise</strong> — ambient noise, room echo, or other instruments in the background can confuse the pitch detector.</li>
               <li><strong>Use 256kbps+ MP3s</strong> — low bitrate MP3s lose harmonic information that the AI needs for accurate note detection.</li>
-              <li><strong>Try instrument-specific tools</strong> — use <Link href="/piano-to-midi">piano-to-midi</Link> for piano, <Link href="/guitar-to-midi">guitar-to-midi</Link> for guitar, or <Link href="/drums-to-midi">drums-to-midi</Link> for drums. These are tuned for specific instruments and give better accuracy.</li>
-              <li><strong>Clean up the MIDI in your DAW</strong> — even with 99% accuracy, a few wrong notes are normal. Most DAWs let you quickly fix individual notes in the piano roll editor.</li>
+              <li><strong>Try a focused recording</strong> — <Link href="/piano-to-midi">piano</Link>, <Link href="/guitar-to-midi">guitar</Link>, and <Link href="/drums-to-midi">drums</Link> pages use the same Basic Pitch model. They do not switch to a different network. An isolated take is still the better input.</li>
+              <li><strong>Clean up the MIDI in your DAW</strong> — a few wrong notes are normal. Most DAWs let you fix individual notes in the piano roll.</li>
             </ul>
 
             <p>
-              For <Link href="/youtube-to-midi">YouTube videos</Link>, you can also convert directly from a URL — just paste the YouTube link and the tool extracts the audio automatically.
+              <Link href="/youtube-to-midi">Song audio</Link> has to be a file you already have. This converter does not accept a YouTube URL.
             </p>
 
             {/* CTA */}

@@ -157,16 +157,16 @@ export default function Article() {
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Accuracy</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#ca8a04" }}>Varies by software</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a" }}>99.4% (Basic Pitch AI)</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Basic Pitch, no fixed percentage</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             <p>
-              The key advantage: our tool uses the same AI model (Spotify's Basic Pitch) that powers
-              many $100+ desktop applications — but runs it in your browser for free using WebAssembly.
-              No compromise on accuracy.
+              The practical difference is where it runs. This site uses Spotify&apos;s open-source Basic
+              Pitch model in your browser, for free, through WebAssembly. It is that model, not a
+              higher-accuracy replacement, and it does not upload the file.
             </p>
 
             <h2 id="privacy">Privacy: Nothing Leaves Your Device</h2>

@@ -5,7 +5,7 @@ export function OrganizationSchema() {
     name: "MP3toMIDI",
     url: "https://mp3tomidi.vip",
     logo: "https://mp3tomidi.vip/logo.svg",
-    description: "Free online MP3 to MIDI converter powered by AI. Browser-side audio transcription for music producers, DJs, and students.",
+    description: "Free online MP3 to MIDI converter based on Spotify's open-source Basic Pitch model. Browser-side audio transcription. No upload and no signup.",
     sameAs: [],
     contactPoint: {
       "@type": "ContactPoint",
@@ -28,7 +28,7 @@ export function WebSiteSchema() {
     "@type": "WebSite",
     name: "MP3toMIDI",
     url: "https://mp3tomidi.vip",
-    description: "Free online MP3 to MIDI converter. AI-powered, browser-side audio transcription. No upload, no signup.",
+    description: "Free online MP3 to MIDI converter based on Spotify's open-source Basic Pitch model. Browser-side transcription. No upload, no signup.",
     potentialAction: {
       "@type": "SearchAction",
       target: {

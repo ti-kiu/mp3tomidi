@@ -23,9 +23,9 @@ const features = [
   {
     tag: "AI TRANSCRIPTION",
     icon: "psychology",
-    title: "Neural Audio Extraction",
-    desc: "Spotify's Basic Pitch model runs directly in your browser. It detects notes, chords, pitch bends, and micro-timing with industry-leading accuracy.",
-    chips: ["99.4% Note Accuracy", "Instrument Separation", "Micro-timing Detection"],
+    title: "Basic Pitch Transcription",
+    desc: "Spotify's open-source Basic Pitch model runs directly in your browser. It estimates notes, timing, and pitch bends from the audio on your device. Clear, single-instrument recordings usually need less cleanup than dense mixes.",
+    chips: ["Spotify Basic Pitch", "Runs Locally", "Pitch Bend Detection"],
   },
   {
     tag: "SPEED",

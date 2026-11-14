@@ -29,15 +29,8 @@ const instruments: Tool[] = [
   { href: "/music-to-midi", label: "Music to MIDI", desc: "Convert music files to MIDI" },
 ];
 
-// 长尾关键词页
 const longTail: Tool[] = [
-  { href: "/convert-mp3-to-midi", label: "Convert MP3 to MIDI", desc: "Browser-based MP3 to MIDI tool" },
-  { href: "/mp3-to-midi-converter", label: "MP3 to MIDI Converter", desc: "Free online converter, no upload" },
-  { href: "/mp3-to-midi-ai", label: "MP3 to MIDI AI", desc: "AI-powered note detection" },
-  { href: "/turn-mp3-to-midi", label: "Turn MP3 to MIDI", desc: "Quick MP3 to MIDI conversion" },
-  { href: "/convert-mp3-file-to-midi", label: "Convert MP3 File to MIDI", desc: "Drag & drop file conversion" },
-  { href: "/mp3-to-midi-file-conversion", label: "MP3 to MIDI File Conversion", desc: "Complete file conversion guide" },
-  { href: "/convert-midi-to-mp3", label: "Convert MIDI to MP3", desc: "MIDI to audio rendering" },
+  { href: "/convert-midi-to-mp3", label: "Convert MIDI to MP3", desc: "MIDI to audio is not available in the browser yet" },
 ];
 
 // 信息/资源页
@@ -65,7 +58,7 @@ const relatedMap: Record<string, Tool[]> = {
   "/wma-to-midi": [converters[0], converters[1], converters[9], instruments[0], resources[0]],
   "/opus-to-midi": [converters[0], converters[1], converters[9], instruments[0], resources[0]],
   "/audio-to-midi": [converters[0], converters[1], converters[2], instruments[0], resources[0]],
-  "/midi-to-mp3": [converters[0], converters[1], converters[9], longTail[6], resources[0]],
+  "/midi-to-mp3": [converters[0], converters[1], converters[9], longTail[0], resources[0]],
 
   // 乐器/场景提取页
   "/piano-to-midi": [converters[0], converters[1], instruments[1], instruments[2], instruments[3], resources[0]],
@@ -77,14 +70,7 @@ const relatedMap: Record<string, Tool[]> = {
   "/song-to-midi": [converters[0], converters[1], instruments[5], instruments[7], resources[0]],
   "/music-to-midi": [converters[0], converters[1], instruments[6], resources[0]],
 
-  // 长尾关键词页
-  "/convert-mp3-to-midi": [converters[0], converters[1], converters[9], longTail[1], longTail[2], resources[0]],
-  "/mp3-to-midi-converter": [converters[0], converters[9], longTail[0], longTail[2], longTail[3], resources[0]],
-  "/mp3-to-midi-ai": [converters[0], converters[9], longTail[0], longTail[1], longTail[3], resources[0]],
-  "/turn-mp3-to-midi": [converters[0], converters[1], longTail[0], longTail[1], longTail[2], resources[0]],
-  "/convert-mp3-file-to-midi": [converters[0], converters[9], longTail[0], longTail[1], longTail[5], resources[0]],
-  "/mp3-to-midi-file-conversion": [converters[0], converters[1], longTail[0], longTail[3], longTail[4], resources[0]],
-  "/convert-midi-to-mp3": [converters[10], converters[0], converters[1], longTail[0], resources[0]],
+  "/convert-midi-to-mp3": [converters[10], converters[0], converters[1], resources[0]],
 
   // 信息页
   "/what-is-midi": [converters[0], converters[1], converters[9], converters[10]],

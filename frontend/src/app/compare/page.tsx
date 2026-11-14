@@ -185,8 +185,8 @@ export default function ComparePage() {
                 <p>Works in any modern browser on any device. No downloads, no plugins, no accounts. Just open and convert.</p>
               </div>
               <div className="verdict-card">
-                <h3>AI-Powered Accuracy</h3>
-                <p>Uses Spotify&apos;s Basic Pitch neural network — the same technology behind professional music analysis tools.</p>
+                <h3>Basic Pitch Model</h3>
+                <p>Based on Spotify&apos;s open-source Basic Pitch model, running in your browser. Clear, single-instrument recordings usually need less cleanup than dense mixes.</p>
               </div>
             </div>
             <div className="compare-cta">

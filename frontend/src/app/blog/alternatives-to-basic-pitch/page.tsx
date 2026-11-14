@@ -50,7 +50,7 @@ const faqItems = [
   {
     question: "Which MIDI converter is most accurate?",
     answer:
-      "In our tests, MP3toMIDI and Basic Pitch produced nearly identical results since they share the same AI model. Melodyne is more accurate for complex multi-instrument recordings, but it costs $99. For single-instrument tracks, browser-based tools match desktop software quality.",
+      "MP3toMIDI and Spotify's Basic Pitch demo use the same open-source model, so the transcription is the same kind of result. Melodyne is a different, paid editor aimed at complex multi-instrument recordings. This site does not publish a scored accuracy comparison.",
   },
   {
     question: "Can I convert guitar or drums to MIDI?",

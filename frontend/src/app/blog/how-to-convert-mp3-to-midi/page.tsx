@@ -35,11 +35,11 @@ const faqItems = [
   },
   {
     question: "Is converting MP3 to MIDI free?",
-    answer: "Yes. MP3toMIDI offers free MP3 to MIDI conversion with no sign-up required. The free tier handles files up to 10 minutes. There are no watermarks, no daily limits, and no hidden fees. Just upload your MP3 and download the MIDI.",
+    answer: "Yes. MP3toMIDI converts MP3 to MIDI in the browser with no sign-up. There is no paid tier, no watermark, and no daily cap. The file stays on your device. The practical limit is about 50MB.",
   },
   {
     question: "How accurate is MP3 to MIDI conversion?",
-    answer: "Accuracy depends on the source audio. Solo piano or guitar tracks achieve 90-97% note accuracy. Vocal tracks are around 85-93%. Full band mixes with multiple instruments are harder — expect 75-85% accuracy. Using high-bitrate MP3 (256kbps+) and clean audio improves results significantly.",
+    answer: "The converter is based on Spotify's open-source Basic Pitch model, running in your browser. There is no fixed accuracy rate. Solo piano or guitar usually needs less editing than a full mix. A high-bitrate MP3 (256kbps or higher) keeps more of the detail Basic Pitch can use.",
   },
   {
     question: "Can I convert MP3 to MIDI on my phone?",

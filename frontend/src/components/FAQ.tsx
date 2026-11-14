@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ACCURACY_ANSWER } from "@/lib/modelCopy";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -8,7 +9,7 @@ export default function FAQ() {
   const faqs = [
     {
       q: "How accurate is the conversion?",
-      a: "Our AI achieves 99.4% note accuracy on clean, single-instrument recordings. For complex mixes with multiple instruments, accuracy varies but typically produces usable MIDI drafts that need minimal cleanup in your DAW.",
+      a: ACCURACY_ANSWER,
     },
     {
       q: "Is my audio uploaded to a server?",

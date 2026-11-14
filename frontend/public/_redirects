@@ -1,0 +1,14 @@
+# Near-duplicate MP3-to-MIDI URLs permanently redirect to the canonical tool page.
+# Cloudflare Pages and Netlify read this file from the published output.
+/mp3-to-midi-converter /mp3-to-midi 301
+/mp3-to-midi-converter/ /mp3-to-midi 301
+/convert-mp3-to-midi /mp3-to-midi 301
+/convert-mp3-to-midi/ /mp3-to-midi 301
+/turn-mp3-to-midi /mp3-to-midi 301
+/turn-mp3-to-midi/ /mp3-to-midi 301
+/mp3-to-midi-ai /mp3-to-midi 301
+/mp3-to-midi-ai/ /mp3-to-midi 301
+/mp3-to-midi-file-conversion /mp3-to-midi 301
+/mp3-to-midi-file-conversion/ /mp3-to-midi 301
+/convert-mp3-file-to-midi /mp3-to-midi 301
+/convert-mp3-file-to-midi/ /mp3-to-midi 301

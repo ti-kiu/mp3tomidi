@@ -1,10 +1,16 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, type ReactNode } from "react";
 import { useConvert } from "@/hooks/useConvert";
 import MidiPreview from "@/components/MidiPreview";
 
-export default function Hero() {
+export default function Hero({
+  title,
+  description,
+}: {
+  title?: ReactNode;
+  description?: string;
+} = {}) {
   const [file, setFile] = useState<File | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -52,30 +58,20 @@ export default function Hero() {
             Free — No signup required
           </div>
 
-          <h1>
-            Drop a track.
-            <br />
-            <span>Get the notes.</span>
+          <h1 className={title ? "hero-title-long" : undefined}>
+            {title ?? (
+              <>
+                Drop a track.
+                <br />
+                <span>Get the notes.</span>
+              </>
+            )}
           </h1>
 
           <p>
-            Upload any MP3, WAV, or FLAC. Our AI extracts every note, chord,
-            and rhythm — then hands you a clean MIDI file you can drop straight
-            into Ableton, FL Studio, or Logic.
+            {description ??
+              "Upload any MP3, WAV, or FLAC. Spotify's open-source Basic Pitch model transcribes notes in your browser and downloads a MIDI file you can open in Ableton, FL Studio, or Logic."}
           </p>
-
-          <div className="social-proof">
-            <div className="avatar-stack">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="avatar">
-                  {String.fromCharCode(64 + i)}
-                </div>
-              ))}
-            </div>
-            <p>
-              <strong>5,000+</strong> producers joined this week
-            </p>
-          </div>
         </div>
 
         <div className="upload-card" id="convert">

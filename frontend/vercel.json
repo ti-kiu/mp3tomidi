@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    { "source": "/mp3-to-midi-converter", "destination": "/mp3-to-midi", "statusCode": 301 },
+    { "source": "/mp3-to-midi-converter/", "destination": "/mp3-to-midi", "statusCode": 301 },
+    { "source": "/convert-mp3-to-midi", "destination": "/mp3-to-midi", "statusCode": 301 },
+    { "source": "/convert-mp3-to-midi/", "destination": "/mp3-to-midi", "statusCode": 301 },
+    { "source": "/turn-mp3-to-midi", "destination": "/mp3-to-midi", "statusCode": 301 },
+    { "source": "/turn-mp3-to-midi/", "destination": "/mp3-to-midi", "statusCode": 301 },
+    { "source": "/mp3-to-midi-ai", "destination": "/mp3-to-midi", "statusCode": 301 },
+    { "source": "/mp3-to-midi-ai/", "destination": "/mp3-to-midi", "statusCode": 301 },
+    { "source": "/mp3-to-midi-file-conversion", "destination": "/mp3-to-midi", "statusCode": 301 },
+    { "source": "/mp3-to-midi-file-conversion/", "destination": "/mp3-to-midi", "statusCode": 301 },
+    { "source": "/convert-mp3-file-to-midi", "destination": "/mp3-to-midi", "statusCode": 301 },
+    { "source": "/convert-mp3-file-to-midi/", "destination": "/mp3-to-midi", "statusCode": 301 }
+  ]
+}

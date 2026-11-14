@@ -34,15 +34,15 @@ const faqItems = [
   },
   {
     question: "What audio formats can I convert to MIDI for free?",
-    answer: "MP3toMIDI supports MP3, WAV, FLAC, OGG, M4A, AAC, AIFF, WMA, and Opus — all converted to MIDI for free. You can also paste a YouTube link directly. No format restrictions behind a paywall.",
+    answer: "The file picker accepts MP3, WAV, FLAC, OGG, and M4A. There is no YouTube URL field. If you have another format, convert it to one of those files first. Nothing is locked behind a paywall.",
   },
   {
     question: "How accurate is a free audio to MIDI converter?",
-    answer: "Accuracy depends on the source audio. Solo instruments like piano or guitar achieve 90-97% note detection accuracy. Full band mixes are harder — expect 75-85%. MP3toMIDI's AI model matches or exceeds paid alternatives in independent tests.",
+    answer: "The converter is based on Spotify's open-source Basic Pitch model, running in your browser. There is no fixed accuracy rate, and this site does not claim to beat paid editors. Clear solo piano or guitar usually needs less editing than a full mix.",
   },
   {
     question: "Do free MIDI converters store or share my audio files?",
-    answer: "It depends on the tool. Most web-based converters process your file temporarily and delete it within hours. MP3toMIDI deletes uploaded files automatically after processing. Desktop apps like Audacity never upload anything. Always check the privacy policy before uploading copyrighted material.",
+    answer: "It depends on the tool. MP3toMIDI does not upload the file at all: Spotify's open-source Basic Pitch model runs in your browser. Other websites may keep a copy for a while. Read that site's privacy policy before you send it a recording.",
   },
   {
     question: "Can I use the MIDI output commercially if it was converted for free?",
@@ -251,15 +251,15 @@ export default function Article() {
               <Link href="/piano-to-midi">piano to MIDI</Link>,{" "}
               <Link href="/drums-to-midi">drums to MIDI</Link>,{" "}
               <Link href="/bass-to-midi">bass to MIDI</Link>, and even{" "}
-              <Link href="/youtube-to-midi">YouTube to MIDI</Link> directly from a URL. Every
-              conversion uses the same optimized AI model regardless of which entry point you use.
+              <Link href="/youtube-to-midi">song audio you already saved</Link>. None of those pages take a YouTube URL.
+              Every one of them runs the same Basic Pitch model.
             </p>
 
             <h2 id="formats">Supported Formats: More Than Just MP3</h2>
 
             <figure className="article-image">
               <Image src="/blog/free-audio-to-midi-converter/img-4.svg" alt="Supported audio formats for MIDI conversion: MP3, WAV, FLAC, OGG, M4A, AAC, AIFF, WMA, Opus" width={800} height={400} />
-              <figcaption>9 audio formats supported — all converted to MIDI with the same accuracy.</figcaption>
+              <figcaption>Supported files are transcribed with the same Basic Pitch model.</figcaption>
             </figure>
 
             <p>
@@ -272,7 +272,7 @@ export default function Article() {
                   <tr style={{ background: "#f3f4f6", textAlign: "left" }}>
                     <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Format</th>
                     <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Type</th>
-                    <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Avg Accuracy</th>
+                    <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Transcription</th>
                     <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Best For</th>
                   </tr>
                 </thead>
@@ -280,47 +280,48 @@ export default function Article() {
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}><Link href="/mp3-to-midi">MP3</Link></td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Lossy</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>89.5%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Same Basic Pitch model</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Most common format, good enough for most uses</td>
                   </tr>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}><Link href="/wav-to-midi">WAV</Link></td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Lossless</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>90.5%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Same Basic Pitch model</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Best quality, larger files</td>
                   </tr>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}><Link href="/flac-to-midi">FLAC</Link></td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Lossless</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>90.5%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Same Basic Pitch model</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Same quality as WAV, smaller file size</td>
                   </tr>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>OGG</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Lossy</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>88.9%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Same Basic Pitch model</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Open source alternative to MP3</td>
                   </tr>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>M4A / AAC</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Lossy</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>89.2%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Same Basic Pitch model</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Apple ecosystem default format</td>
                   </tr>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>YouTube URL</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Stream</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>85-90%</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}><Link href="/youtube-to-midi">Convert directly from YouTube</Link> — no download needed</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Not accepted</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Save an audio file first</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>This converter does not fetch a YouTube link</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             <p>
-              Accuracy numbers are based on our internal benchmark of 50 tracks across genres.
-              Solo instruments perform better than full mixes. If you need the highest accuracy,
-              use a <Link href="/song-to-midi">lossless format like WAV or FLAC</Link>.
+              There is no published accuracy percentage. Solo instruments are easier than full mixes
+              because Basic Pitch is not separating a band into stems. A lossless file such as{" "}
+              <Link href="/wav-to-midi">WAV</Link> or <Link href="/flac-to-midi">FLAC</Link> only helps
+              when that is the audio you actually have.
             </p>
 
             <h2 id="privacy">Privacy & Data Handling: What Happens to Your Files?</h2>
@@ -348,7 +349,7 @@ export default function Article() {
                 <tbody>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", fontWeight: 600 }}>MP3toMIDI</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Auto-delete after processing</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>No upload — audio stays in the browser</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>No</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a" }}>Excellent</td>
                   </tr>

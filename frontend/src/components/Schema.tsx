@@ -1,11 +1,17 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+import { ACCURACY_ANSWER } from "@/lib/modelCopy";
+import { howToForPath, toolSchemaForPath, type HowToSpec } from "@/lib/pageHowTo";
+
 export function SoftwareApplicationSchema() {
+  const tool = toolSchemaForPath(usePathname() || "/");
   const schema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "MP3toMIDI",
-    url: "https://mp3tomidi.vip",
-    description:
-      "Free online MP3 to MIDI converter. AI-powered, browser-side audio transcription. No upload, no signup.",
+    name: tool.name,
+    url: tool.url,
+    description: tool.description,
     applicationCategory: "MultimediaApplication",
     operatingSystem: "Web Browser",
     offers: {
@@ -18,7 +24,7 @@ export function SoftwareApplicationSchema() {
       "WAV to MIDI conversion",
       "FLAC to MIDI conversion",
       "OGG to MIDI conversion",
-      "Browser-side AI transcription",
+      "Browser-side Basic Pitch transcription",
       "MIDI preview",
       "No file upload required",
     ],
@@ -36,7 +42,7 @@ export function FAQPageSchema({ items, url }: { items?: { question: string; answ
   const defaultFaqs = [
     {
       question: "How accurate is the conversion?",
-      answer: "Our AI achieves 99.4% note detection accuracy on clean, single-instrument recordings. The system uses Spotify's Basic Pitch neural network trained on tens of thousands of hours of music. For best results, use recordings with a single instrument and minimal background noise.",
+      answer: ACCURACY_ANSWER,
     },
     {
       question: "Is my audio uploaded to a server?",
@@ -144,36 +150,21 @@ export function ArticleSchema({
   );
 }
 
-export function HowToSchema() {
+export function HowToSchema({ spec }: { spec: HowToSpec }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    name: "How to Convert MP3 to MIDI Online",
-    description:
-      "Convert any audio file to MIDI in 3 steps using your browser. No upload, no signup, no software install.",
+    name: spec.name,
+    description: spec.description,
     tool: [
       { "@type": "HowToTool", name: "Modern web browser (Chrome, Firefox, Edge, Safari)" },
     ],
-    step: [
-      {
-        "@type": "HowToStep",
-        position: 1,
-        name: "Upload your audio file",
-        text: "Drag and drop your MP3, WAV, FLAC, OGG, or M4A file onto the converter. Or click to browse your files. Max file size: 50MB.",
-      },
-      {
-        "@type": "HowToStep",
-        position: 2,
-        name: "AI converts audio to MIDI",
-        text: "Spotify's Basic Pitch AI model analyzes the audio and detects musical notes. The entire process runs in your browser — nothing is uploaded to any server. Takes under 15 seconds for most files.",
-      },
-      {
-        "@type": "HowToStep",
-        position: 3,
-        name: "Preview and download MIDI",
-        text: "View detected notes on a piano roll preview. If it looks good, download the standard MIDI file. Import it into any DAW — Ableton, FL Studio, Logic Pro, GarageBand, Cubase, or Reaper.",
-      },
-    ],
+    step: spec.steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
   };
 
   return (
@@ -184,11 +175,16 @@ export function HowToSchema() {
   );
 }
 
+export function RouteHowTo() {
+  const spec = howToForPath(usePathname() || "/");
+  if (!spec) return null;
+  return <HowToSchema spec={spec} />;
+}
+
 export function WebPageSchema({
   title,
   description,
   url,
-  faqQuestions,
 }: {
   title: string;
   description: string;
@@ -211,16 +207,6 @@ export function WebPageSchema({
       cssSelector: ["h1", "h2", ".speakable"],
     },
   };
-
-  if (faqQuestions) {
-    schema.about = {
-      "@type": "FAQPage",
-      mainEntity: Array.from({ length: faqQuestions }, (_, i) => ({
-        "@type": "Question",
-        position: i + 1,
-      })),
-    };
-  }
 
   return (
     <script

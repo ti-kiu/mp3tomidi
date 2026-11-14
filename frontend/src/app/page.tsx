@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import RelatedTools from "@/components/RelatedTools";
 import Hero from "@/components/Hero";
@@ -8,6 +9,10 @@ import Footer from "@/components/Footer";
 import { SoftwareApplicationSchema, FAQPageSchema, WebPageSchema } from "@/components/Schema";
 import { OrganizationSchema, WebSiteSchema, BreadcrumbListSchema } from "@/components/SchemaOrg";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "https://mp3tomidi.vip" },
+};
 
 function WhatIsMidi() {
   return (
