@@ -11,8 +11,8 @@ export default function HowItWorks() {
     {
       number: "02",
       icon: "memory",
-      title: "AI extracts the notes",
-      desc: "Our neural engine detects pitch, velocity, timing, and chord structure — all in your browser.",
+      title: "Basic Pitch reads the notes",
+      desc: "Spotify's open-source Basic Pitch model estimates pitch, timing, and loudness in your browser. The file is not uploaded.",
       bg: "linear-gradient(160deg, #e6faf7 0%, #ccfbf1 100%)",
       iconBg: "#0d9488",
     },

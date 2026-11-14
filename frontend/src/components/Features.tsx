@@ -11,20 +11,21 @@ export default function Features() {
           {/* Large card — AI Transcription (orange) */}
           <div className="card feature-large" style={{ background: "linear-gradient(135deg, #fff7ed 0%, #fff1e6 100%)" }}>
             <div className="feature-large-content">
-              <span className="feature-tag" style={{ background: "#ffedd5", color: "#c2410c" }}>AI TRANSCRIPTION</span>
+              <span className="feature-tag" style={{ background: "#ffedd5", color: "#c2410c" }}>BASIC PITCH</span>
               <div className="feature-icon" style={{ background: "#ea580c" }}>
                 <span className="material-icons-outlined" style={{ color: "#fff" }}>psychology</span>
               </div>
-              <h3>Neural Audio Extraction</h3>
+              <h3>Basic Pitch Transcription</h3>
               <p>
-                Deep-learning models trained on 500,000+ hours of professional
-                multi-track recordings. Identifies melodies, chords, and rhythms
-                with 99.4% accuracy — from clean solos to dense mixes.
+                Audio is transcribed in your browser with Spotify&apos;s open-source
+                Basic Pitch model. It estimates notes, timing, and loudness from
+                the file on your device. Clear, single-instrument recordings
+                usually need less cleanup. Dense mixes can include extra or missing notes.
               </p>
               <div className="chip-row">
-                <span className="chip" style={{ background: "#ffedd5", color: "#9a3412" }}>99.4% Note Accuracy</span>
-                <span className="chip" style={{ background: "#ffedd5", color: "#9a3412" }}>Instrument Separation</span>
-                <span className="chip" style={{ background: "#ffedd5", color: "#9a3412" }}>Micro-timing Detection</span>
+                <span className="chip" style={{ background: "#ffedd5", color: "#9a3412" }}>Spotify Basic Pitch</span>
+                <span className="chip" style={{ background: "#ffedd5", color: "#9a3412" }}>Runs in Your Browser</span>
+                <span className="chip" style={{ background: "#ffedd5", color: "#9a3412" }}>No File Upload</span>
               </div>
             </div>
             <div className="feature-visual">

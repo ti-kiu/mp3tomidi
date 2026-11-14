@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     question: "Does converting WAV to MIDI give better results than MP3 to MIDI?",
-    answer: "In most cases, the difference is minimal. WAV files don't have compression artifacts, so the AI has cleaner audio to work with. But modern pitch detection algorithms are good enough that a high-quality MP3 (256kbps+) produces nearly identical MIDI output. We measured only a 1.2% accuracy difference between 320kbps MP3 and WAV in our tests.",
+    answer: "Usually the difference is small. WAV has no MP3 compression artifacts, so Basic Pitch gets a cleaner signal. A high-bitrate MP3 (256kbps or higher) is often close enough that converting it to WAV first does not help. This site does not publish a measured percentage gap.",
   },
   {
     question: "What bitrate MP3 should I use for MIDI conversion?",
@@ -144,63 +144,46 @@ export default function Article() {
               <figcaption>Same track, two formats, same converter — we compared the MIDI output.</figcaption>
             </figure>
 
-            <h2 id="results">Results: It's Closer Than You'd Think</h2>
+            <h2 id="results">What Actually Changes</h2>
 
             <div style={{ overflowX: "auto", margin: "1.5rem 0" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.9rem" }}>
                 <thead>
                   <tr style={{ background: "#f3f4f6", textAlign: "left" }}>
-                    <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Instrument</th>
-                    <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>WAV Accuracy</th>
-                    <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>MP3 Accuracy</th>
-                    <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Difference</th>
+                    <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Source</th>
+                    <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>WAV or FLAC</th>
+                    <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>MP3</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Solo Piano</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>97.8%</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>96.5%</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a" }}>-1.3%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Solo piano, guitar, or vocal</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>No compression artifacts for Basic Pitch to misread</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Usually close if the file is 256kbps or higher</td>
                   </tr>
                   <tr>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Vocals</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>94.2%</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>93.1%</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a" }}>-1.1%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Full mix</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Still a rough draft, because the instruments overlap</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Also a rough draft. The mix is the hard part, not the codec</td>
                   </tr>
                   <tr>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Guitar</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>91.5%</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>90.8%</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a" }}>-0.7%</td>
-                  </tr>
-                  <tr>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Full Mix</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>78.3%</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>77.6%</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a" }}>-0.7%</td>
-                  </tr>
-                  <tr style={{ fontWeight: 600, background: "#f9fafb" }}>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Average</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>90.5%</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>89.5%</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a" }}>-1.0%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Low-bitrate MP3</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Not available if this is the only file you have</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>More smeared harmonics, so expect more wrong notes</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             <p>
-              The average difference was about 1%. Solo piano showed the biggest gap (1.3%) because
-              piano has rich harmonics that compression can slightly alter. For full band mixes, the
-              difference was only 0.7% — likely because the mix was already dense enough that minor
-              compression artifacts didn't matter.
+              Both columns use the same model: Spotify&apos;s open-source Basic Pitch, in the browser.
+              A WAV file can only help when you still have the uncompressed audio. Turning an MP3 into
+              a WAV does not restore what the encoder removed.
             </p>
 
             <figure className="article-image">
               <Image src="/blog/mp3-vs-wav-midi/img-results-chart.svg" alt="Bar chart showing WAV vs MP3 accuracy by instrument type" width={800} height={400} />
-              <figcaption>WAV consistently outperforms MP3, but the gap is small across all instrument types.</figcaption>
+              <figcaption>WAV can be slightly cleaner. The model is still Basic Pitch either way.</figcaption>
             </figure>
 
             <h2 id="recommendation">When Does the Format Actually Matter?</h2>
@@ -229,7 +212,7 @@ export default function Article() {
               The bottom line: if you have a WAV file, use it — you might get slightly better results.
               If you only have an MP3, don't bother converting it to WAV first (that won't undo the
               compression). Just use the MP3 directly with{" "}
-              <Link href="/mp3-to-midi">MP3toMIDI</Link> and you'll get results that are 99% as good. Our <Link href="/audio-to-midi">audio to MIDI tool</Link> handles all formats.
+              <Link href="/mp3-to-midi">MP3toMIDI</Link>. The <Link href="/audio-to-midi">audio to MIDI</Link> page accepts the other formats with the same Basic Pitch model.
             </p>
 
             {/* CTA */}

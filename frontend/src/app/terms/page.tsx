@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description:
     "Terms of Service for mp3tomidi.vip — read the rules for using our free MP3 to MIDI converter.",
   robots: { index: false, follow: true },
+  alternates: { canonical: "https://mp3tomidi.vip/terms" },
 };
 
 export default function TermsPage() {

@@ -67,11 +67,10 @@ export default function Article() {
               These cover the range of what most people actually try to convert.
             </p>
             <p>
-              We scored each tool on four criteria: <strong>accuracy</strong> (how many notes were
-              correct), <strong>speed</strong> (how long the conversion took), <strong>privacy</strong>
-              (whether files are uploaded to a server), and <strong>price</strong> (free vs. paid).
-              We also considered ease of use, but that&apos;s subjective enough that we&apos;re keeping it
-              separate from the main ranking.
+              The notes below compare <strong>privacy</strong> (whether a file is uploaded),{" "}
+              <strong>price</strong>, and what kind of recording each tool is meant for. This is not
+              a scored accuracy ranking. MP3toMIDI runs Spotify&apos;s open-source Basic Pitch model
+              in the browser.
             </p>
 
             <figure className="article-image">
@@ -92,10 +91,10 @@ export default function Article() {
               processes it locally, and you get a MIDI file.
             </p>
             <p>
-              The accuracy impressed us, especially on piano and guitar. It picked up chord
-              voicings correctly about 80% of the time, and single-note melodies were nearly
-              perfect. On full band mixes, it&apos;s more hit-or-miss — but that&apos;s true of every tool
-              on this list.
+              On piano and guitar, isolated takes are the recordings that need the least cleanup.
+              Single-note melodies are easier than dense chords. Full mixes are more hit-or-miss,
+              which is true of Basic Pitch generally — this site runs that open-source model, not a
+              separate scorer.
             </p>
             <p>
               The main limitation is file size (50MB max) and the fact that processing happens on

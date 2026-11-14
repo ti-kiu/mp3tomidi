@@ -32,9 +32,7 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Tools</h4>
             <ul>
-              <li><Link href="/convert-mp3-to-midi">Convert MP3 to MIDI</Link></li>
-              <li><Link href="/mp3-to-midi-converter">MP3 to MIDI Converter</Link></li>
-              <li><Link href="/mp3-to-midi-ai">MP3 to MIDI AI</Link></li>
+              <li><Link href="/mp3-to-midi">MP3 to MIDI</Link></li>
               <li><Link href="/convert-midi-to-mp3">Convert MIDI to MP3</Link></li>
             </ul>
           </div>

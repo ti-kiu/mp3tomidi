@@ -12,7 +12,7 @@ import { SoftwareApplicationSchema, WebPageSchema } from "@/components/Schema";
 export const metadata: Metadata = {
   title: "YouTube to MIDI Converter — Convert YouTube Audio | MP3toMIDI",
   description:
-    "Convert YouTube videos to MIDI. Extract music from YouTube and convert to MIDI notes. Free browser-based AI tool.",
+    "Transcribe an audio file you already saved. This page does not download YouTube videos. Spotify's open-source Basic Pitch model runs in your browser.",
   keywords: [
     "youtube to midi",
     "youtube to midi converter",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "YouTube to MIDI Converter — Free, Browser-Based",
     description:
-      "Convert YouTube videos to MIDI. Free, browser-based AI tool.",
+      "Transcribe a saved audio file with Spotify's open-source Basic Pitch model. This page does not download YouTube videos.",
     url: "https://mp3tomidi.vip/youtube-to-midi",
     siteName: "MP3toMIDI",
     locale: "en_US",
@@ -41,7 +41,7 @@ export default function YouTubeToMidiPage() {
       <SoftwareApplicationSchema />
       <WebPageSchema
         title="YouTube to MIDI Converter — Free, Browser-Based"
-        description="Convert YouTube audio to MIDI using AI in your browser. Free, private, no signup."
+        description="Transcribe a saved audio file with Spotify's open-source Basic Pitch model. This page does not download YouTube videos."
         url="https://mp3tomidi.vip/youtube-to-midi"
         faqQuestions={8}
       />

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     question: "Can I extract piano notes from a song with other instruments?",
-    answer: "Yes, but accuracy drops with complex mixes. A solo piano recording gives 95%+ accuracy. With a full band mix, expect 70-80%. The AI tries to isolate the piano frequencies, but drums and bass can overlap. For best results, use the isolated piano track if available.",
+    answer: "Yes, but a full mix is harder. The converter uses Spotify's open-source Basic Pitch model and does not isolate the piano from the rest of the band. A solo piano recording usually needs less editing. If you have the isolated piano track, use that.",
   },
   {
     question: "What format should I export the piano notes as?",
@@ -38,7 +38,7 @@ const faqItems = [
   },
   {
     question: "How accurate is AI piano transcription?",
-    answer: "On clean solo piano recordings, modern AI achieves 95-98% note accuracy. Complex jazz with dense voicings may drop to 85%. The timing is usually very accurate, though you may need to quantize notes to fix minor rhythm issues.",
+    answer: "There is no fixed accuracy rate. Clean solo piano usually needs less editing. Dense jazz voicings often include extra or missing notes. You may still want to quantize timing in a DAW. The model is Spotify's open-source Basic Pitch, running in the browser.",
   },
   {
     question: "Can I extract just the right hand (melody) from a piano piece?",

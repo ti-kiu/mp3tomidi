@@ -10,7 +10,7 @@ import RelatedTools from "@/components/RelatedTools";
 export const metadata: Metadata = {
   title: "Best MIDI Converter Online — Free, Fast, No Upload Needed",
   description:
-    "Compare the best MIDI converters online in 2026. Browser-side processing, privacy-first, no upload required. Accuracy and speed benchmarks included.",
+    "Compare online MIDI converters in 2026. MP3toMIDI runs Spotify's open-source Basic Pitch model in the browser, with no file upload.",
   keywords: [
     "midi converter online",
     "best midi converter",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Best MIDI Converter Online — Free, Fast, No Upload Needed",
-    description: "We tested 5 online MIDI converters for accuracy and speed. Here's which one wins.",
+    description: "MP3toMIDI runs Spotify's open-source Basic Pitch model in the browser. Here is how that compares with tools that upload your file.",
     url: "https://mp3tomidi.vip/blog/midi-converter-online",
     images: [{ url: "https://mp3tomidi.vip/blog/midi-converter-online/cover.svg", width: 1200, height: 630 }],
   },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const faqItems = [
   {
     question: "What is the best free MIDI converter online?",
-    answer: "MP3toMIDI is the best free online MIDI converter in 2026. It runs entirely in your browser (no upload needed), supports MP3, WAV, FLAC, OGG, M4A, and more, and achieves 94.2% accuracy in our tests — the highest among all tested tools. The free tier handles files up to 10 minutes.",
+    answer: "MP3toMIDI is a free browser converter. It runs Spotify's open-source Basic Pitch model on your device, supports common audio files, and does not upload them. There is no separate paid tier. It is not a higher-accuracy model than Basic Pitch, because it is Basic Pitch.",
   },
   {
     question: "Is it safe to use an online MIDI converter?",
@@ -39,7 +39,7 @@ const faqItems = [
   },
   {
     question: "How accurate are online MIDI converters?",
-    answer: "Accuracy varies widely. In our tests, the best converter (MP3toMIDI) achieved 94.2% note accuracy on solo instruments and 82.1% on full mixes. Older tools like WIDI Recognition scored as low as 68.7%. Accuracy depends on the AI model, the source audio quality, and how many instruments are playing simultaneously.",
+    answer: "There is no fixed accuracy rate. MP3toMIDI uses Spotify's open-source Basic Pitch model. Clear, single-instrument recordings usually need less editing. Dense mixes often include extra or missing notes. This page does not publish a scored bake-off against other products.",
   },
   {
     question: "Can I convert MP3 to MIDI without uploading my file?",
@@ -115,7 +115,7 @@ export default function Article() {
               <figcaption>The five features that separate great MIDI converters from mediocre ones.</figcaption>
             </figure>
 
-            <p><strong>Accuracy</strong> is the most important factor. A converter that misses 30% of notes is useless, no matter how fast it is. The best tools use modern AI models trained on millions of audio samples to detect pitches, timing, and velocity.</p>
+            <p><strong>The recording</strong> matters more than the marketing score. A converter can miss notes in a dense mix and still be useful on a clean solo. MP3toMIDI uses Spotify&apos;s open-source Basic Pitch model. It does not publish a percentage accuracy.</p>
 
             <p><strong>Format support</strong> matters too. You don't want to convert your files to a specific format just to use a converter. The best tools handle MP3, WAV, FLAC, OGG, M4A, and more without complaints.</p>
 
@@ -156,12 +156,12 @@ export default function Article() {
               modern laptops and phones handle it easily.
             </p>
 
-            <h2 id="comparison">Accuracy Comparison: 5 MIDI Converters Tested</h2>
+            <h2 id="comparison">How These Converters Differ</h2>
 
             <p>
-              We tested each converter on the same set of 20 audio tracks across different genres and
-              instruments. Each track was converted and the output was compared note-for-note against
-              a manually created reference MIDI.
+              This is not a scored accuracy test. MP3toMIDI runs Spotify&apos;s open-source Basic Pitch
+              model, so it is not a more accurate model than Basic Pitch. The practical difference is
+              where the audio is processed and what the page asks you to do.
             </p>
 
             <div style={{ overflowX: "auto", margin: "1.5rem 0" }}>
@@ -169,7 +169,7 @@ export default function Article() {
                 <thead>
                   <tr style={{ background: "#f3f4f6", textAlign: "left" }}>
                     <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Converter</th>
-                    <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Accuracy</th>
+                    <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Model on this site</th>
                     <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Processing</th>
                     <th style={{ padding: "0.75rem", borderBottom: "2px solid #e5e7eb" }}>Price</th>
                   </tr>
@@ -177,31 +177,31 @@ export default function Article() {
                 <tbody>
                   <tr style={{ fontWeight: 600, background: "#fff7ed" }}>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>MP3toMIDI</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb", color: "#16a34a" }}>94.2%</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Browser-side</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Basic Pitch, in the browser</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>On your device</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Free</td>
                   </tr>
                   <tr>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Basic Pitch (Spotify)</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>88.5%</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Browser-side</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Basic Pitch (Spotify demo)</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Same open-source model</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Spotify&apos;s own site</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Free</td>
                   </tr>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>AmazingMIDI</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>79.1%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Not this model</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Server-side</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Free</td>
                   </tr>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>MIDIculous</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>74.3%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Not this model</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Server-side</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>$29/mo</td>
                   </tr>
                   <tr>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>WIDI Recognition</td>
-                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>68.7%</td>
+                    <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Not this model</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>Server-side</td>
                     <td style={{ padding: "0.75rem", borderBottom: "1px solid #e5e7eb" }}>$99 one-time</td>
                   </tr>
@@ -210,15 +210,13 @@ export default function Article() {
             </div>
 
             <figure className="article-image">
-              <Image src="/blog/midi-converter-online/img-2.svg" alt="Bar chart comparing accuracy of 5 MIDI converters" width={800} height={400} />
-              <figcaption>MP3toMIDI leads with 94.2% accuracy, followed by Basic Pitch at 88.5%.</figcaption>
+              <Image src="/blog/midi-converter-online/img-2.svg" alt="Diagram of browser-side versus server-side MIDI conversion" width={800} height={400} />
+              <figcaption>MP3toMIDI uses Basic Pitch locally. It is not a higher-scoring model than Basic Pitch.</figcaption>
             </figure>
 
             <p>
-              The accuracy gap between the top and bottom converters is dramatic — 25.5 percentage
-              points. That means the worst converter misses roughly 1 in 4 notes that the best one
-              catches. For a 100-note piano piece, that's the difference between 94 correct notes and
-              69 correct notes.
+              Treat a dense mix as a draft. A solo instrument is the recording that usually needs the
+              least cleanup, whether you use this page or another Basic Pitch demo.
             </p>
 
             <h2 id="privacy">Privacy & Speed Benchmarks</h2>
@@ -229,17 +227,10 @@ export default function Article() {
             </figure>
 
             <p>
-              Speed matters when you're converting multiple files. We timed each converter on the same
-              3-minute audio file:
+              Browser-side conversion skips the upload. That is the speed difference you can count on.
+              This page does not publish a stopwatch comparison against Spotify&apos;s Basic Pitch demo,
+              because both are the same model on different sites.
             </p>
-
-            <ul>
-              <li><strong>MP3toMIDI</strong>: 3.2 seconds (browser-side, no upload)</li>
-              <li><strong>Basic Pitch</strong>: 5.8 seconds (browser-side, no upload)</li>
-              <li><strong>AmazingMIDI</strong>: 8.1 seconds (includes upload time)</li>
-              <li><strong>MIDIculous</strong>: 12.4 seconds (includes upload time)</li>
-              <li><strong>WIDI Recognition</strong>: 15.7 seconds (includes upload time)</li>
-            </ul>
 
             <figure className="article-image">
               <Image src="/blog/midi-converter-online/img-4.svg" alt="Privacy diagram showing audio stays on device with browser-side conversion" width={800} height={400} />

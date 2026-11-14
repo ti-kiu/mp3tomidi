@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   description:
     "Privacy Policy for mp3tomidi.vip — learn how we handle your data. Your audio never leaves your device.",
   robots: { index: false, follow: true },
+  alternates: { canonical: "https://mp3tomidi.vip/privacy" },
 };
 
 export default function PrivacyPage() {
